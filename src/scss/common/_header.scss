@@ -1,6 +1,6 @@
 header {
 	width: 100%;
-	height: 72px;
+	height: 80px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -11,15 +11,15 @@ header {
 		height: 100%;
 		margin: 0 auto;
 		position: relative;
-		.web_h1 {
-			float: left;
-		}
 		.web_menu {
 			width: 100%;
 			padding-top: 28px;
 			float: left;
+			.web_h1 {
+				float: left;
+			}
 			#gnb {
-				width: 60%;
+				width: 50vw;
 				height: 20px;
 				float: left;
 				> li {
@@ -32,34 +32,31 @@ header {
 						display: block;
 						font: bold 16px/1 $main-font;
 						color: #eee;
-						i {
-							margin-right: 5px;
-						}
 					}
 				}
 			}
-		}
-		.log {
-			height: 100%;
-			float: right;
-			margin-right: 10px;
-			li {
-				float: left;
-				height: 20px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
+			.log {
+				height: 100%;
+				float: right;
 				margin-right: 10px;
-				a {
-					display: block;
-					font: 16px/1 'arial';
-					padding: 5px 10px;
-					color: #eee;
-					border: 1px solid #6d6d6d;
-					border-radius: 3px;
-					&:hover {
-						background: #6d6d6d;
-						color: #fff;
+				li {
+					float: left;
+					height: 20px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin-right: 10px;
+					a {
+						display: block;
+						font: 16px/1 'arial';
+						padding: 5px 10px;
+						color: #eee;
+						border: 1px solid #6d6d6d;
+						border-radius: 3px;
+						&:hover {
+							background: #6d6d6d;
+							color: #fff;
+						}
 					}
 				}
 			}
@@ -124,6 +121,71 @@ header {
 						text-align: center;
 					}
 				}
+			}
+		}
+		.fa-bars {
+			font-size: 24px;
+			position: absolute;
+			bottom: 20px;
+			right: 40px;
+			display: none;
+		}
+	}
+	&.main {
+		width: 100%;
+		height: 80px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: transparent;
+		z-index: 2;
+		.container {
+			width: 1180px;
+			height: 100%;
+			margin: 0 auto;
+
+			h1 {
+				left: 5vw;
+				a {
+					color: #fff;
+				}
+			}
+			#gnb {
+				right: 5vw;
+				li a {
+					color: #fff;
+				}
+			}
+			.fa-bars {
+				color: #fff;
+			}
+		}
+	}
+	&.sub {
+		background: #222;
+		.container {
+			h1 a {
+				color: #fff;
+			}
+			#gnb li a {
+				color: #fff;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet-origin) {
+	header {
+		.container {
+			width: 100%;
+			h1 {
+				left: 40px;
+			}
+			#gnb {
+				display: none;
+			}
+			.fa-bars {
+				display: block;
 			}
 		}
 	}

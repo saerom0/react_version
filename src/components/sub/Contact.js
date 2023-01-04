@@ -16,22 +16,22 @@ function Contact() {
 	//컴포넌트 재랜더링시 해당 정보값을 매번 변수에 할당하지 않도록 useRef로 참조객체에 저장
 	info.current = [
 		{
-			title: '넥슨 본사',
-			latlng: new kakao.maps.LatLng(37.40211707077346, 127.10344953763003),
+			title: '강남',
+			latlng: new kakao.maps.LatLng(37.4960607, 127.0279746),
 			imgUrl: `${process.env.PUBLIC_URL}/img/marker1.png`,
 			imgSize: new kakao.maps.Size(232, 99),
 			imgPos: { offset: new kakao.maps.Point(116, 99) },
 		},
 		{
-			title: '올림픽 공원',
-			latlng: new kakao.maps.LatLng(37.5206868, 127.1214941),
+			title: '광화문',
+			latlng: new kakao.maps.LatLng(37.5745826, 126.9792381),
 			imgUrl: `${process.env.PUBLIC_URL}/img/marker2.png`,
 			imgSize: new kakao.maps.Size(232, 99),
 			imgPos: { offset: new kakao.maps.Point(116, 99) },
 		},
 		{
-			title: '서울 시청',
-			latlng: new kakao.maps.LatLng(37.5662952, 126.9779451),
+			title: '서울스퀘어',
+			latlng: new kakao.maps.LatLng(37.5554992, 126.9735873),
 			imgUrl: `${process.env.PUBLIC_URL}/img/marker3.png`,
 			imgSize: new kakao.maps.Size(232, 99),
 			imgPos: { offset: new kakao.maps.Point(116, 99) },
@@ -101,9 +101,9 @@ function Contact() {
 	}, [Traffic, kakao]); //traffic정보 출력할때 필요한 정보값 의존성 등록
 
 	return (
-		<Layout name={'Location'}>
+		<Layout name={'Contact'}>
 			<div id='map' ref={container}></div>
-			<nav>
+			<nav className='traffic'>
 				<button onClick={() => setTraffic(!Traffic)}>
 					{Traffic ? 'Traffic ON' : 'Traffic OFF'}
 				</button>

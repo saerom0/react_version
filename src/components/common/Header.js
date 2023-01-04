@@ -6,12 +6,12 @@ function Header(props) {
 	return (
 		<header className={props.type}>
 			<div className='container'>
-				<h1 className='web_h1'>
-					<NavLink exact to='/' activeStyle={active}>
-						REAL STATE
-					</NavLink>
-				</h1>
-				<nav className='web_menu'>
+				<div className='web_menu'>
+					<h1 className='web_h1'>
+						<NavLink exact to='/' activeStyle={active}>
+							REAL STATE
+						</NavLink>
+					</h1>
 					<ul id='gnb'>
 						<li>
 							<NavLink to='/office' activeStyle={active}>
@@ -39,15 +39,16 @@ function Header(props) {
 							</NavLink>
 						</li>
 					</ul>
-				</nav>
-				<ul className='log'>
-					<li>
-						<NavLink to='/signup'>Log In</NavLink>
-					</li>
-					<li>
-						<NavLink to='/signup'>Sign Up</NavLink>
-					</li>
-				</ul>
+					<ul className='log'>
+						<li>
+							<NavLink to='/signup'>Log In</NavLink>
+						</li>
+						<li>
+							<NavLink to='/signup'>Sign Up</NavLink>
+						</li>
+					</ul>
+				</div>
+
 				<FontAwesomeIcon icon={faBars} />
 			</div>
 		</header>
