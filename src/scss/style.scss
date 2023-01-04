@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
+
+$tablet-plus: 1180px;
+$tablet-origin: 900px;
+$mobile: 600px;
+
+$bg-color: #e3e3e3;
+$main-font: 'Jost', sans-serif;
+
+//common
+@import 'common/reset';
+@import 'common/header';
+@import 'common/layout';
+@import 'common/footer';
+@import 'common/modal';
+
+//main
+@import 'main/visual';
+@import 'main/middle_menu';
+@import 'main/banner';
+@import 'main/offer';
+@import 'main/promo';
+@import 'main/track';
+
+//sub
+@import 'sub/review';
+@import 'sub/office';
+@import 'sub/gallery';
+@import 'sub/contact';
+@import 'sub/sign_up';
+@import 'sub/youtube';

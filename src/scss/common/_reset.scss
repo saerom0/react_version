@@ -1,0 +1,33 @@
+@charset 'UTF-8';
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+table,
+th,
+td {
+	border-collapse: collapse;
+}
+fieldset {
+	border: none;
+}
+.h {
+	position: absolute;
+	top: -99999px;
+	opacity: 0;
+}
+textarea {
+	resize: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Hahmlet&family=Montserrat&family=Roboto:wght@400;700&family=Sunflower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
