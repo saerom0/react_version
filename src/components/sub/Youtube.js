@@ -1,21 +1,23 @@
+// const key = 'AIzaSyCwLGRESuf8Zwcy3A9ufGkTyoUcRtYEu_Y';
+// const playlist = 'PLKfwPBQMIxKDP60C-MiQuif3-9MB7RTHm';
+
 import Layout from '../common/Layout';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Modal from '../common/Modal';
 
 function Youtube() {
+	const modal = useRef(null);
 	const [Vids, setVids] = useState([]);
-	const [Open, setOpen] = useState(false);
 	const [Index, setIndex] = useState(0);
 
 	useEffect(() => {
-		const key = 'AIzaSyCwLGRESuf8Zwcy3A9ufGkTyoUcRtYEu_Y';
-		const playlist = 'PLKfwPBQMIxKDP60C-MiQuif3-9MB7RTHm';
+		const key = 'AIzaSyDq1ThuKd63CGMc178rIvnscNriIww6L4A';
+		const playlist = 'PLHtvRFLN5v-W5bQjvyH8QTdQQhgflJ3nu';
 		const num = 10;
 		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlist}&maxResults=${num}`;
 
 		axios.get(url).then((json) => {
-			console.log(json.data.items);
 			setVids(json.data.items);
 		});
 	}, []);
@@ -29,39 +31,37 @@ function Youtube() {
 					const date = data.snippet.publishedAt;
 
 					return (
-						<div className='videoList'>
-							<article key={data.id}>
-								<div
-									className='pic'
-									onClick={() => {
-										setOpen(true);
-										setIndex(idx);
-									}}
-								>
-									<img
-										src={data.snippet.thumbnails.high.url}
-										alt={data.snippet.title}
-									/>
-								</div>
-								<div className='con'>
-									<h2>{tit.length > 60 ? tit.substr(0, 60) + '...' : tit}</h2>
-									<p>
-										{desc.length > 100 ? desc.substr(0, 100) + '...' : desc}
-									</p>
-								</div>
-							</article>
-						</div>
+						<article key={data.id}>
+							<h3>{tit.length > 60 ? tit.substr(0, 60) + '...' : tit}</h3>
+
+							<div className='txt'>
+								<p>{desc.length > 100 ? desc.substr(0, 100) + '...' : desc}</p>
+								<span>{date.split('T')[0]}</span>
+							</div>
+
+							<div
+								className='pic'
+								onClick={() => {
+									setIndex(idx);
+									modal.current.open();
+								}}
+							>
+								<img
+									src={data.snippet.thumbnails.high.url}
+									alt={data.snippet.title}
+								/>
+							</div>
+						</article>
 					);
 				})}
 			</Layout>
-			{Open && (
-				<Modal setOpen={setOpen}>
-					<iframe
-						title={Vids[0].id}
-						src={`https://www.youtube.com/embed/${Vids[Index].snippet.resourceId.videoId}`}
-					></iframe>
-				</Modal>
-			)}
+
+			<Modal ref={modal}>
+				<iframe
+					title={Vids[0]?.id}
+					src={`https://www.youtube.com/embed/${Vids[Index]?.snippet.resourceId.videoId}`}
+				></iframe>
+			</Modal>
 		</>
 	);
 }

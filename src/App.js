@@ -2,6 +2,7 @@ import { Route, Switch } from 'react-router-dom';
 //common
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
+import MobMenu from './components/common/MobMenu';
 //main
 import Main from './components/main/Main';
 //sub

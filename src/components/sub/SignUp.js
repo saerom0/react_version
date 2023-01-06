@@ -2,7 +2,7 @@ import Layout from '../common/Layout';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function SignUp() {
+function Members() {
 	const history = useHistory();
 	const initVal = {
 		userid: '',
@@ -300,4 +300,4 @@ function SignUp() {
 	);
 }
 
-export default SignUp;
+export default Members;

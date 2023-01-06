@@ -1,15 +1,16 @@
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faHome } from '@fortawesome/free-solid-svg-icons';
 function Header(props) {
-	const active = { color: 'aqua' };
+	const active = { color: '#333' };
 	return (
 		<header className={props.type}>
 			<div className='container'>
 				<div className='web_menu'>
 					<h1 className='web_h1'>
 						<NavLink exact to='/' activeStyle={active}>
-							REAL STATE
+							<FontAwesomeIcon icon={faHome} />
+							Home
 						</NavLink>
 					</h1>
 					<ul id='gnb'>
