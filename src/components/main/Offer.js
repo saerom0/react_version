@@ -1,44 +1,39 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Offer() {
-	const [offer_alt, setOffer_alt] = useState([
-		'서울 강남1호점 사무실 사진',
-		'일본 오사카지점 사무실 사진',
-		'홍콩 몽콕지점 사무실 사진',
+	const [offer, setOffer] = useState([
+		'VESTIBULUM AENEAN',
+		'NONUMMY ENDRERIT',
+		'MONTES MAURIS',
+		'CUM NATOQUE',
+		'offer5',
+		'1인 사무공간',
 	]);
-	console.log(typeof offer_alt);
-	console.log(offer_alt);
+	const icon_star = '<i class="fas fa-star"></i>';
+	const url = process.env.PUBLIC_URL;
 	return (
 		<section id='offer' className='myScroll'>
-			<h1>SPECIAL OFFER</h1>
-			<section>
-				{
-					offer_alt.map((_, idx) => {
+			<div className='inner'>
+				<h1>SPECIAL OFFER</h1>
+				<section className='wrap'>
+					{offer.map((el, idx) => {
 						return (
-							<div key={idx}>
-								<img
-									src='img/office1.jpg'
-									alt={() => setOffer_alt(offer_alt[idx])}
-								/>
-								<p>MODERN OFFICE</p>
-								<br />
-								<p>OVER 150 OFFER</p>
-							</div>
+							<article>
+								<div key={idx} className='frame'>
+									<div className='pic'>
+										<img src={`${url}/img/offer${idx + 1}.jpg`} alt={el} />
+									</div>
+								</div>
+								<h2>
+									<Link to='/'>{el}</Link>
+								</h2>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+							</article>
 						);
-					})
-					/* {offer_alt.map((el, idx) => {
-					return (
-						<div key={idx}>
-							<img src='img/office1.jpg' alt={()=>setOffer_alt(offer_alt[idx])} />
-							<p>MODERN OFFICE</p>
-							<br />
-							<p>OVER 150 OFFER</p>
-							<Link to='#'>CLICK HERE</Link>
-						</div>
-					);
-				})} */
-				}
-			</section>
+					})}
+				</section>
+			</div>
 		</section>
 	);
 }
