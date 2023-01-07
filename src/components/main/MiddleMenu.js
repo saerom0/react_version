@@ -1,7 +1,7 @@
 function MiddleMenu() {
 	return (
-		<section id='news' className='myScroll'>
-			중간메뉴-탭메뉴
+		<section id='middle_menu' className='myScroll'>
+			<div className='inner'></div>
 		</section>
 	);
 }

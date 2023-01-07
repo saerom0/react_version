@@ -1,9 +1,10 @@
-import { useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 function Visual() {
 	const panel = useRef(null);
 	const vs_btn = useRef(null);
 	const url = process.env.PUBLIC_URL;
+	const [visualBg, setVisualBg] = useState(['mainbg1', 'mainbg2', 'mainbg3']);
 
 	const interval = useRef(4000);
 	let vs_num = useRef(0);
@@ -44,15 +45,13 @@ function Visual() {
 		<section id='visual' className='page'>
 			<div className='visual'>
 				<ul className='panel' ref={panel}>
-					<li data-index='0'>
-						<img src={url + '/img/mainbg1.jpg'} alt='1' />
-					</li>
-					<li data-index='1'>
-						<img src={url + '/img/mainbg2.jpg'} alt='1' />
-					</li>
-					<li data-index='2'>
-						<img src={url + '/img/mainbg1.jpg'} alt='1' />
-					</li>
+					{visualBg.map((el, idx) => {
+						return (
+							<li data-index={idx} key={idx}>
+								<img src={`${url}/img/${el}.jpg`} alt={idx} />
+							</li>
+						);
+					})}
 				</ul>
 
 				<ul className='pagenation' ref={vs_btn}>
