@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Banner() {
-	const [bannerBg, setBannerBg] = useState(['office1', 'office2', 'office3']);
+	const [banner, setBanner] = useState(['office1', 'office2', 'office3']);
 	return (
 		<section id='banner' className='myScroll'>
 			<div className='inner'>
 				<h1>클릭하면 패널바뀌는 3장 슬라이더</h1>
 				<section>
-					{bannerBg.map((el) => {
+					{banner.map((el) => {
 						return (
 							<div>
 								<img src={`${process.env.PUBLIC_URL}/img/${el}.jpg`} alt={el} />
@@ -22,7 +22,7 @@ function Banner() {
 					})}
 				</section>
 				<ul className='bn_btn'>
-					{bannerBg.map((el, idx) => {
+					{banner.map((el, idx) => {
 						return (
 							<li>
 								<Link to='#'></Link>
