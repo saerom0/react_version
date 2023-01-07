@@ -59,12 +59,15 @@ function Visual() {
 					<li onClick={() => on_page(1)}></li>
 					<li onClick={() => on_page(2)}></li>
 				</ul>
-				{/* <div className="inner">
-                <div className="cp_name">
-                    <h1 className="hidden">REAL SUITE</h1>
-                    <img src={url+"img/cp_name.png"} alt="회사명이 세로로 세겨진 이미지" />
-                </div>
-            </div> */}
+				<div className='inner'>
+					<div className='cp_name'>
+						<h1 className='hidden'>REAL SUITE</h1>
+						<img
+							src={`${url}/img/cp_name.png`}
+							alt={'회사명이 세로로 세겨진 이미지'}
+						/>
+					</div>
+				</div>
 			</div>
 		</section>
 	);
