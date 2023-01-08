@@ -6,7 +6,7 @@
 		opacity: 0;
 		transition: 1s;
 	}
-	> .inner {
+	.container {
 		width: 1180px;
 		min-height: 400px;
 		margin: 100px auto 150px;
@@ -14,18 +14,13 @@
 		opacity: 0;
 		transform: translateY(100px);
 		transition: opacity 1s, transform 1s;
-		h1 {
-			font: normal 30px/1 'arial';
-			color: #777;
-			margin-bottom: 50px;
-		}
 	}
 
 	&.on {
 		figure {
 			opacity: 1;
 		}
-		> .inner {
+		.container {
 			opacity: 1;
 			transform: translateY(0px);
 		}
@@ -37,7 +32,7 @@
 		figure {
 			height: 200px;
 		}
-		> .container {
+		> .inner {
 			width: 100%;
 			margin: 80px auto 120px;
 			padding: 0px 40px;

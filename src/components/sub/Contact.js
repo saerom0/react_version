@@ -1,10 +1,34 @@
 import Layout from '../common/Layout';
 import { useRef, useEffect, useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 
 //useMemo : 함수의 리턴값을 메모이제이션
 //useCallback : 함수자체를 메모이제이션
-
 function Contact() {
+	const [input, setInput] = useState([
+		'Name',
+		'Phone',
+		'E-mail',
+		'Enquire contents',
+	]);
+
+	return (
+		<Layout name={'Contact'}>
+			<div className='container'>
+				<h2>Enquire</h2>
+				<section className='enquire-submit'>
+					{input.map((el, idx) => {
+						return <input type={'text'} placeholder={el} required key={idx} />;
+					})}
+					<Link to='/'>Submit</Link>
+				</section>
+				<Map />
+			</div>
+		</Layout>
+	);
+}
+
+function Map() {
 	const { kakao } = window;
 	const [Traffic, setTraffic] = useState(false);
 	const [Index, setIndex] = useState(0);
@@ -101,7 +125,7 @@ function Contact() {
 	}, [Traffic, kakao]); //traffic정보 출력할때 필요한 정보값 의존성 등록
 
 	return (
-		<Layout name={'Contact'}>
+		<>
 			<div id='map' ref={container}></div>
 			<nav className='traffic'>
 				<button onClick={() => setTraffic(!Traffic)}>
@@ -128,7 +152,7 @@ function Contact() {
 					})}
 				</ul>
 			</nav>
-		</Layout>
+		</>
 	);
 }
 

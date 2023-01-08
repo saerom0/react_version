@@ -2,7 +2,7 @@ import Layout from '../common/Layout';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function Members() {
+function SignUp() {
 	const history = useHistory();
 	const initVal = {
 		userid: '',
@@ -114,7 +114,7 @@ function Members() {
 	}, [Err, Submit, history]);
 
 	return (
-		<Layout name={'Members'}>
+		<Layout name={'SignUp'}>
 			<form action='' onSubmit={handleSubmit}>
 				<fieldset>
 					<legend className='h'>회원가입 폼 양식</legend>
@@ -300,4 +300,4 @@ function Members() {
 	);
 }
 
-export default Members;
+export default SignUp;

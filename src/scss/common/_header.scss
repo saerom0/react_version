@@ -5,7 +5,12 @@ header {
 	top: 0;
 	left: 0;
 	background: transparent;
+	transition: 0.5s;
 	z-index: 3;
+	&:hover {
+		background: rgba(255, 255, 255, 0.2);
+		z-index: 2;
+	}
 	.container {
 		width: 1180px;
 		height: 100%;
@@ -14,12 +19,25 @@ header {
 		.web_menu {
 			width: 100%;
 			padding-top: 28px;
+			margin-left: 10px;
 			float: left;
 			.web_h1 {
 				float: left;
 				padding-right: 3vw;
-				font: bold 16px/1 $main-font;
+				a {
+					display: block;
+					font: bold 16px/1 $main-font;
+					color: #eee;
+					transition: 0.5s;
+					&:hover {
+						color: #000;
+					}
+					i {
+						margin-right: 5px;
+					}
+				}
 			}
+
 			#gnb {
 				width: 50vw;
 				height: 20px;
@@ -34,6 +52,7 @@ header {
 						display: block;
 						font: bold 16px/1 $main-font;
 						color: #eee;
+						transition: 0.5s;
 					}
 				}
 			}
@@ -50,14 +69,35 @@ header {
 					margin-right: 10px;
 					a {
 						display: block;
-						font: 16px/1 'arial';
+						font: 16px/1 $main-font;
 						padding: 5px 10px;
-						color: #eee;
+						color: #fff;
 						border: 1px solid #6d6d6d;
 						border-radius: 3px;
 						&:hover {
 							background: #6d6d6d;
 							color: #fff;
+						}
+					}
+				}
+			}
+			.tablet-log {
+				display: none;
+				width: 60px;
+				height: 100%;
+				float: right;
+				margin-right: 0px;
+				li {
+					width: 20px;
+					float: left;
+					text-align: right;
+					&:first-child {
+						margin-right: 20px;
+					}
+					a {
+						color: #fff;
+						i {
+							font-size: 16px;
 						}
 					}
 				}
@@ -164,13 +204,13 @@ header {
 		}
 	}
 	&.sub {
-		background: #222;
+		background: #e3e3e3;
 		.container {
 			h1 a {
-				color: #fff;
+				color: #000;
 			}
 			#gnb li a {
-				color: #fff;
+				color: #000;
 			}
 		}
 	}
