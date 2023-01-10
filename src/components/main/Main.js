@@ -19,8 +19,8 @@ function Main({ menuOpen }) {
 			<Banner />
 			<Offer />
 			<Promo />
-			<Track setScrolled={setScrolled} setPos={setPos} />
-			<Btns />
+			<Track Scrolled={Scrolled} />
+			<Btns setScrolled={setScrolled} setPos={setPos} />
 		</main>
 	);
 }

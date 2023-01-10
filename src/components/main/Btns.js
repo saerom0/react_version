@@ -1,25 +1,23 @@
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect } from 'react';
 import Anime from '../../asset/anime';
 
-function Btns({ setScrolled, setPos }) {
+function Btns() {
 	const pos = useRef([]);
-	const num = useRef(4);
+	const num = useRef(5);
 	const speed = useRef(500);
 	const btnRef = useRef(null);
 
-	const getPos = useCallback(() => {
+	const getPos = () => {
 		pos.current = [];
 		const secs = btnRef.current.parentElement.querySelectorAll('.myScroll');
 		for (const sec of secs) pos.current.push(sec.offsetTop);
-		setPos(pos.current);
-	}, [setPos]);
+	};
 
-	const activation = useCallback(() => {
+	const activation = () => {
 		const btns = btnRef.current.children;
 		const secs = btnRef.current.parentElement.querySelectorAll('.myScroll');
 		const scroll = window.scrollY;
 		const base = -window.innerHeight / 3;
-		setScrolled(scroll);
 
 		pos.current.forEach((pos, idx) => {
 			if (scroll >= pos + base) {
@@ -29,7 +27,7 @@ function Btns({ setScrolled, setPos }) {
 				secs[idx].classList.add('on');
 			}
 		});
-	}, [setScrolled]);
+	};
 
 	useEffect(() => {
 		window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });

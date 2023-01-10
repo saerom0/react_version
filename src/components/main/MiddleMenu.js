@@ -2,7 +2,7 @@ import { faArrowRight, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
-function MiddleMenu() {
+function MiddleMenu({ Scrolled, currentPos }) {
 	return (
 		<section id='middle_menu' className='scroll'>
 			<div className='inner'>
