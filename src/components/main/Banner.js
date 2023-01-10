@@ -1,12 +1,29 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import Anime from '../../asset/anime';
 
 function Banner() {
-	const [banner, setBanner] = useState([
+	const [banner] = useState([
 		'MODERN OFFICE OVER 150 OFFER',
 		'FIRST CHOICE FOR GLOBAL WORKPLAC',
 		'OFFICES WITH THE LATEST FACILITIES',
 	]);
+	const bn_btn = useRef(null);
+	const bn_div = useRef(null);
+
+	function activate(index) {
+		new Anime(bn_div, {
+			prop: 'margin-left',
+			value: -100 * index + '%',
+			duration: 1000,
+		});
+		for (let btn of bn_btn.current.children) btn.classList.remove('on');
+		bn_btn.current.children[index].add('on');
+	}
+
+	// let isOn = el.classList.contains('on');
+	// if (isOn) return;
+
 	return (
 		<section id='banner' className='myScroll'>
 			<div className='inner'>
@@ -19,7 +36,7 @@ function Banner() {
 									alt={`office${idx}`}
 								/>
 								<p>{el}</p>
-								<Link to='/'>CLICK HERE</Link>
+								<Link to='/office'>CLICK HERE</Link>
 							</div>
 						);
 					})}
@@ -27,7 +44,11 @@ function Banner() {
 				<ul className='bn_btn'>
 					{banner.map((el, idx) => {
 						return (
-							<li>
+							<li
+								onClick={() => {
+									activate(idx);
+								}}
+							>
 								<Link to='#'></Link>
 							</li>
 						);

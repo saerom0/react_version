@@ -2,13 +2,11 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Offer() {
-	const [offer, setOffer] = useState([
+	const [offer] = useState([
 		'VESTIBULUM AENEAN',
 		'NONUMMY ENDRERIT',
 		'MONTES MAURIS',
 		'CUM NATOQUE',
-		'offer5',
-		'1인 사무공간',
 	]);
 	const icon_star = '<i class="fas fa-star"></i>';
 	const url = process.env.PUBLIC_URL;
