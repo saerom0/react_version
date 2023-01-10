@@ -1,75 +1,102 @@
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect, useCallback, useState } from 'react';
+
+// img src={`${url}/img/${el}.jpg`} alt={idx}
+// const url = process.env.PUBLIC_URL;
+// const [visualBg, setVisualBg] = useState(['mainbg1', 'mainbg2', 'mainbg3']);
 
 function Visual() {
+	const btns = useRef(null);
 	const panel = useRef(null);
-	const vs_btn = useRef(null);
+	const btnStart = useRef(null);
+	const btnStop = useRef(null);
+
+	const num = useRef(0);
+	const len = 3;
+	const interval = 4000;
+	const timer = useRef(null);
 	const url = process.env.PUBLIC_URL;
-	const [visualBg, setVisualBg] = useState(['mainbg1', 'mainbg2', 'mainbg3']);
 
-	const interval = useRef(4000);
-	let vs_num = useRef(0);
-	let timer = useRef(null);
-
-	useEffect(() => startRolling);
-	//패널 활성화 함수
-	const activation = (idx) => {
-		const panels = panel.current.children;
-		const vs_btns = vs_btn.current.children;
-		for (const el of panels) el.classList.remove('on');
-		for (const el of vs_btns) el.classList.remove('on');
-		panels[idx].classList.add('on');
-		vs_btns[idx].classList.add('on');
-		vs_num = idx;
+	const activation = (index) => {
+		for (const el of btns.current.children) el.classList.remove('on');
+		for (const el of panel.current.children) el.classList.remove('on');
+		btns.current.children[index].classList.add('on');
+		panel.current.children[index].classList.add('on');
+		num.current = index;
 	};
 
-	//롤링 함수
-	const rolling = () => {
-		const panels = panel.current.children;
-		const len = panels.current.length - 1;
-		vs_num < len ? vs_num++ : (vs_num = 0);
-		activation(vs_num);
-	};
+	const rolling = useCallback(() => {
+		num.current < len - 1 ? num.current++ : (num.current = 0);
+		activation(num.current);
+	}, []);
 
-	//롤링 시작 함수
-	const startRolling = () => {
-		activation(vs_num);
+	const startRolling = useCallback(() => {
+		activation(num.current);
 		timer.current = setInterval(rolling, interval);
+
+		btnStart.current.classList.add('on');
+		btnStop.current.classList.remove('on');
+	}, [rolling]);
+
+	const stopRolling = () => {
+		console.log('stop');
+		clearInterval(timer.current);
+
+		btnStop.current && btnStop.current.classList.add('on');
+		btnStart.current && btnStart.current.classList.remove('on');
 	};
 
-	//버튼 활성화 함수
-	const on_page = (idx) => {
-		activation(idx);
-	};
+	useEffect(() => {
+		console.log('init');
+		btns.current.children[0].classList.add('on');
+		startRolling();
+
+		return () => stopRolling();
+	}, [startRolling]);
 
 	return (
-		<section id='visual' className='page'>
-			<div className='visual'>
-				<ul className='panel' ref={panel}>
-					{visualBg.map((el, idx) => {
-						return (
-							<li data-index={idx} key={idx}>
-								<img src={`${url}/img/${el}.jpg`} alt={idx} />
-							</li>
-						);
-					})}
-				</ul>
+		<figure id='visual' className='myScroll'>
+			<ul className='panel' ref={panel}>
+				<li>
+					<img src={`${url}/img/mainbg1.jpg`} alt={1} />
+				</li>
+				<li>
+					<img src={`${url}/img/mainbg2.jpg`} alt={1} />
+				</li>
+				<li>
+					<img src={`${url}/img/mainbg3.jpg`} alt={1} />
+				</li>
+			</ul>
 
-				<ul className='pagenation' ref={vs_btn}>
-					<li className='on' onClick={() => on_page(0)}></li>
-					<li onClick={() => on_page(1)}></li>
-					<li onClick={() => on_page(2)}></li>
-				</ul>
-				<div className='inner'>
-					<div className='cp_name'>
-						<h1 className='hidden'>REAL SUITE</h1>
-						<img
-							src={`${url}/img/cp_name.png`}
-							alt={'회사명이 세로로 세겨진 이미지'}
-						/>
-					</div>
+			<ul className='btns' ref={btns}>
+				{Array(len)
+					.fill()
+					.map((_, idx) => (
+						<li
+							key={idx}
+							onClick={() => {
+								activation(idx);
+								stopRolling();
+							}}
+						></li>
+					))}
+			</ul>
+
+			<div className='container'>
+				<div className='cp-name'>
+					<h1 className='hidden'>REAL SUITE</h1>
+					<img src={`${url}/img/cp_name.png`} alt={'logo'} />
 				</div>
 			</div>
-		</section>
+
+			<nav>
+				<span className='btnStart' ref={btnStart} onClick={startRolling}>
+					start
+				</span>
+				<span className='btnStop on' ref={btnStop} onClick={stopRolling}>
+					stop
+				</span>
+			</nav>
+		</figure>
 	);
 }
 

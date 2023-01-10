@@ -10,7 +10,6 @@ function Banner() {
 	return (
 		<section id='banner' className='myScroll'>
 			<div className='inner'>
-				<h1>슬라이더</h1>
 				<section>
 					{banner.map((el, idx) => {
 						return (

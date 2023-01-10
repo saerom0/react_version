@@ -1,80 +1,184 @@
+// #visual {
+// 	width: 100%;
+// 	height: 100vh;
+// 	.visual {
+// 		width: 100%;
+// 		height: 100%;
+// 		position: relative;
+// 		overflow: hidden;
+// 		.panel {
+// 			position: absolute;
+// 			width: 100%;
+// 			height: 100%;
+// 			background: rgb(5, 5, 0);
+// 			top: 0;
+// 			left: 0;
+// 			li {
+// 				position: absolute;
+// 				width: 100%;
+// 				height: 100%;
+// 				top: 0;
+// 				left: 0;
+
+// 				&.on img {
+// 					opacity: 0.8;
+// 					transform: scale(1.05);
+// 				}
+// 				img {
+// 					width: 100%;
+// 					height: 100%;
+// 					object-fit: cover;
+// 					// opacity: 0;
+// 					filter: grayscale(1);
+// 					transform: scale(1);
+// 					transition: opacity 0.5s, transform 4s;
+// 				}
+// 			}
+// 		}
+// 		.btns {
+// 			position: absolute;
+// 			height: 20px;
+// 			left: 50%;
+// 			top: 65vh;
+// 			transform: translateX(-50%);
+// 			display: flex;
+// 			gap: 10px;
+// 			z-index: 3;
+
+// 			li {
+// 				width: 90px;
+// 				height: 9px;
+// 				background: #000;
+// 				opacity: 0.3;
+// 				cursor: pointer;
+// 				transition: 0.5s;
+
+// 				&.on {
+// 					background: #fff;
+// 					opacity: 1;
+// 				}
+// 			}
+// 		}
+// 		.inner {
+// 			width: 1180px;
+// 			height: 100%;
+// 			margin: 0 auto;
+// 			.cp_name {
+// 				width: 220px;
+// 				position: absolute;
+// 				left: 50%;
+// 				top: 17vh;
+// 				transform: translateX(-50%);
+// 				z-index: 3;
+// 				img {
+// 					width: 100%;
+// 					height: 100%;
+// 					object-fit: cover;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
 #visual {
 	width: 100%;
 	height: 100vh;
-	.visual {
+	background: #555;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	.panel {
+		position: absolute;
 		width: 100%;
 		height: 100%;
-		position: relative;
-		overflow: hidden;
-		.panel {
-			position: absolute;
+
+		background: rgb(5, 5, 0);
+		top: 0;
+		left: 0;
+		li {
 			width: 100%;
 			height: 100%;
-			background: rgb(5, 5, 0);
+			position: absolute;
 			top: 0;
 			left: 0;
-			li {
-				position: absolute;
+			transition: opacity 1s;
+			z-index: 1;
+			opacity: 0;
+			img {
 				width: 100%;
 				height: 100%;
-				top: 0;
-				left: 0;
-
-				&.on img {
-					opacity: 0.8;
+				object-fit: cover;
+				// opacity: 0;
+				filter: grayscale(1);
+				transform: scale(1);
+				transition: opacity 0.5s, transform 4s;
+			}
+			&.on {
+				opacity: 1;
+				img {
 					transform: scale(1.05);
 				}
-				img {
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
-					// opacity: 0;
-					filter: grayscale(1);
-					transform: scale(1);
-					transition: opacity 0.5s, transform 4s;
-				}
 			}
 		}
-		.pagenation {
+	}
+
+	.btns {
+		position: absolute;
+		height: 20px;
+		left: 50%;
+		top: 65vh;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 10px;
+		z-index: 3;
+
+		li {
+			width: 90px;
+			height: 9px;
+			background: #000;
+			opacity: 0.3;
+			cursor: pointer;
+			transition: 0.5s;
+
+			&.on {
+				background: #fff;
+				opacity: 1;
+			}
+		}
+	}
+
+	.container {
+		width: 1180px;
+		height: 100%;
+		margin: 0 auto;
+		.cp-name {
+			width: 220px;
 			position: absolute;
-			height: 20px;
 			left: 50%;
-			top: 65vh;
+			top: 17vh;
 			transform: translateX(-50%);
-			display: flex;
-			gap: 10px;
 			z-index: 3;
-
-			li {
-				width: 90px;
-				height: 9px;
-				background: #000;
-				opacity: 0.3;
-				cursor: pointer;
-				transition: 0.5s;
-
-				&.on {
-					background: #fff;
-					opacity: 1;
-				}
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
 			}
 		}
-		.inner {
-			width: 1180px;
-			height: 100%;
-			margin: 0 auto;
-			.cp_name {
-				width: 220px;
-				position: absolute;
-				left: 50%;
-				top: 17vh;
-				transform: translateX(-50%);
-				z-index: 3;
-				img {
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
-				}
+	}
+	nav {
+		position: absolute;
+		bottom: 10vh;
+		right: 10vw;
+		display: flex;
+		gap: 30px;
+		z-index: 2;
+		span {
+			cursor: pointer;
+			color: #fff;
+
+			&.on {
+				font-weight: bold;
+				color: #000;
 			}
 		}
 	}
