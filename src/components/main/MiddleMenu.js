@@ -1,35 +1,86 @@
-import { useState } from 'react';
+import { faArrowRight, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 function MiddleMenu() {
-	const [menu, setMenu] = useState(['OFFICES', 'SERVICES', 'GALLERY']);
 	return (
 		<section id='middle_menu' className='myScroll'>
 			<div className='inner'>
-				<ul className='sub_gnb'>
-					{menu.map((el, idx) => {
-						return (
-							<li>
-								<span>{el}</span>
-							</li>
-						);
-					})}
-				</ul>
+				<ul className='sub-gnb'>
+					<li>
+						<span>OFFICES</span>
+						<div className='sub-menu'>
+							<ul>
+								<li>
+									<Link to='office.html'>KOREA</Link>
+								</li>
+								<li>
+									<Link to='office.html'>AMERICA</Link>
+								</li>
+								<li>
+									<Link to='office.html'>ENGLAND</Link>
+								</li>
+								<li>
+									<Link to='office.html'>HONGKONG</Link>
+								</li>
+								<li>
+									<Link to='office.html'>VIEW MORE</Link>
+									<FontAwesomeIcon icon={faArrowRight} />
+								</li>
+							</ul>
+						</div>
+					</li>
 
-				<div class='intro'>
+					<li>
+						<span>SERVICES</span>
+						<div className='sub-menu'>
+							<ul>
+								<li>
+									<Link to='office.html'>BUSINESS SUPPORT</Link>
+								</li>
+								<li>
+									<Link to='office.html'>VIRTUAL OFFICE</Link>
+								</li>
+								<li className='isSub'>
+									<Link to='office.html'>
+										CO-WORKING SPACE
+										<FontAwesomeIcon icon={faAngleRight} />
+									</Link>
+
+									<div className='sub-menu-2'>
+										<ul>
+											<li>
+												<Link to='office.html'>MEETING ROOM</Link>
+											</li>
+											<li>
+												<Link to='office.html'>CONFERENCE FACILITIES</Link>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+
+					<li>
+						<span>ENQUIRE</span>
+					</li>
+				</ul>
+				<div className='intro'>
 					<h2>WHO WE ARE</h2>
-					<h3>
+					<h3 className='page'>
 						WORLD'S PREMIUM ONE-STOP SERVICED OFFICE PROVIDER,
 						<br />
 						RUN BY MULTI-CULTURAL INDUSTRY EXPERTS
 					</h3>
-					<div class='p_wrap'>
-						<p class='left'>
+					<div className='p-wrap'>
+						<p className='left'>
 							Located in some of the most prestigious buildings in the
 							Asia-Pacific region, we offer an unparalleled range of services,
 							from sourcing the right local business partners to legal
 							accounting, payroll and IT.
 						</p>
-						<p class='right'>
+						<p className='right'>
 							Our solutions are customized to our clients’ needs because every
 							business is unique. REAL SUITE is more than just a service
 							provider, but a reliable partner in your company’s journey to
