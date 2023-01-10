@@ -5,17 +5,22 @@ import Banner from './Banner';
 import Offer from './Offer';
 import Visual from './Visual';
 import Track from './Track';
+import Btns from './Btns';
+import { useState } from 'react';
 
-function Main() {
+function Main({ menuOpen }) {
+	const [Scrolled, setScrolled] = useState(0);
+	const [Pos, setPos] = useState([]);
 	return (
 		<main>
-			<Header type={'main'} />
+			<Header type={'main'} menuOpen={menuOpen} />
 			<Visual />
-			<MiddleMenu className={'scroll'} />
+			<MiddleMenu Scrolled={Scrolled} currentPos={Pos[1]} />
 			<Banner />
 			<Offer />
-			<Promo className={'scroll'} />
-			<Track className={'scroll'} />
+			<Promo />
+			<Track setScrolled={setScrolled} setPos={setPos} />
+			<Btns />
 		</main>
 	);
 }

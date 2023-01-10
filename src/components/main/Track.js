@@ -8,7 +8,7 @@ function Track() {
 		'+ businesses served',
 	]);
 	return (
-		<section id='track' className='scroll'>
+		<section id='track' className='myScroll'>
 			<div className='inner'>
 				<h1>OUR TRACK RECORD</h1>
 				<figure>

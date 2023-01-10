@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Promo() {
 	return (
-		<section id='promo' className='scroll'>
+		<section id='promo' className='myScroll'>
 			<div className='inner'>
 				<div className='wrap'>
 					<h1 className='promo_text'>
@@ -11,7 +11,7 @@ function Promo() {
 					<p>
 						<span>for annual membership</span>
 					</p>
-					<Link to='/'>LEARN MORE</Link>
+					<Link to='/office'>LEARN MORE</Link>
 				</div>
 
 				<div className='wrap2'>

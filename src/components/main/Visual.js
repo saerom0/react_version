@@ -33,20 +33,20 @@ function Visual() {
 		// btnStop.current.classList.remove('on');
 	}, [rolling]);
 
-	// const stopRolling = () => {
-	// 	console.log('stop');
-	// 	clearInterval(timer.current);
+	const stopRolling = () => {
+		console.log('stop');
+		clearInterval(timer.current);
 
-	// btnStop.current && btnStop.current.classList.add('on');
-	// btnStart.current && btnStart.current.classList.remove('on');
-	// };
+		// btnStop.current && btnStop.current.classList.add('on');
+		// btnStart.current && btnStart.current.classList.remove('on');
+	};
 
 	useEffect(() => {
 		console.log('init');
 		btns.current.children[0].classList.add('on');
 		startRolling();
 
-		// return () => stopRolling();
+		return () => stopRolling();
 	}, [startRolling]);
 
 	return (
