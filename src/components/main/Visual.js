@@ -3,8 +3,8 @@ import { useRef, useEffect, useCallback } from 'react';
 function Visual() {
 	const btns = useRef(null);
 	const panel = useRef(null);
-	const btnStart = useRef(null);
-	const btnStop = useRef(null);
+	// const btnStart = useRef(null);
+	// const btnStop = useRef(null);
 
 	const num = useRef(0);
 	const len = 3;
@@ -29,24 +29,24 @@ function Visual() {
 		activation(num.current);
 		timer.current = setInterval(rolling, interval);
 
-		btnStart.current.classList.add('on');
-		btnStop.current.classList.remove('on');
+		// btnStart.current.classList.add('on');
+		// btnStop.current.classList.remove('on');
 	}, [rolling]);
 
-	const stopRolling = () => {
-		console.log('stop');
-		clearInterval(timer.current);
+	// const stopRolling = () => {
+	// 	console.log('stop');
+	// 	clearInterval(timer.current);
 
-		btnStop.current && btnStop.current.classList.add('on');
-		btnStart.current && btnStart.current.classList.remove('on');
-	};
+	// btnStop.current && btnStop.current.classList.add('on');
+	// btnStart.current && btnStart.current.classList.remove('on');
+	// };
 
 	useEffect(() => {
 		console.log('init');
 		btns.current.children[0].classList.add('on');
 		startRolling();
 
-		return () => stopRolling();
+		// return () => stopRolling();
 	}, [startRolling]);
 
 	return (
@@ -71,7 +71,7 @@ function Visual() {
 							key={idx}
 							onClick={() => {
 								activation(idx);
-								stopRolling();
+								// stopRolling();
 							}}
 						></li>
 					))}
@@ -84,14 +84,14 @@ function Visual() {
 				</div>
 			</div>
 
-			<nav>
+			{/* <nav>
 				<span className='btnStart' ref={btnStart} onClick={startRolling}>
 					start
 				</span>
 				<span className='btnStop on' ref={btnStop} onClick={stopRolling}>
 					stop
 				</span>
-			</nav>
+			</nav> */}
 		</figure>
 	);
 }
