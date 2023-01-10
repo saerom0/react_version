@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function MiddleMenu() {
 	return (
-		<section id='middle_menu' className='myScroll'>
+		<section id='middle_menu' className='scroll'>
 			<div className='inner'>
 				<ul className='sub-gnb'>
 					<li>

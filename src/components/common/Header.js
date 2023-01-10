@@ -8,13 +8,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 function Header(props) {
-	const active = { color: '#555' };
 	return (
 		<header className={props.type}>
 			<div className='container'>
 				<div className='web_menu'>
 					<h1 className='web_h1'>
-						<NavLink exact to='/' activeStyle={active}>
+						<NavLink exact to='/'>
 							<FontAwesomeIcon icon={faHome} />
 							Home
 						</NavLink>
@@ -27,29 +26,19 @@ function Header(props) {
 					<nav>
 						<ul id='gnb'>
 							<li>
-								<NavLink to='/office' activeStyle={active}>
-									Shared Office
-								</NavLink>
+								<NavLink to='/office'>Shared Office</NavLink>
 							</li>
 							<li>
-								<NavLink to='/gallery' activeStyle={active}>
-									Gallery
-								</NavLink>
+								<NavLink to='/gallery'>Gallery</NavLink>
 							</li>
 							<li>
-								<NavLink to='/youtube' activeStyle={active}>
-									Youtube
-								</NavLink>
+								<NavLink to='/youtube'>Youtube</NavLink>
 							</li>
 							<li>
-								<NavLink to='/review' activeStyle={active}>
-									Review
-								</NavLink>
+								<NavLink to='/review'>Review</NavLink>
 							</li>
 							<li>
-								<NavLink to='/contact' activeStyle={active}>
-									Contact
-								</NavLink>
+								<NavLink to='/contact'>Contact</NavLink>
 							</li>
 						</ul>
 					</nav>

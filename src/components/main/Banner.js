@@ -30,7 +30,7 @@ function Banner() {
 				<section>
 					{banner.map((el, idx) => {
 						return (
-							<div>
+							<div key={idx}>
 								<img
 									src={`${process.env.PUBLIC_URL}/img/office${idx + 1}.jpg`}
 									alt={`office${idx}`}
@@ -42,9 +42,10 @@ function Banner() {
 					})}
 				</section>
 				<ul className='bn_btn'>
-					{banner.map((el, idx) => {
+					{banner.map((_, idx) => {
 						return (
 							<li
+								key={idx}
 								onClick={() => {
 									activate(idx);
 								}}

@@ -1,10 +1,11 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faFacebookSquare,
 	faInstagramSquare,
 	faTwitterSquare,
 	faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { Link } from 'react-router-dom';
 
 function Footer() {
@@ -35,7 +36,7 @@ function Footer() {
 				<section className='web-wrap2'>
 					<h1 className='hidden'>REAL SUITE</h1>
 					<img
-						src={`${process.env.PUBLIC_URL}/img/logo_png`}
+						src={`${process.env.PUBLIC_URL}/img/company_logo.png`}
 						alt={'회사로고'}
 					/>
 					<p>Copyright © 2023 REAL SUITE ALL Right reserved.</p>

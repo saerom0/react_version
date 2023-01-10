@@ -11,11 +11,11 @@ function Main() {
 		<main>
 			<Header type={'main'} />
 			<Visual />
-			<MiddleMenu />
+			<MiddleMenu className={'scroll'} />
 			<Banner />
 			<Offer />
-			<Promo />
-			<Track />
+			<Promo className={'scroll'} />
+			<Track className={'scroll'} />
 		</main>
 	);
 }

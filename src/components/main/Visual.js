@@ -1,8 +1,4 @@
-import { useRef, useEffect, useCallback, useState } from 'react';
-
-// img src={`${url}/img/${el}.jpg`} alt={idx}
-// const url = process.env.PUBLIC_URL;
-// const [visualBg, setVisualBg] = useState(['mainbg1', 'mainbg2', 'mainbg3']);
+import { useRef, useEffect, useCallback } from 'react';
 
 function Visual() {
 	const btns = useRef(null);

@@ -8,14 +8,14 @@ function Track() {
 		'+ businesses served',
 	]);
 	return (
-		<section id='track' className='page'>
+		<section id='track' className='scroll'>
 			<div className='inner'>
 				<h1>OUR TRACK RECORD</h1>
 				<figure>
 					<video
 						className='cp_vid'
 						src={`${process.env.PUBLIC_URL}/img/wework.mp4`}
-						autoplay
+						autoPlay
 						loop
 						muted
 					>
@@ -26,7 +26,7 @@ function Track() {
 				<div className='record'>
 					{record.map((el, idx) => {
 						return (
-							<div>
+							<div key={idx}>
 								<img
 									src={`${process.env.PUBLIC_URL}/img/${idx + 1}.png`}
 									alt={idx}

@@ -17,8 +17,8 @@ function Offer() {
 				<section className='wrap'>
 					{offer.map((el, idx) => {
 						return (
-							<article>
-								<div key={idx} className='frame'>
+							<article key={idx}>
+								<div className='frame'>
 									<div className='pic'>
 										<img src={`${url}/img/offer${idx + 1}.jpg`} alt={el} />
 									</div>
