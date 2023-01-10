@@ -15,19 +15,19 @@ function Footer() {
 					<Link to='/'>QUICK LINKS</Link>
 					<ul>
 						<li>
-							<Link to='/'>Shared office</Link>
+							<Link to='/office'>Shared office</Link>
 						</li>
 						<li>
-							<Link to='/'>Gallery</Link>
+							<Link to='/gallery'>Gallery</Link>
 						</li>
 						<li>
-							<Link to='/'>Youtube</Link>
+							<Link to='/youtube'>Youtube</Link>
 						</li>
 						<li>
-							<Link to='/'>Review</Link>
+							<Link to='/review'>Review</Link>
 						</li>
 						<li>
-							<Link to='/'>Contact</Link>
+							<Link to='/contact'>Contact</Link>
 						</li>
 					</ul>
 				</section>

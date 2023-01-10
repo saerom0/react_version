@@ -14,7 +14,17 @@ import SignUp from './components/sub/SignUp';
 import Youtube from './components/sub/Youtube';
 import './scss/style.scss';
 
+import { fetchYoutube } from './redux/youtubeSlice';
+import { useDispatch } from 'react-redux';
+import { useEffect, useRef } from 'react';
+
 function App() {
+	const dispatch = useDispatch();
+	const menuOpen = useRef(null);
+
+	useEffect(() => {
+		dispatch(fetchYoutube());
+	}, [dispatch]);
 	return (
 		<>
 			<Switch>

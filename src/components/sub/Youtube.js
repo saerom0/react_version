@@ -3,14 +3,13 @@
 
 import Layout from '../common/Layout';
 import { useState, useRef } from 'react';
-import Modal from '../common/Modal';
 import { useSelector } from 'react-redux';
+import Modal from '../common/Modal';
 
 function Youtube() {
-	//App에서 변경요청이 일어난 전역 데이터를 호출
-	const Vids = useSelector((store) => store.youtubeReducer.youtube);
 	const modal = useRef(null);
 	const [Index, setIndex] = useState(0);
+	const Vids = useSelector((store) => store.youtube.data);
 
 	return (
 		<>
