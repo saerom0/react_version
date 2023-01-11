@@ -43,12 +43,12 @@ function Office() {
 					<section className='wrap-2'>
 						<article>
 							<h2>
-								BESPOKE SERVICED
+								PREMIUM SERVICED
 								<br /> RUN BY MULTI-CULTURAL INDUSTRY EXPERTS
 							</h2>
 							<img
 								src={`${process.env.PUBLIC_URL}/img/random.jpg`}
-								alt='About page picture'
+								alt='About page'
 							/>
 						</article>
 					</section>
@@ -176,7 +176,7 @@ function Office() {
 							SEQUI EXERCITATIONEM ILLO.
 						</h2>
 						<article>
-							<h3>Our ipsum sit amet consectetur adipisicing.</h3>
+							<h3>Our ipsum sit amet consectetur.</h3>
 							<h3>
 								Quote culpa veniam sedesse sequi ratione accusantium evenent
 								nesciunt, temporibus in incidunt voluptate similique.

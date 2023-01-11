@@ -19,11 +19,12 @@ function Contact() {
 
 	return (
 		<Layout name={'Contact'}>
-			<div className='container'>
+			<h1>Contact Us</h1>
+			<div className='inner'>
 				<div className='enquire'>
 					<h2>Request for consultation</h2>
 					<form className='form'>
-						<input type={'text'} placeholder={'Name'} required />
+						<input type='text' placeholder={'Name'} required />
 						<input type={'text'} placeholder={'Phone Number'} required />
 						<input type={'text'} placeholder='email' required />
 						<input type={'text'} placeholder={'Enquire contents'} required />

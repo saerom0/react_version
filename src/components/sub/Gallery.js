@@ -59,6 +59,7 @@ function Gallery() {
 	return (
 		<>
 			<Layout name={'Gallery'}>
+				<h1>GALLERY</h1>
 				<div className='controls'>
 					<div className='searchBox'>
 						<input

@@ -1,7 +1,9 @@
 .SignUp {
-	// .sub-bg {
-	// 	background: #000 url(../img/sign_up.jpg) no-repeat center/cover;
-	// }
+	h1 {
+		padding: 50px;
+		border-bottom: 1px solid #bbbbbb;
+		font: 40px/1 'arial';
+	}
 	.container {
 		display: flex;
 		flex-direction: column;

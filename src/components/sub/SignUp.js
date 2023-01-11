@@ -115,9 +115,10 @@ function SignUp() {
 
 	return (
 		<Layout name={'SignUp'}>
+			<h1>SIGN UP</h1>
 			<form action='' onSubmit={handleSubmit}>
 				<fieldset>
-					<legend className='h'>회원가입 폼 양식</legend>
+					<legend className='hidden'>회원가입 폼 양식</legend>
 					<table border='1'>
 						<tbody>
 							{/* user id */}

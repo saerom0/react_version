@@ -52,6 +52,7 @@ function Review() {
 
 	return (
 		<Layout name={'Review'}>
+			<h1>REVIEW</h1>
 			<div className='inputBox'>
 				<input type='text' placeholder='제목을 입력하세요' ref={input} />
 				<br />
