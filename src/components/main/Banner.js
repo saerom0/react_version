@@ -12,13 +12,17 @@ function Banner() {
 	const bn_div = useRef(null);
 
 	function activate(index) {
-		new Anime(bn_div, {
+		console.log(bn_div);
+		new Anime(bn_div.current, {
 			prop: 'margin-left',
 			value: -100 * index + '%',
 			duration: 1000,
 		});
 		for (let btn of bn_btn.current.children) btn.classList.remove('on');
-		bn_btn.current.children[index].add('on');
+		bn_btn.current.children[index].classList.add('on');
+
+		let isOn = bn_btn.current.children[index].classList.contains('on');
+		if (isOn) return;
 	}
 
 	// let isOn = el.classList.contains('on');
@@ -27,7 +31,7 @@ function Banner() {
 	return (
 		<section id='banner' className='myScroll'>
 			<div className='inner'>
-				<section>
+				<section ref={bn_div}>
 					{banner.map((el, idx) => {
 						return (
 							<div key={idx}>
@@ -41,16 +45,17 @@ function Banner() {
 						);
 					})}
 				</section>
-				<ul className='bn_btn'>
+				<ul className='bn_btn' ref={bn_btn}>
 					{banner.map((_, idx) => {
 						return (
-							<li
-								key={idx}
-								onClick={() => {
-									activate(idx);
-								}}
-							>
-								<Link to='#'></Link>
+							<li key={idx}>
+								<Link
+									to='/'
+									onClick={(e) => {
+										e.preventDefault();
+										activate(idx);
+									}}
+								></Link>
 							</li>
 						);
 					})}

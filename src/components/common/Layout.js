@@ -9,7 +9,6 @@ function Layout(props) {
 
 	return (
 		<section className={`content ${props.name}`} ref={frame}>
-			<figure></figure>
 			<div className='container'>{props.children}</div>
 		</section>
 	);
