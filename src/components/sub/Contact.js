@@ -42,10 +42,13 @@ function Contact() {
 						<div>
 							Follow
 							<div className='sns-icons'>
-								<FontAwesomeIcon icon={faTwitterSquare} />
-								<FontAwesomeIcon icon={faInstagramSquare} />
-								<FontAwesomeIcon icon={faFacebookSquare} />
-								<FontAwesomeIcon icon={faYoutube} />
+								<FontAwesomeIcon icon={faTwitterSquare} className='sns-icon' />
+								<FontAwesomeIcon
+									icon={faInstagramSquare}
+									className='sns-icon'
+								/>
+								<FontAwesomeIcon icon={faFacebookSquare} className='sns-icon' />
+								<FontAwesomeIcon icon={faYoutube} className='sns-icon' />
 							</div>
 						</div>
 					</section>

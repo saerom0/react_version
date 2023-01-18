@@ -10,14 +10,19 @@
 		left: 50%;
 		transform: translateX(-50%);
 	}
-	.controls {
+	#gallery {
 		width: 100%;
 		padding: 10px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-
-		.searchBox {
+		h2 {
+			display: block;
+			font: bold 70px/1 'arial';
+			padding: 0px 50px 50px;
+			color: #000;
+		}
+		.search_box {
 			input {
 				width: 200px;
 				height: 28px;
@@ -33,6 +38,7 @@
 				color: #fff;
 				cursor: pointer;
 				margin-left: 5px;
+				vertical-align: top;
 			}
 		}
 
@@ -46,6 +52,33 @@
 				color: #fff;
 				cursor: pointer;
 				margin-left: 5px;
+			}
+		}
+		.gallery-title {
+			position: relative;
+			padding: 0 50px;
+			&::after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+			font: 14px/1.5 'arial';
+			p {
+				float: left;
+				&:nth-of-type(1) {
+					width: 50%;
+					text-align: left;
+					padding-right: 20%;
+				}
+				&:nth-of-type(2) {
+					width: 25%;
+					padding-right: 5%;
+				}
+				&:nth-of-type(3) {
+					width: 25%;
+					text-align: right;
+					padding-left: 5%;
+				}
 			}
 		}
 	}

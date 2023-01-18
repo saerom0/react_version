@@ -10,7 +10,7 @@ export const fetchFlickr = createAsyncThunk(
 		const method_interest = 'flickr.interestingness.getList';
 		const method_search = 'flickr.photos.search';
 		const method_user = 'flickr.people.getPhotos';
-		const num = 50;
+		const num = 30;
 		let url = '';
 		if (opt.type === 'interest')
 			url = `${baseURL}&method=${method_interest}&api_key=${key}&per_page=${num}`;

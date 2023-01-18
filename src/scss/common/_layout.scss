@@ -9,23 +9,15 @@
 		transition: opacity 1s, transform 1s;
 	}
 
-	&.on {
-		figure {
-			opacity: 1;
-		}
-		.container {
-			opacity: 1;
-			transform: translateY(0px);
-		}
+	&.on .container {
+		opacity: 1;
+		transform: translateY(0px);
 	}
 }
 
 @media screen and (max-width: $tablet-origin) {
 	.content {
-		figure {
-			height: 200px;
-		}
-		> .inner {
+		.container {
 			width: 100%;
 			margin: 80px auto 120px;
 			padding: 0px 40px;

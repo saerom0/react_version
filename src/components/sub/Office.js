@@ -2,6 +2,8 @@ import Layout from '../common/Layout';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 function Office() {
 	const [qna, setQna] = useState([]);
@@ -25,19 +27,21 @@ function Office() {
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
 								fugiat maxime dignissimos unde sit! Hic.
 							</p>
-							<h3>02. Serviced Office</h3>
+							<h3>02. Co-working Space</h3>
 							<p>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
 								fugiat maxime dignissimos unde sit! Hic.
 							</p>
-							<h3>03. Serviced Office</h3>
+							<h3>03. Virtual Office</h3>
 							<p>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
 								fugiat maxime dignissimos unde sit! Hic.
 							</p>
 						</div>
-						<div className='circle'>
-							<Link to='/review'>150+ OFFERS</Link>
+						<div className='move'>
+							<article className='circle'>
+								<Link to='/review'>150+ OFFERS</Link>
+							</article>
 						</div>
 					</section>
 					<section className='wrap-2'>
@@ -48,7 +52,7 @@ function Office() {
 							</h2>
 							<img
 								src={`${process.env.PUBLIC_URL}/img/random.jpg`}
-								alt='About page'
+								alt='About page wrap2 image'
 							/>
 						</article>
 					</section>
@@ -127,7 +131,7 @@ function Office() {
 									<h3>04</h3>
 									<h4>
 										What are the differences between office space and a
-										dedicated workstation??
+										dedicated workstation?
 									</h4>
 								</label>
 								<div className='information'>
@@ -191,25 +195,56 @@ function Office() {
 								src={`${process.env.PUBLIC_URL}/img/member1.jpg`}
 								alt='member1'
 							/>
-							<p className='member-position'></p>
+							<p className='member-name'>
+								Susan
+								<FontAwesomeIcon
+									icon={faEnvelope}
+									className='envelope'
+								></FontAwesomeIcon>
+							</p>
+							<p className='member-position'>President, CEO</p>
 						</article>
 						<article>
 							<img
 								src={`${process.env.PUBLIC_URL}/img/member2.jpg`}
 								alt='member2'
 							/>
+							<p className='member-name'>
+								James
+								<FontAwesomeIcon
+									icon={faEnvelope}
+									className='envelope'
+								></FontAwesomeIcon>
+							</p>
+							<p className='member-position'>General Manager</p>
 						</article>
 						<article>
 							<img
 								src={`${process.env.PUBLIC_URL}/img/member3.jpg`}
 								alt='member3'
 							/>
+							<p className='member-name'>
+								Zoe
+								<FontAwesomeIcon
+									icon={faEnvelope}
+									className='envelope'
+								></FontAwesomeIcon>
+							</p>
+							<p className='member-position'>Assistant Manager</p>
 						</article>
 						<article>
 							<img
 								src={`${process.env.PUBLIC_URL}/img/member4.jpg`}
 								alt='member4'
 							/>
+							<p className='member-name'>
+								Sam
+								<FontAwesomeIcon
+									icon={faEnvelope}
+									className='envelope'
+								></FontAwesomeIcon>
+							</p>
+							<p className='member-position'>Senior Staff</p>
 						</article>
 					</section>
 				</div>

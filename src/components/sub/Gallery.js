@@ -1,18 +1,13 @@
-// const key = '1f6a8afb62dde6c9a4d9073dd46560aa';
-// const myId = '197108414@N08';
-
 import Layout from '../common/Layout';
 import { useEffect, useState, useRef } from 'react';
 import Masonry from 'react-masonry-component';
 import Modal from '../common/Modal';
-//fetchFlickr함수 slice로 부터 import
 import { fetchFlickr } from '../../redux/flickrSlice';
-//데이터를 전역에서 가져오는것 뿐만 아니라 새로운 데이터 변경 요청도 해야하므로 useDispatch도 import
 import { useSelector, useDispatch } from 'react-redux';
 
 function Gallery() {
 	const dispatch = useDispatch();
-	const myId = '197108414@N08';
+	const my_id = '197108414@N08';
 	const masonryOptions = { transitionDuration: '0.5s' };
 	const frame = useRef(null);
 	const input = useRef(null);
@@ -44,7 +39,7 @@ function Gallery() {
 	};
 
 	const showMine = () => {
-		dispatch(fetchFlickr({ type: 'user', user: myId }));
+		dispatch(fetchFlickr({ type: 'user', user: my_id }));
 		frame.current.classList.remove('on');
 		setLoading(true);
 	};
@@ -60,8 +55,9 @@ function Gallery() {
 		<>
 			<Layout name={'Gallery'}>
 				<h1>GALLERY</h1>
-				<div className='controls'>
-					<div className='searchBox'>
+				<div id='gallery'>
+					<h2 onClick={showMine}>SIGHTSEEING</h2>
+					<div className='search_box'>
 						<input
 							type='text'
 							ref={input}
@@ -73,8 +69,22 @@ function Gallery() {
 
 					<nav>
 						<button onClick={showInterest}>Interest Gallery</button>
-						<button onClick={showMine}>My Gallery</button>
 					</nav>
+					<section className='gallery-title'>
+						<p>
+							All you need for business success. Stay inspired in a shared
+							environment with like-minded individuals pursuing their passions
+							and become part of a creative community that stretches
+						</p>
+						<p>
+							Lower your costs and save time with our business concierge,
+							professional and technical services.
+						</p>
+						<p>
+							We provide on-demand services from translation to company
+							registration so you are free to fully focus on your business.
+						</p>
+					</section>
 				</div>
 
 				{Loading && (

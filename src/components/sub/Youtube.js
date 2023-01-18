@@ -15,35 +15,63 @@ function Youtube() {
 		<>
 			<Layout name={'Youtube'}>
 				<h1>YOUTUBE</h1>
-				{Vids.map((data, idx) => {
-					const tit = data.snippet.title;
-					const desc = data.snippet.description;
-					const date = data.snippet.publishedAt;
+				<div className='container'>
+					<article className='youtube-title-left'>
+						<p className='title-sub1'>
+							Enjoy superior working conditions, including state-of-the-art
+							equipment and technical support staff who will help you with any
+							specific requirements.
+						</p>
+						<h2>THE</h2>
+						<h3>REAL OFFICE</h3>
+					</article>
+					<article className='youtube-title-right'>
+						<span>▶</span>
+						<p>
+							Our professional support team are highly trained to anticipate,
+							meet your needs, whatever they may be.
+						</p>
+						<figure>
+							<img
+								src={`${process.env.PUBLIC_URL}/img/youtubeimg.png`}
+								alt='youtube title img'
+							/>
+						</figure>
+					</article>
+					<div class='videoList'>
+						{Vids.map((data, idx) => {
+							const tit = data.snippet.title;
+							const desc = data.snippet.description;
+							const date = data.snippet.publishedAt;
 
-					return (
-						<article key={data.id}>
-							<h3>{tit.length > 60 ? tit.substr(0, 60) + '...' : tit}</h3>
+							return (
+								<article key={data.id}>
+									<h4>{tit.length > 60 ? tit.substr(0, 60) + '...' : tit}</h4>
 
-							<div className='txt'>
-								<p>{desc.length > 100 ? desc.substr(0, 100) + '...' : desc}</p>
-								<span>{date.split('T')[0]}</span>
-							</div>
+									<div className='txt'>
+										<p>
+											{desc.length > 100 ? desc.substr(0, 100) + '...' : desc}
+										</p>
+										<span>{date.split('T')[0]}</span>
+									</div>
 
-							<div
-								className='pic'
-								onClick={() => {
-									setIndex(idx);
-									modal.current.open();
-								}}
-							>
-								<img
-									src={data.snippet.thumbnails.high.url}
-									alt={data.snippet.title}
-								/>
-							</div>
-						</article>
-					);
-				})}
+									<div
+										className='pic'
+										onClick={() => {
+											setIndex(idx);
+											modal.current.open();
+										}}
+									>
+										<img
+											src={data.snippet.thumbnails.high.url}
+											alt={data.snippet.title}
+										/>
+									</div>
+								</article>
+							);
+						})}
+					</div>
+				</div>
 			</Layout>
 
 			<Modal ref={modal}>
