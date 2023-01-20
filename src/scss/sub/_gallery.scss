@@ -42,18 +42,17 @@
 			}
 		}
 
-		nav {
-			button {
-				width: 130px;
-				height: 28px;
-				border: none;
-				background: #555;
-				font: 12px/1 'arial';
-				color: #fff;
-				cursor: pointer;
-				margin-left: 5px;
-			}
+		button {
+			width: 130px;
+			height: 28px;
+			border: none;
+			background: #555;
+			font: 12px/1 'arial';
+			color: #fff;
+			cursor: pointer;
+			margin-left: 5px;
 		}
+
 		.gallery-title {
 			position: relative;
 			padding: 0 50px;

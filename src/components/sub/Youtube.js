@@ -1,6 +1,3 @@
-// const key = 'AIzaSyCwLGRESuf8Zwcy3A9ufGkTyoUcRtYEu_Y';
-// const playlist = 'PLKfwPBQMIxKDP60C-MiQuif3-9MB7RTHm';
-
 import Layout from '../common/Layout';
 import { useState, useRef } from 'react';
 import { useSelector } from 'react-redux';

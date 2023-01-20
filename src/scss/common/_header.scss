@@ -29,9 +29,7 @@ header {
 					font: bold 16px/1 $main-font;
 					// color: #eee;
 					transition: 0.5s;
-					&:hover {
-						color: #000;
-					}
+
 					i {
 						margin-right: 5px;
 					}
@@ -180,7 +178,12 @@ header {
 		top: 0;
 		left: 0;
 		background: transparent;
-		z-index: 2;
+		transition: 0.5s;
+		z-index: 3;
+		&:hover {
+			background: rgba(255, 255, 255, 0.2);
+			z-index: 2;
+		}
 		.container {
 			width: 1180px;
 			height: 100%;
@@ -190,12 +193,18 @@ header {
 				left: 5vw;
 				a {
 					color: #fff;
+					&:hover {
+						color: #000;
+					}
 				}
 			}
 			#gnb {
 				right: 5vw;
 				li a {
 					color: #fff;
+					&:hover {
+						color: #000;
+					}
 				}
 			}
 			.fa-bars {

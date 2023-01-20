@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
 
-$tablet-plus: 1180px;
-$tablet-origin: 900px;
-$mobile: 600px;
+$tablet-plus: 1200px;
+$tablet-origin: 850px;
+$mobile: 500px;
 
 $bg-color: #e3e3e3;
 $main-font: 'Jost', sans-serif;
-$kr-font: 'Hahmlet', serif;
+$kr-font: 'Gowun Dodum', sans-serif;
 
 //common
 @import 'common/reset';
@@ -14,7 +14,6 @@ $kr-font: 'Hahmlet', serif;
 @import 'common/layout';
 @import 'common/footer';
 @import 'common/modal';
-@import 'common/mob_menu';
 
 //main
 @import 'main/visual';

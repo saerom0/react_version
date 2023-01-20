@@ -67,9 +67,8 @@ function Gallery() {
 						<button onClick={showSearch}>Search</button>
 					</div>
 
-					<nav>
-						<button onClick={showInterest}>Interest Gallery</button>
-					</nav>
+					<button onClick={showInterest}>TO OTHER PICTURES</button>
+
 					<section className='gallery-title'>
 						<p>
 							All you need for business success. Stay inspired in a shared
