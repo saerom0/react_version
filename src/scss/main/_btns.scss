@@ -14,7 +14,7 @@
 		background: #ddd;
 		border-radius: 8px;
 		cursor: pointer;
-
+		transition: 0.5s;
 		&.on {
 			height: 50px;
 			background: #555;

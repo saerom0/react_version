@@ -47,11 +47,11 @@ function Footer() {
 				</section>
 
 				<section className='wrap3'>
-					<div>
-						<FontAwesomeIcon icon={faTwitterSquare} />
-						<FontAwesomeIcon icon={faInstagramSquare} />
-						<FontAwesomeIcon icon={faFacebookSquare} />
-						<FontAwesomeIcon icon={faYoutube} />
+					<div className='sns-icons'>
+						<FontAwesomeIcon icon={faTwitterSquare} className='twitter' />
+						<FontAwesomeIcon icon={faInstagramSquare} className='insta' />
+						<FontAwesomeIcon icon={faFacebookSquare} className='face-book' />
+						<FontAwesomeIcon icon={faYoutube} className='youtube' />
 					</div>
 					<address>
 						Lorem ipsum dolor sit amet B/D consectetur adipisicing elit. Sint.

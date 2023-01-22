@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-function Office() {
+function About() {
 	const [qna, setQna] = useState([]);
 
 	useEffect(() => {
@@ -253,4 +253,4 @@ function Office() {
 	);
 }
 
-export default Office;
+export default About;

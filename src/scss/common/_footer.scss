@@ -81,14 +81,18 @@ footer {
 			justify-content: flex-end;
 			width: 200px;
 			text-align: right;
-			div {
+			.sns-icons {
 				display: flex;
 				justify-content: space-between;
-				// .icon {
-				// 	font-size: 25px;
-				// 	color: #999;
-				// 	cursor: pointer;
-				// }
+				margin-bottom: 20px;
+				.twitter,
+				.face-book,
+				.youtube,
+				.insta {
+					font-size: 25px;
+					color: #999;
+					cursor: pointer;
+				}
 			}
 			address {
 				font: 14px/1.3 $main-font;
@@ -161,10 +165,14 @@ footer {
 
 			.wrap3 {
 				width: 30px;
-				div {
+				.sns-icons {
 					display: flex;
 					flex-direction: column;
-					flex i {
+
+					.twitter,
+					.insta,
+					.face-book,
+					.youtube {
 						font-size: 20px;
 						margin-top: 20px;
 					}
