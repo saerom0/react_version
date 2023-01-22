@@ -14,7 +14,7 @@ function Header(props) {
 				<div className='web_menu'>
 					<h1 className='web_h1'>
 						<NavLink exact to='/'>
-							<FontAwesomeIcon icon={faHome} />
+							<FontAwesomeIcon icon={faHome} className='home' />
 							Home
 						</NavLink>
 					</h1>
@@ -55,12 +55,12 @@ function Header(props) {
 					<ul className='tablet-log'>
 						<li>
 							<NavLink to='/signup'>
-								<FontAwesomeIcon icon={faSignInAlt} />
+								<FontAwesomeIcon icon={faSignInAlt} className='log-in' />
 							</NavLink>
 						</li>
 						<li>
 							<NavLink to='/signup'>
-								<FontAwesomeIcon icon={faUserPlus} />
+								<FontAwesomeIcon icon={faUserPlus} className='sign-up' />
 							</NavLink>
 						</li>
 					</ul>
@@ -68,6 +68,7 @@ function Header(props) {
 
 				<FontAwesomeIcon
 					icon={faBars}
+					className='fa-bars'
 					onClick={() => props.menuOpen.current.toggle()}
 				/>
 			</div>

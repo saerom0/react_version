@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function MiddleMenu({ Scrolled, currentPos }) {
 	return (
 		<section id='middle_menu' className='scroll'>
-			<div className='inner'>
+			<div className='container'>
 				<ul className='sub-gnb'>
 					<li>
 						<span>OFFICES</span>

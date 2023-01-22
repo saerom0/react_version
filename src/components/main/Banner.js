@@ -30,7 +30,7 @@ function Banner() {
 
 	return (
 		<section id='banner' className='myScroll'>
-			<div className='inner'>
+			<div className='container'>
 				<section ref={bn_div}>
 					{banner.map((el, idx) => {
 						return (

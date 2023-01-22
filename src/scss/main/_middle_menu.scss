@@ -3,7 +3,7 @@
 	position: relative;
 	margin-top: -15vh;
 	z-index: 2;
-	&.on .inner {
+	&.on .container {
 		.sub-gnb {
 			position: fixed;
 			width: 1180px;
@@ -22,7 +22,7 @@
 			}
 		}
 	}
-	.inner {
+	.container {
 		width: 1180px;
 		margin: 0 auto;
 		background: #fff;
@@ -146,6 +146,146 @@
 				.left {
 					margin-right: 20px;
 					text-align: right;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet-plus) {
+	#middle_menu {
+		&.on .container {
+			width: 100%;
+			.sub-gnb {
+				width: 100%;
+				padding: 0px 30px;
+				left: 0;
+			}
+			.intro {
+				h2 {
+					padding-top: 65px;
+				}
+			}
+		}
+		.container {
+			width: 100%;
+			padding: 0px 30px;
+			background: #fff;
+			.sub-gnb {
+				width: 100%;
+				height: 65px;
+				> li {
+					> a {
+						font: bold 18px/65px 'Roboto';
+					}
+					&:hover {
+						.sub-menu {
+							ul {
+								top: 65px;
+							}
+						}
+					}
+				}
+			}
+			.intro {
+				h2 {
+					font: bold 55px/1 'Roboto';
+					margin: 20px auto;
+				}
+				h3 {
+					width: 100%;
+					font: bold 20px/35px 'Roboto';
+				}
+				span {
+					font: bold 14px/1 'Roboto';
+					letter-spacing: 2px;
+					line-height: 20px;
+					margin: 0 auto 40px;
+					text-align: center;
+				}
+				.p-wrap {
+					p {
+						font: 13px/1.5 'Roboto';
+					}
+				}
+			}
+		}
+	}
+}
+
+//$tablet-origin (500px~849px)
+@media screen and (max-width: $tablet-origin) {
+	#middle_menu {
+		.container {
+			.sub-gnb {
+				> li {
+					&:hover {
+						.sub-menu {
+							ul {
+								width: 200px;
+								li {
+									&isSub:hover .sub-menu-2 {
+										margin-left: 399px;
+									}
+									.sub-menu-2 {
+										margin-top: 0px;
+										ul {
+											width: 200px;
+											li {
+												a {
+													letter-spacing: 1px;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.intro {
+				.p-wrap {
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+}
+
+//$mobile (~499px)
+@media screen and (max-width: $mobile) {
+	#middle_menu {
+		z-index: 1;
+		.container {
+			.sub-gnb {
+				display: none;
+			}
+			.intro {
+				width: 100%;
+				h2 {
+					margin: 30px auto;
+					font: bold 40px/1 'Roboto';
+				}
+				h3 {
+					font: bold 15px/1.2 'Roboto';
+					margin-bottom: 30px;
+				}
+				span {
+					width: 100%;
+					margin: 20px auto;
+				}
+				.p-wrap {
+					flex-wrap: wrap;
+					p {
+						width: 100%;
+						margin-bottom: 20px;
+						text-align: center;
+					}
+					.left {
+						margin-right: 0;
+						text-align: center;
+					}
 				}
 			}
 		}

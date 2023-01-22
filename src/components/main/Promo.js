@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 function Promo() {
 	return (
 		<section id='promo' className='myScroll'>
-			<div className='inner'>
+			<div className='container'>
 				<div className='wrap'>
 					<h1 className='promo_text'>
 						<span>GETTING 25% OFF</span>

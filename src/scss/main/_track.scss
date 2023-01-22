@@ -3,7 +3,7 @@
 	padding: 80px 0;
 	background: #000;
 	position: relative;
-	.inner {
+	.container {
 		width: 1180px;
 		margin: 0 auto;
 		&::after {
@@ -50,6 +50,58 @@
 					display: inline-block;
 					font: bold 20px/1 $main-font;
 					margin-right: 3px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet-plus) {
+	#track {
+		padding: 70px 30px;
+		.container {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			figure {
+				width: 500px;
+				height: 350px;
+			}
+			.record {
+				display: block;
+				min-width: 350px;
+				height: 100%;
+				div {
+					display: flex;
+					align-items: center;
+					height: 80px;
+				}
+			}
+		}
+	}
+}
+
+//$tablet-origin (500px~849px)
+
+//$mobile (~499px)
+@media screen and (max-width: $mobile) {
+	#track {
+		padding: 30px 20px;
+		.container {
+			figure {
+				width: 100%;
+				height: 100%;
+			}
+			.record {
+				div {
+					img {
+						transform: scale(0.5);
+					}
+					span {
+						font: 15px/1 $main-font;
+					}
 				}
 			}
 		}

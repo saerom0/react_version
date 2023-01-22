@@ -2,7 +2,7 @@
 	width: 100%;
 	position: relative;
 	background: #fff;
-	.inner {
+	.container {
 		width: 1180px;
 		position: relative;
 		margin: 0 auto;
@@ -85,6 +85,74 @@
 				}
 				&:last-child {
 					margin-right: 0;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet-plus) {
+	#banner {
+		padding: 0 30px;
+		.container {
+			width: 100%;
+			section {
+				height: 430px;
+				div {
+					margin-bottom: 80px;
+					p {
+						top: 10%;
+						font: 900 65px/1.4 'Roboto', sans-serif;
+					}
+				}
+			}
+			.bn-btn {
+				li {
+					width: 75px;
+				}
+			}
+		}
+	}
+}
+
+//$tablet-origin (500px~849px)
+@media screen and (max-width: $tablet-origin) {
+	#banner {
+		.container {
+			section {
+				div {
+					p {
+						font: 900 55px/1.3 'Roboto', sans-serif;
+						letter-spacing: 15px;
+					}
+				}
+			}
+		}
+	}
+}
+
+//$mobile (~499px)
+@media screen and (max-width: $mobile) {
+	#banner {
+		.container {
+			section {
+				height: 380px;
+				div {
+					p {
+						top: 10%;
+						font: 900 45px/1.3 'Roboto', sans-serif;
+						letter-spacing: 5px;
+					}
+					a {
+						font: bold 12px/1.2 'Roboto';
+						letter-spacing: 3px;
+						padding: 15px 20px;
+					}
+				}
+			}
+			.bn-btn {
+				li {
+					width: 50px;
 				}
 			}
 		}

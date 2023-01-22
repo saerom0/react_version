@@ -9,7 +9,7 @@ function Track() {
 	]);
 	return (
 		<section id='track' className='myScroll'>
-			<div className='inner'>
+			<div className='container'>
 				<h1>OUR TRACK RECORD</h1>
 				<figure>
 					<video

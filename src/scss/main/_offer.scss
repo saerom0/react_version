@@ -2,7 +2,7 @@
 	padding: 150px 0;
 	overflow: hidden;
 
-	.inner {
+	.container {
 		width: 1180px;
 		margin: 0 auto;
 		position: relative;
@@ -59,19 +59,6 @@
 							transition: 0.5s;
 							margin-bottom: 20px;
 						}
-						.here {
-							display: none;
-							width: 100px;
-							height: 100px;
-							border-radius: 50%;
-							position: absolute;
-							right: 0;
-							bottom: 0;
-							color: red;
-							opacity: 0;
-							transition: 0.5s;
-							z-index: 4;
-						}
 						a {
 							display: none;
 							position: absolute;
@@ -89,12 +76,6 @@
 								font-size: 25px;
 								color: #282828;
 							}
-						}
-						&.on .here {
-							display: none;
-							transform: scale(20);
-
-							//클릭하면 on클래스가 toggle되지만 화면상에 안보임
 						}
 					}
 					.review {
@@ -144,6 +125,75 @@
 							display: flex;
 						}
 					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $tablet-plus) {
+	#offer {
+		padding: 100px 30px;
+		.container {
+			width: 100%;
+			.wrap {
+				padding: 0 5%;
+				article {
+					width: 47%;
+					margin-right: 6%;
+					margin-bottom: 30px;
+					&:nth-of-type(2n) {
+						margin-right: 0;
+					}
+					.frame {
+						height: 360px;
+						.review {
+							bottom: 40px;
+							a {
+								i {
+									font-size: 15px;
+								}
+							}
+						}
+						.btn-offer {
+							margin: 20px auto;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//$tablet-origin (500px~849px)
+@media screen and (max-width: $tablet-origin) {
+	#offer {
+		.container {
+			.wrap {
+				article {
+					.frame {
+						.review {
+							left: 50%;
+							transform: translateX(-50%);
+							bottom: 57px;
+						}
+						a {
+							margin: 30px auto 0 auto;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//$mobile (~499px)
+@media screen and (max-width: $mobile) {
+	#offer {
+		.container {
+			.wrap {
+				article {
+					width: 100%;
+					margin-right: 0;
 				}
 			}
 		}

@@ -12,7 +12,7 @@ function Offer() {
 	const url = process.env.PUBLIC_URL;
 	return (
 		<section id='offer' className='myScroll'>
-			<div className='inner'>
+			<div className='container'>
 				<h1>SPECIAL OFFER</h1>
 				<section className='wrap'>
 					{offer.map((el, idx) => {

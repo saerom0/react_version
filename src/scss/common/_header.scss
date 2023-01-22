@@ -30,27 +30,31 @@ header {
 					// color: #eee;
 					transition: 0.5s;
 
-					i {
+					.home {
 						margin-right: 5px;
 					}
 				}
 			}
-
-			#gnb {
-				width: 50vw;
-				height: 20px;
-				float: left;
-				> li {
+			.mob-h1 {
+				display: none;
+			}
+			nav {
+				#gnb {
+					width: 50vw;
+					height: 20px;
 					float: left;
-					padding-right: 3vw;
-					&:last-child {
-						border-right: none;
-					}
-					> a {
-						display: block;
-						font: bold 16px/1 $main-font;
-						color: #eee;
-						transition: 0.5s;
+					> li {
+						float: left;
+						padding-right: 3vw;
+						&:last-child {
+							border-right: none;
+						}
+						> a {
+							display: block;
+							font: bold 16px/1 $main-font;
+							color: #eee;
+							transition: 0.5s;
+						}
 					}
 				}
 			}
@@ -94,7 +98,8 @@ header {
 					}
 					a {
 						color: #fff;
-						i {
+						.sign-in,
+						.log-in {
 							font-size: 16px;
 						}
 					}
@@ -102,67 +107,67 @@ header {
 			}
 		}
 
-		.mob_menu {
-			display: none;
-			flex-direction: column;
-			width: 50vw;
-			height: 100vh;
-			position: fixed;
-			top: 0;
-			left: -50vw;
-			background: #1c1c1c;
-			padding: 35px 30px;
-			z-index: 6;
-			transition: 0.5s;
-			&.on {
-				left: 0;
-			}
-			.mob_h1 {
-				width: 143px;
-				height: 45px;
-				display: block;
-				margin: 0 auto;
-				margin-bottom: 20px;
-				img {
-					width: 100%;
-					height: 100%;
-				}
-			}
-			.mob_log {
-				li {
-					width: 70%;
-					height: 40px;
-					margin: 0 auto;
-					text-align: center;
-					a {
-						display: block;
-						font: 14px/1 'arial';
-						padding: 5px 10px;
-						color: #fff;
-						border: 1px solid #6d6d6d;
-						border-radius: 3px;
-						text-align: center;
-						&:hover {
-							background: #6d6d6d;
-							color: #fff;
-						}
-					}
-				}
-			}
-			#mob_gnb {
-				li {
-					a {
-						display: block;
-						width: 100%;
-						padding: 20px 0;
-						border-bottom: 1px solid #444;
-						font: bold 14px/1 'arial';
-						color: #888;
-						text-align: center;
-					}
-				}
-			}
-		}
+		// .mob_menu {
+		// 	display: none;
+		// 	flex-direction: column;
+		// 	width: 50vw;
+		// 	height: 100vh;
+		// 	position: fixed;
+		// 	top: 0;
+		// 	left: -50vw;
+		// 	background: #1c1c1c;
+		// 	padding: 35px 30px;
+		// 	z-index: 6;
+		// 	transition: 0.5s;
+		// 	&.on {
+		// 		left: 0;
+		// 	}
+		// 	.mob_h1 {
+		// 		width: 143px;
+		// 		height: 45px;
+		// 		display: block;
+		// 		margin: 0 auto;
+		// 		margin-bottom: 20px;
+		// 		img {
+		// 			width: 100%;
+		// 			height: 100%;
+		// 		}
+		// 	}
+		// 	.mob_log {
+		// 		li {
+		// 			width: 70%;
+		// 			height: 40px;
+		// 			margin: 0 auto;
+		// 			text-align: center;
+		// 			a {
+		// 				display: block;
+		// 				font: 14px/1 'arial';
+		// 				padding: 5px 10px;
+		// 				color: #fff;
+		// 				border: 1px solid #6d6d6d;
+		// 				border-radius: 3px;
+		// 				text-align: center;
+		// 				&:hover {
+		// 					background: #6d6d6d;
+		// 					color: #fff;
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// 	#mob_gnb {
+		// 		li {
+		// 			a {
+		// 				display: block;
+		// 				width: 100%;
+		// 				padding: 20px 0;
+		// 				border-bottom: 1px solid #444;
+		// 				font: bold 14px/1 'arial';
+		// 				color: #888;
+		// 				text-align: center;
+		// 			}
+		// 		}
+		// 	}
+		// }
 		.fa-bars {
 			font-size: 24px;
 			position: absolute;
@@ -198,12 +203,14 @@ header {
 					}
 				}
 			}
-			#gnb {
-				right: 5vw;
-				li a {
-					color: #fff;
-					&:hover {
-						color: #000;
+			nav {
+				#gnb {
+					right: 5vw;
+					li a {
+						color: #fff;
+						&:hover {
+							color: #000;
+						}
 					}
 				}
 			}
@@ -236,10 +243,9 @@ header {
 			width: 100%;
 			padding: 0px 30px;
 			.web-menu {
-				padding-top: 22px;
 				#gnb {
 					width: 65%;
-					li a {
+					> li > a {
 						font: bold 13px/1 $main-font;
 					}
 				}
@@ -254,7 +260,7 @@ header {
 	}
 }
 
-//$tablet-origin (600px~899px)
+//$tablet-origin (500px~849px)
 @media screen and (max-width: $tablet-origin) {
 	header {
 		.container {
@@ -267,17 +273,17 @@ header {
 						font: bold 13px/1 $main-font;
 					}
 				}
-				nav {
-					#gnb {
-						width: 64vw;
-						li {
-							margin-left: 10px;
-							a {
-								font: bold 13px/1 $main-font;
-							}
+
+				#gnb {
+					width: 62vw;
+					li {
+						margin-left: 10px;
+						a {
+							font: bold 13px/1 $main-font;
 						}
 					}
 				}
+
 				.log {
 					display: none;
 				}
@@ -296,7 +302,8 @@ header {
 						}
 						a {
 							color: #fff;
-							i {
+							.log-in,
+							.sign-up {
 								font-size: 16px;
 							}
 						}
@@ -307,7 +314,7 @@ header {
 	}
 }
 
-//$mobile (~599px)
+//$mobile (~499px)
 @media screen and (max-width: $mobile) {
 	header {
 		height: 90px;
