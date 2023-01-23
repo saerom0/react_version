@@ -85,10 +85,7 @@ footer {
 				display: flex;
 				justify-content: space-between;
 				margin-bottom: 20px;
-				.twitter,
-				.face-book,
-				.youtube,
-				.insta {
+				.sns-icon {
 					font-size: 25px;
 					color: #999;
 					cursor: pointer;
@@ -168,11 +165,7 @@ footer {
 				.sns-icons {
 					display: flex;
 					flex-direction: column;
-
-					.twitter,
-					.insta,
-					.face-book,
-					.youtube {
+					.sns-icon {
 						font-size: 20px;
 						margin-top: 20px;
 					}

@@ -10,17 +10,10 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Contact() {
-	const [input, setInput] = useState([
-		'Name',
-		'Phone',
-		'E-mail',
-		'Enquire contents',
-	]);
-
 	return (
 		<Layout name={'Contact'}>
 			<h1>Contact Us</h1>
-			<div className='inner'>
+			<div className='container'>
 				<div className='enquire'>
 					<h2>Request for consultation</h2>
 					<form className='form'>
@@ -73,22 +66,22 @@ function Map() {
 			title: '강남',
 			latlng: new kakao.maps.LatLng(37.4960607, 127.0279746),
 			imgUrl: `${process.env.PUBLIC_URL}/img/marker1.png`,
-			imgSize: new kakao.maps.Size(232, 99),
-			imgPos: { offset: new kakao.maps.Point(116, 99) },
+			imgSize: new kakao.maps.Size(60, 80),
+			imgPos: { offset: new kakao.maps.Point(30, 99) },
 		},
 		{
 			title: '광화문',
 			latlng: new kakao.maps.LatLng(37.5745826, 126.9792381),
-			imgUrl: `${process.env.PUBLIC_URL}/img/marker2.png`,
-			imgSize: new kakao.maps.Size(232, 99),
-			imgPos: { offset: new kakao.maps.Point(116, 99) },
+			imgUrl: `${process.env.PUBLIC_URL}/img/marker1.png`,
+			imgSize: new kakao.maps.Size(60, 80),
+			imgPos: { offset: new kakao.maps.Point(30, 99) },
 		},
 		{
 			title: '서울스퀘어',
 			latlng: new kakao.maps.LatLng(37.5554992, 126.9735873),
-			imgUrl: `${process.env.PUBLIC_URL}/img/marker3.png`,
-			imgSize: new kakao.maps.Size(232, 99),
-			imgPos: { offset: new kakao.maps.Point(116, 99) },
+			imgUrl: `${process.env.PUBLIC_URL}/img/marker1.png`,
+			imgSize: new kakao.maps.Size(60, 80),
+			imgPos: { offset: new kakao.maps.Point(30, 99) },
 		},
 	];
 

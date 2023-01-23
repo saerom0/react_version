@@ -1,13 +1,11 @@
 .Contact {
-	h1 {
-		padding: 50px;
-		border-bottom: 1px solid #bbbbbb;
-		font: 40px/1 'arial';
-	}
-	.inner {
+	.container {
 		position: relative;
-		width: 1180px;
-		margin: 0 auto;
+		h1 {
+			padding: 50px;
+			border-bottom: 1px solid #bbbbbb;
+			font: 40px/1 'arial';
+		}
 		&::after {
 			content: '';
 			display: block;
@@ -134,7 +132,7 @@
 }
 
 @media screen and (max-width: $tablet-plus) {
-	.contact {
+	.Contact {
 		width: 100%;
 		.container {
 			width: 100%;
@@ -144,7 +142,7 @@
 }
 
 @media screen and (max-width: $tablet-origin) {
-	.contact {
+	.Contact {
 		.sub-bg {
 			height: 220px;
 		}
@@ -165,7 +163,7 @@
 }
 
 @media screen and (max-width: $mobile) {
-	.contact {
+	.Contact {
 		.container {
 			width: 500px;
 			#map {

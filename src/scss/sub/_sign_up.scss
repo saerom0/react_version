@@ -1,20 +1,8 @@
-.SignUp {
-	h1 {
-		padding: 50px;
-		border-bottom: 1px solid #bbbbbb;
-		font: 40px/1 'arial';
-	}
+.Sign-up {
 	.container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		h1 {
-			width: 85%;
-			border-bottom: 1px solid #bbb;
-			padding-bottom: 20px;
-		}
 		form {
 			width: 85%;
+			margin: 0 auto;
 			fieldset {
 				display: flex;
 				flex-direction: column;
@@ -67,7 +55,7 @@
 					th {
 						width: 23%;
 						padding: 15px;
-						font: bold 14px/1 'Roboto', sans-serif;
+						font: bold 14px/1 $main-font;
 						letter-spacing: 1px;
 						color: #666;
 						text-align: left;
@@ -75,7 +63,7 @@
 						border-bottom: 1px solid #bbb;
 						background: #eee;
 						label {
-							font-family: 'Roboto', sans-serif;
+							font-family: $main-font;
 						}
 						i {
 							transform: scale(0.6);
@@ -92,7 +80,7 @@
 						input[type='reset'] {
 							width: 150px;
 							height: 40px;
-							font: bold 14px/1 'Sunflower', sans-serif;
+							font: bold 14px/1 $main-font;
 							margin: 0 10px;
 							cursor: pointer;
 							transition: 0.5s;
@@ -149,6 +137,9 @@
 							margin-right: 5px;
 							font-family: 'Sunflower', sans-serif;
 						}
+						select#gender {
+							font-family: $kr-font;
+						}
 						input#email::-webkit-input-placeholder {
 							font-family: $kr-font;
 						}
@@ -170,7 +161,7 @@
 }
 
 @media screen and (max-width: $tablet-plus) {
-	.sign-up {
+	.Sign-up {
 		width: 100%;
 		.container {
 			width: 100%;
@@ -181,7 +172,7 @@
 // @media screen and (max-width: $tablet-origin)
 
 @media screen and (max-width: $mobile) {
-	.sign-up {
+	.Sign-up {
 		.container {
 			form {
 				.all-agree {

@@ -48,10 +48,10 @@ function Footer() {
 
 				<section className='wrap3'>
 					<div className='sns-icons'>
-						<FontAwesomeIcon icon={faTwitterSquare} className='twitter' />
-						<FontAwesomeIcon icon={faInstagramSquare} className='insta' />
-						<FontAwesomeIcon icon={faFacebookSquare} className='face-book' />
-						<FontAwesomeIcon icon={faYoutube} className='youtube' />
+						<FontAwesomeIcon icon={faTwitterSquare} className='sns-icon' />
+						<FontAwesomeIcon icon={faInstagramSquare} className='sns-icon' />
+						<FontAwesomeIcon icon={faFacebookSquare} className='sns-icon' />
+						<FontAwesomeIcon icon={faYoutube} className='sns-icon' />
 					</div>
 					<address>
 						Lorem ipsum dolor sit amet B/D consectetur adipisicing elit. Sint.

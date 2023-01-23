@@ -26,7 +26,7 @@ function Header(props) {
 					<nav>
 						<ul id='gnb'>
 							<li>
-								<NavLink to='/office'>Shared Office</NavLink>
+								<NavLink to='/about'>About</NavLink>
 							</li>
 							<li>
 								<NavLink to='/gallery'>Gallery</NavLink>

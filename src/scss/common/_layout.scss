@@ -7,6 +7,12 @@
 		opacity: 0;
 		transform: translateY(100px);
 		transition: opacity 1s, transform 1s;
+		h1 {
+			padding: 0 50px 30px;
+			border-bottom: 1px solid #bbbbbb;
+			font: 40px/1 $kr-font;
+			margin-bottom: 80px;
+		}
 	}
 
 	&.on .container {
