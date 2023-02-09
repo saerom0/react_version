@@ -45,10 +45,10 @@ function Header(props) {
 
 					<ul className='log'>
 						<li>
-							<NavLink to='/signup'>Log In</NavLink>
+							<NavLink to='/signup'>Log in</NavLink>
 						</li>
 						<li>
-							<NavLink to='/signup'>Sign Up</NavLink>
+							<NavLink to='/signup'>Sign up</NavLink>
 						</li>
 					</ul>
 

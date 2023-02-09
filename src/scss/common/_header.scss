@@ -1,7 +1,7 @@
 header {
+	position: absolute;
 	width: 100%;
 	height: 80px;
-	position: absolute;
 	top: 0;
 	left: 0;
 	background: transparent;
@@ -12,10 +12,10 @@ header {
 		z-index: 2;
 	}
 	.container {
+		position: relative;
 		width: 1180px;
 		height: 100%;
 		margin: 0 auto;
-		position: relative;
 		.web_menu {
 			width: 100%;
 			padding-top: 28px;
@@ -74,7 +74,7 @@ header {
 						padding: 5px 10px;
 						color: #fff;
 						border: 1px solid #6d6d6d;
-						border-radius: 3px;
+						border-radius: 15px;
 						&:hover {
 							background: #6d6d6d;
 							color: #fff;
@@ -158,6 +158,7 @@ header {
 		}
 	}
 	&.sub {
+		height: 80px;
 		background: #e3e3e3;
 		.container {
 			h1 a {
@@ -179,7 +180,7 @@ header {
 	header {
 		.container {
 			width: 100%;
-			padding: 0px 30px;
+			// padding: 0px 30px;
 			.web-menu {
 				#gnb {
 					width: 65%;

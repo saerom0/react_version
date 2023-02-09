@@ -1,3 +1,5 @@
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +10,7 @@ function Offer() {
 		'MONTES MAURIS',
 		'CUM NATOQUE',
 	]);
-	const icon_star = '<i class="fas fa-star"></i>';
+	const icon_star = <FontAwesomeIcon className='star' icon={faStar} />;
 	const url = process.env.PUBLIC_URL;
 	return (
 		<section id='offer' className='myScroll'>
@@ -21,8 +23,17 @@ function Offer() {
 								<div className='frame'>
 									<div className='pic'>
 										<img src={`${url}/img/offer${idx + 1}.jpg`} alt={el} />
+										<div className='stars'>
+											{icon_star}
+											{icon_star}
+											{icon_star}
+											{icon_star}
+											{icon_star}
+										</div>
 									</div>
+									<button className='btn_offer'>VIEW MORE</button>
 								</div>
+
 								<h2>
 									<Link to='/'>{el}</Link>
 								</h2>

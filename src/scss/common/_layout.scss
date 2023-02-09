@@ -1,9 +1,10 @@
 .content {
+	width: 100%;
 	.container {
+		position: relative;
 		width: 1180px;
 		min-height: 400px;
-		margin: 100px auto 150px;
-		position: relative;
+		margin: 150px auto;
 		opacity: 0;
 		transform: translateY(100px);
 		transition: opacity 1s, transform 1s;
@@ -25,8 +26,29 @@
 	.content {
 		.container {
 			width: 100%;
-			margin: 80px auto 120px;
-			padding: 0px 40px;
+			margin: 30px auto 50px;
+		}
+	}
+}
+
+@media screen and (max-width: $tablet-origin) {
+	.content {
+		.container {
+			h1 {
+				font: 35px/1 $kr-font;
+				margin-bottom: 40px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.content {
+		.container {
+			position: relative;
+			h1 {
+				font: 30px/1 $kr-font;
+			}
 		}
 	}
 }
