@@ -11,8 +11,8 @@ function Header(props) {
 	return (
 		<header className={props.type}>
 			<div className='container'>
-				<div className='web_menu'>
-					<h1 className='web_h1'>
+				<div className='web-menu'>
+					<h1 className='web-h1'>
 						<NavLink exact to='/'>
 							<FontAwesomeIcon icon={faHome} className='home' />
 							Home

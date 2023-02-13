@@ -4,6 +4,8 @@ import Masonry from 'react-masonry-component';
 import Modal from '../common/Modal';
 import { fetchFlickr } from '../../redux/flickrSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function Gallery() {
 	const dispatch = useDispatch();
@@ -32,12 +34,6 @@ function Gallery() {
 		setLoading(true);
 	};
 
-	const showUser = (e) => {
-		dispatch(fetchFlickr({ type: 'user', user: e.target.innerText }));
-		frame.current.classList.remove('on');
-		setLoading(true);
-	};
-
 	const showMine = () => {
 		dispatch(fetchFlickr({ type: 'user', user: my_id }));
 		frame.current.classList.remove('on');
@@ -58,16 +54,20 @@ function Gallery() {
 				<div id='gallery'>
 					<h2 onClick={showMine}>SIGHTSEEING</h2>
 					<div className='search_box'>
+						<button className='interest-btn' onClick={showInterest}>
+							<FontAwesomeIcon className='arrow' icon={faArrowRight} />
+							TO OTHER PICTURES
+						</button>
 						<input
 							type='text'
 							ref={input}
-							placeholder='검색어를 입력하세요'
+							placeholder='검색어 입력'
 							onKeyUp={(e) => e.key === 'Enter' && showSearch()}
 						/>
-						<button onClick={showSearch}>Search</button>
+						<button className='search-btn' onClick={showSearch}>
+							Search
+						</button>
 					</div>
-
-					<button onClick={showInterest}>TO OTHER PICTURES</button>
 
 					<section className='gallery-title'>
 						<p>
@@ -112,21 +112,19 @@ function Gallery() {
 												alt={item.title}
 											/>
 										</div>
-										<h2>{item.title}</h2>
+										<span>{item.title}</span>
 
-										<div className='profile'>
-											<img
-												src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
-												alt={item.owner}
-												onError={(e) =>
-													e.target.setAttribute(
-														'src',
-														'https://www.flickr.com/images/buddyicon.gif'
-													)
-												}
-											/>
-											<span onClick={showUser}>{item.owner}</span>
-										</div>
+										<img
+											className='profile'
+											src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
+											alt={item.owner}
+											onError={(e) =>
+												e.target.setAttribute(
+													'src',
+													'https://www.flickr.com/images/buddyicon.gif'
+												)
+											}
+										/>
 									</div>
 								</article>
 							);

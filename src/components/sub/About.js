@@ -1,12 +1,32 @@
 import Layout from '../common/Layout';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
+const pub = process.env.PUBLIC_URL;
 
 function About() {
 	const [qna, setQna] = useState([]);
+	const [check_icon] = useState(
+		<FontAwesomeIcon
+			icon={faCheckCircle}
+			className='check-icon'
+		></FontAwesomeIcon>
+	);
+	const [cstype] = useState([
+		'SERVICED OFFICE',
+		'CO-WORKING SPACE',
+		'VIRTUAL OFFICE',
+		'MEETING ROOMS & CONFERENCE FACILITIES',
+		'BUSINESS SUPPORT SERVICES',
+	]);
+
+	const activation = (el, e) => {
+		el.classList.remove('on');
+		!e.target.classList.contains('on') && e.target.classList.add('on');
+	};
 
 	useEffect(() => {
 		axios.get(`${process.env.PUBLIC_URL}/DB/qna.json`).then((json) => {
@@ -65,6 +85,13 @@ function About() {
 							<section id='service_type'>
 								<nav>
 									<ul>
+										{cstype.map((el) => {
+											return (
+												<li onClick={activation}>
+													<h3>{el}</h3>
+												</li>
+											);
+										})}
 										<li className='on'>
 											<h3>SERVICED OFFICE</h3>
 										</li>
@@ -84,108 +111,49 @@ function About() {
 
 									<article className='on'>
 										<h3>IDEAL FOR</h3>
-										<p>
-											<i className='far fa-check-circle'></i>Business
-											corporations and multinationals
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>Representative
-											office and SMEs
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>Flexible project
-											space
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>Short-term swing
-											space
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>Risk-free new
-											market entry
-										</p>
+										<p>{check_icon}Business corporations and multinationals</p>
+										<p>{check_icon}Representative office and SMEs</p>
+										<p>{check_icon}Flexible project space</p>
+										<p>{check_icon}Short-term swing space</p>
+										<p>{check_icon}Risk-free new market entry</p>
 										<p>KRW 800,000 /PER MONTH</p>
 									</article>
 
 									<article>
 										<h3>IDEAL FOR</h3>
-										<p>
-											<i className='far fa-check-circle'></i>Individuals and
-											freelancers
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>Business networking
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>Innovative
-											start-ups
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>Vibrant community
-											event space
-										</p>
+										<p>{check_icon}Individuals and freelancers</p>
+										<p>{check_icon}Business networking</p>
+										<p>{check_icon}Innovative start-ups</p>
+										<p>{check_icon}Vibrant community event space</p>
 										<p>COWORKING DAY PASS : KRW 50,000 /PER DAY</p>
 										<p>DEDICATED WORKSTATION : KRW 650,000 /PER MONTH</p>
 									</article>
 
 									<article>
 										<h3>IDEAL FOR</h3>
-										<p>
-											<i className='far fa-check-circle'></i>Entrepreneurs
-											working from home
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>Start-ups with a
-											limited budget
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>SMEs with a
-											regional presence
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>Company
-											registration address
-										</p>
+										<p>{check_icon}Entrepreneurs working from home</p>
+										<p>{check_icon}Start-ups with a limited budget</p>
+										<p>{check_icon}SMEs with a regional presence</p>
+										<p>{check_icon}Company registration address</p>
 										<p>KRW 95,000 /PER MONTH</p>
 									</article>
 
 									<article>
 										<h3>IDEAL FOR</h3>
-										<p>
-											<i className='far fa-check-circle'></i>Business meetings
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>Corporate trainings
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>Business travellers
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>Home office users
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>Training venue
-										</p>
+										<p>{check_icon}Business meetings</p>
+										<p>{check_icon}Corporate trainings</p>
+										<p>{check_icon}Business travellers</p>
+										<p>{check_icon}Home office users</p>
+										<p>{check_icon}Training venue</p>
 										<p>MEETING ROOMS : KRW 60,000 /PER HOUR</p>
 										<p>VIDEO CONFERENCING : KRW 250,000 /PER HOUR</p>
 									</article>
 
 									<article>
-										<p>
-											<i className='far fa-check-circle'></i>Business Concierge
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>Accounting & Tax
-											consultation
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>Web design and
-											hosting
-										</p>
-										<p>
-											<i className='far fa-check-circle'></i>New market entry
-											support
-										</p>
+										<p>{check_icon}Business Concierge</p>
+										<p>{check_icon}Accounting & Tax consultation</p>
+										<p>{check_icon}Web design and hosting</p>
+										<p>{check_icon}New market entry support</p>
 									</article>
 								</nav>
 							</section>
@@ -266,8 +234,109 @@ function About() {
 					</section>
 				</div>
 			</section>
+			<Store />
 		</Layout>
 	);
 }
 
+function Store() {
+	/* 카카오맵 변수 선언 */
+	const [Store, setStore] = useState([]);
+	const [IndexExp, setIndexExp] = useState(0);
+	const [Index, setIndex] = useState(0);
+	const option = useRef(null);
+	const info = useRef(null);
+	const { kakao } = window;
+
+	/* 매장 정보 */
+	// info.current = [
+	// 	{
+	// 		title: 'LUSH Myeongdong Store',
+	// 		location: '5, Myeongdong 8ga-gil, Jung-gu, Seoul',
+	// 		latlng: new kakao.maps.LatLng(37.561652, 126.985299),
+	// 		imgUrl: `${process.env.PUBLIC_URL}/img/marker1.png`,
+	// 		imgSize: new kakao.maps.Size(90, 109),
+	// 		imgPos: { offset: new kakao.maps.Point(45, 109) },
+	// 	},
+	// 	{
+	// 		title: 'LUSH Gangnam Store',
+	// 		location: '433, Gangnam-daero, Seocho-gu, Seoul',
+	// 		latlng: new kakao.maps.LatLng(37.500998, 127.0256544),
+	// 		imgUrl: `${process.env.PUBLIC_URL}/img/marker2.png`,
+	// 		imgSize: new kakao.maps.Size(90, 109),
+	// 		imgPos: { offset: new kakao.maps.Point(45, 109) },
+	// 	},
+	// 	{
+	// 		title: 'LUSH SPA Gyeonglidan',
+	// 		location: '10, Hoenamu-ro 42-gil, Yongsan-gu, Seoul',
+	// 		latlng: new kakao.maps.LatLng(37.5406277, 126.9956342),
+	// 		imgUrl: `${process.env.PUBLIC_URL}/img/marker3.png`,
+	// 		imgSize: new kakao.maps.Size(90, 109),
+	// 		imgPos: { offset: new kakao.maps.Point(45, 109) },
+	// 	},
+	// ];
+	// option.current = {
+	// 	center: info.current[Index].latlng,
+	// 	level: 3,
+	// };
+
+	const getData = async () => {
+		const result = await axios.get(pub + '/DB/content.json');
+		setStore(result.data.store);
+	};
+
+	useEffect(() => {
+		getData();
+	}, []);
+
+	return (
+		<Layout name={'Store'}>
+			<section className='experience'>
+				<h2>Our Experience</h2>
+				<div className='wrap'>
+					<ul className='tabs'>
+						{Store.map((el, idx) => {
+							let isOn = '';
+							IndexExp === idx && (isOn = 'on');
+							return (
+								<li
+									key={`tab${idx}`}
+									className={isOn}
+									onClick={() => setIndexExp(idx)}
+								>
+									<h3>{el.title}</h3>
+								</li>
+							);
+						})}
+					</ul>
+
+					<div className='tabBox'>
+						{Store.map((el, idx) => {
+							let isOn = '';
+							IndexExp === idx && (isOn = 'on');
+							return (
+								<article key={`box${idx}`} className={isOn}>
+									<div className='pic'>
+										<img src={`${pub}/img/${el.image}`} alt={el.title} />
+									</div>
+									<div className='txt'>
+										<h4>{el.title}</h4>
+										<p>{el.content}</p>
+										<span>
+											{el.shop} <br />
+											{el.time}
+										</span>
+										{/* <Link to='/' className='btnMore'>
+											VIEW MORE
+										</Link> */}
+									</div>
+								</article>
+							);
+						})}
+					</div>
+				</div>
+			</section>
+		</Layout>
+	);
+}
 export default About;
