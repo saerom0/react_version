@@ -99,3 +99,56 @@
 		}
 	}
 }
+
+//$tablet-origin (500px~849px)
+@media screen and (max-width: $tablet-origin) {
+	#visual {
+		.container {
+			.cp-name {
+				width: 170px;
+			}
+		}
+	}
+}
+
+//$mobile (~499px)
+@media screen and (max-width: $mobile) {
+	#visual {
+		.panel {
+			background: rgb(255, 255, 255);
+			li {
+				width: 100%;
+				height: 80%;
+				overflow: hidden;
+				img {
+					position: relative;
+					height: 100%;
+					top: 40px;
+					left: 0;
+				}
+				&.on img {
+					opacity: 1;
+					transform: scale(1.05);
+				}
+			}
+		}
+		.btns {
+			top: 87vh;
+			gap: 10px;
+			li {
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+				background: #777;
+				&.on {
+					background: #000;
+				}
+			}
+		}
+		.container {
+			.cp-name {
+				display: none;
+			}
+		}
+	}
+}

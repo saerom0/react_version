@@ -1,6 +1,5 @@
 header {
 	width: 100%;
-	background: transparent;
 	.container {
 		position: relative;
 		width: 1180px;
@@ -22,9 +21,6 @@ header {
 						margin-right: 5px;
 					}
 				}
-			}
-			.mob-h1 {
-				display: none;
 			}
 			nav {
 				#gnb {
@@ -94,7 +90,140 @@ header {
 				}
 			}
 		}
-
+		.btn-call {
+			display: none;
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			right: 30px;
+			top: 30px;
+			z-index: 5;
+			&::before {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 2px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: #000;
+				transition: top 0.5s 0s, transform 0.5s 0.5s;
+			}
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 2px;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				background: #000;
+				transition: bottom 0.5s 0s, transform 0.5s 0.5s;
+			}
+			span {
+				display: block;
+				width: 100%;
+				height: 2px;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				background: #000;
+				margin-top: -1px;
+				transition: 1s;
+				text-indent: -9999px;
+			}
+			&.on {
+				&::before {
+					top: 50%;
+					margin-top: -1px;
+					transform: rotate(45deg);
+				}
+				&::after {
+					bottom: 50%;
+					margin-bottom: -1px;
+					transform: rotate(-45deg);
+				}
+				span {
+					transform: translateX(100%);
+					opacity: 0;
+				}
+			}
+		}
+		.mob-menu {
+			display: none;
+			width: 100%;
+			height: 90px;
+			.mob-logo {
+				width: 132px;
+				height: 90px;
+				a {
+					display: block;
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.side-menu {
+				display: flex;
+				flex-direction: column;
+				width: 270px;
+				height: 100vh;
+				position: fixed;
+				top: 0;
+				left: -270px;
+				background: #1c1c1c;
+				padding: 35px 30px;
+				z-index: 6;
+				transition: 0.5s;
+				&.on {
+					left: 0;
+				}
+				.mob-h1 {
+					width: 143px;
+					height: 45px;
+					display: block;
+					margin: 0 auto;
+					margin-bottom: 20px;
+					img {
+						width: 100%;
+						height: 100%;
+					}
+				}
+				.mob-log {
+					li {
+						width: 70%;
+						height: 40px;
+						margin: 0 auto;
+						text-align: center;
+						a {
+							display: block;
+							font: 14px/1 $main-font;
+							padding: 5px 10px;
+							color: #fff;
+							border: 1px solid #6d6d6d;
+							border-radius: 3px;
+							text-align: center;
+							&:hover {
+								background: #6d6d6d;
+								color: #fff;
+							}
+						}
+					}
+				}
+				#mob_gnb {
+					li {
+						a {
+							display: block;
+							width: 100%;
+							padding: 20px 0;
+							border-bottom: 1px solid #444;
+							font: bold 14px/1 $main-font;
+							color: #888;
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
 		.fa-bars {
 			font-size: 24px;
 			position: absolute;
@@ -224,14 +353,9 @@ header {
 //$mobile (~499px)
 @media screen and (max-width: $mobile) {
 	header {
-		height: 90px;
-		background: $bg-color;
-		&:hover {
-			background: $bg-color;
-		}
 		.container {
 			position: relative;
-			z-index: 5;
+			z-index: 3;
 			.web-menu {
 				display: none;
 			}
@@ -240,6 +364,13 @@ header {
 			}
 			.mob-menu {
 				display: block;
+			}
+		}
+		&.main {
+			height: 90px;
+			background: $bg-color;
+			&:hover {
+				background: $bg-color;
 			}
 		}
 	}

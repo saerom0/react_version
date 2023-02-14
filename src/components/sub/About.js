@@ -29,7 +29,7 @@ function About() {
 	};
 
 	useEffect(() => {
-		axios.get(`${process.env.PUBLIC_URL}/DB/qna.json`).then((json) => {
+		axios.get(`${pub}/DB/qna.json`).then((json) => {
 			setQna(json.data.qna);
 		});
 	}, []);
