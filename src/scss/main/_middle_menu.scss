@@ -3,25 +3,26 @@
 	position: relative;
 	margin-top: -15vh;
 	z-index: 2;
-	&.on .container {
-		.sub-gnb {
-			position: fixed;
-			width: 1180px;
-			z-index: 3;
-			> li {
-				background: #353535;
-				span {
-					color: #ffffff;
-				}
-				&:hover {
-					background: #bbb;
-					span {
-						color: #333;
-					}
-				}
-			}
-		}
-	}
+	overflow: hidden;
+	// &.on .container {
+	// 	.sub-gnb {
+	// 		position: fixed;
+	// 		width: 1180px;
+	// 		z-index: 3;
+	// 		> li {
+	// 			background: #353535;
+	// 			span {
+	// 				color: #ffffff;
+	// 			}
+	// 			&:hover {
+	// 				background: #bbb;
+	// 				span {
+	// 					color: #333;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
 	.container {
 		width: 1180px;
 		margin: 0 auto;
@@ -118,28 +119,36 @@
 			height: 350px;
 			position: relative;
 			h2 {
-				width: 100%;
-				font: bold 72px/1 'Roboto', sans-serif;
+				position: absolute;
+				top: 0;
+				left: 500px;
+				width: 50%;
+				font: bold 72px/1 'Roboto';
 				color: #2a2a2a;
 				text-align: center;
 				margin: 40px auto;
 			}
 			h3 {
-				width: 900px;
-				font: bold 25px/35px 'Roboto', sans-serif;
+				position: absolute;
+				top: 17vh;
+				left: 250px;
+				// width: 900px;
+				font: bold 25px/35px 'Roboto';
 				color: #2a2a2a;
 				letter-spacing: 3px;
 				margin: 0 auto 40px;
 				text-align: center;
 			}
 			.p-wrap {
+				position: absolute;
+				top: 29vh;
 				display: flex;
 				flex-wrap: nowrap;
 				justify-content: center;
 				align-items: center;
 				p {
-					width: 520px;
-					font: 15px/1.5 'Roboto', sans-serif;
+					width: 45%;
+					font: 15px/1.5 'Roboto';
 					color: #bebebe;
 					margin-bottom: 40px;
 				}
@@ -154,19 +163,6 @@
 
 @media screen and (max-width: $tablet-plus) {
 	#middle_menu {
-		&.on .container {
-			width: 100%;
-			.sub-gnb {
-				width: 100%;
-				padding: 0px 30px;
-				left: 0;
-			}
-			.intro {
-				h2 {
-					padding-top: 65px;
-				}
-			}
-		}
 		.container {
 			width: 100%;
 			padding: 0px 30px;
@@ -264,7 +260,7 @@
 			.intro {
 				width: 100%;
 				h2 {
-					margin: 30px auto;
+					margin: 90px auto 40px;
 					font: bold 40px/1 'Roboto';
 				}
 				h3 {

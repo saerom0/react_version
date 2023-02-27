@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-	faBars,
 	faHome,
 	faSignInAlt,
 	faUserPlus,
@@ -9,6 +8,8 @@ import {
 
 function Header(props) {
 	const pub = process.env.PUBLIC_URL;
+	// const dispatch = useDispatch();
+	// const menu = useSelector((store) => store.menu.open);
 	return (
 		<header className={props.type}>
 			<div className='container'>
@@ -18,10 +19,6 @@ function Header(props) {
 							<FontAwesomeIcon icon={faHome} className='home' />
 							Home
 						</NavLink>
-					</h1>
-
-					<h1 className='mob-h1'>
-						<NavLink to='/'></NavLink>
 					</h1>
 
 					<nav>
@@ -67,7 +64,11 @@ function Header(props) {
 					</ul>
 				</div>
 
-				<NavLink to='/' className='btn-call'>
+				<NavLink
+					to='/'
+					className='btn-call'
+					onClick={() => props.menuOpen.current.toggle()}
+				>
 					<span>메뉴호출</span>
 				</NavLink>
 
@@ -77,48 +78,7 @@ function Header(props) {
 							<img src={`${pub}/img/logo_white.png`} alt={'회사로고'} />
 						</NavLink>
 					</div>
-					<nav className='side-menu'>
-						<NavLink className='mob-h1' to='/'>
-							{/* <img src='img/logo_black.png' alt='회사로고' /> */}
-						</NavLink>
-
-						<ul className='mob-log'>
-							<li>
-								<NavLink to='/'>Log in</NavLink>
-							</li>
-							<li>
-								<NavLink to='/sign_up'>Sign up</NavLink>
-							</li>
-							<li>
-								<NavLink to='/'>My Account</NavLink>
-							</li>
-						</ul>
-
-						<ul id='mob_gnb'>
-							<li>
-								<NavLink to='/about'>About</NavLink>
-							</li>
-							<li>
-								<NavLink to='/gallery'>Gallery</NavLink>
-							</li>
-							<li>
-								<NavLink to='/youtube'>Youtube</NavLink>
-							</li>
-							<li>
-								<NavLink to='/review'>Review</NavLink>
-							</li>
-							<li>
-								<NavLink to='/contact'>Contact</NavLink>
-							</li>
-						</ul>
-					</nav>
 				</div>
-
-				<FontAwesomeIcon
-					icon={faBars}
-					className='fa-bars'
-					onClick={() => props.menuOpen.current.toggle()}
-				/>
 			</div>
 		</header>
 	);

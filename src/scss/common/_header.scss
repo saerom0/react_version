@@ -7,15 +7,15 @@ header {
 		margin: 0 auto;
 		.web-menu {
 			width: 100%;
-			padding-top: 28px;
+			padding-top: 25px;
 			margin-left: 10px;
 			float: left;
 			.web-h1 {
 				float: left;
-				padding-right: 3vw;
+				padding-right: 2vw;
 				a {
 					display: block;
-					font: bold 16px/1 $main-font;
+					font: bold 16px/30px $main-font;
 					transition: 0.5s;
 					.home {
 						margin-right: 5px;
@@ -25,17 +25,16 @@ header {
 			nav {
 				#gnb {
 					width: 50vw;
-					height: 20px;
 					float: left;
 					> li {
 						float: left;
-						padding-right: 3vw;
+						padding-right: 2vw;
 						&:last-child {
 							border-right: none;
 						}
 						> a {
 							display: block;
-							font: bold 16px/1 $main-font;
+							font: bold 16px/30px $main-font;
 							color: #eee;
 							transition: 0.5s;
 						}
@@ -69,12 +68,12 @@ header {
 			}
 			.tablet-log {
 				display: none;
-				width: 60px;
+				width: 56px;
 				height: 100%;
 				float: right;
 				margin-right: 0px;
 				li {
-					width: 20px;
+					width: 18px;
 					float: left;
 					text-align: right;
 					&:first-child {
@@ -224,13 +223,6 @@ header {
 				}
 			}
 		}
-		.fa-bars {
-			font-size: 24px;
-			position: absolute;
-			bottom: 20px;
-			right: 40px;
-			display: none;
-		}
 	}
 	&.main {
 		width: 100%;
@@ -265,9 +257,6 @@ header {
 					}
 				}
 			}
-			.fa-bars {
-				color: #fff;
-			}
 		}
 	}
 	&.sub {
@@ -277,12 +266,19 @@ header {
 			.web-menu {
 				.web-h1 a {
 					color: #000;
+					font: bold 16px/30px $main-font;
 				}
-				#gnb li a {
+				nav #gnb li a {
 					color: #000;
+					font: bold 16px/30px $main-font;
 				}
 				.log {
 					li a {
+						color: #000;
+					}
+				}
+				.tablet-log {
+					a {
 						color: #000;
 					}
 				}
@@ -297,17 +293,13 @@ header {
 			width: 100%;
 			padding: 0 30px;
 			.web-menu {
-				#gnb {
-					width: 65%;
-					li a {
-						font: bold 13px/1 $main-font;
+				nav {
+					#gnb {
+						width: 65%;
 					}
 				}
 				.log {
 					margin-right: 0;
-					li a {
-						font: bold 13px/1 $main-font;
-					}
 				}
 			}
 		}
@@ -325,16 +317,16 @@ header {
 				.web-h1 {
 					padding-right: 3vw;
 					a {
-						font: bold 13px/1 $main-font;
+						font: bold 13px/30px $main-font;
 					}
 				}
 				nav {
 					#gnb {
-						width: 62vw;
+						width: 59vw;
 						li {
 							margin-left: 5px;
 							a {
-								font: bold 13px/1 $main-font;
+								font: bold 13px/30px $main-font;
 							}
 						}
 					}
@@ -344,6 +336,18 @@ header {
 				}
 				.tablet-log {
 					display: block;
+				}
+			}
+		}
+		&.sub {
+			.container {
+				.web-menu {
+					.web-h1 a {
+						font: bold 13px/30px $main-font;
+					}
+					nav #gnb li a {
+						font: bold 13px/30px $main-font;
+					}
 				}
 			}
 		}
@@ -372,6 +376,9 @@ header {
 			&:hover {
 				background: $bg-color;
 			}
+		}
+		&.sub {
+			height: 90px;
 		}
 	}
 }

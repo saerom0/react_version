@@ -1,9 +1,9 @@
 import { useRef, useEffect } from 'react';
 import Anime from '../../asset/anime';
 
-function Btns() {
+function Btns({ setScrolled, setPos }) {
 	const pos = useRef([]);
-	const num = useRef(5);
+	const num = useRef(6);
 	const speed = useRef(500);
 	const btnRef = useRef(null);
 
@@ -11,6 +11,7 @@ function Btns() {
 		pos.current = [];
 		const secs = btnRef.current.parentElement.querySelectorAll('.myScroll');
 		for (const sec of secs) pos.current.push(sec.offsetTop);
+		setPos(pos.current);
 	};
 
 	const activation = () => {
@@ -18,9 +19,10 @@ function Btns() {
 		const secs = btnRef.current.parentElement.querySelectorAll('.myScroll');
 		const scroll = window.scrollY;
 		const base = -window.innerHeight / 3;
+		setScrolled(scroll);
 
 		pos.current.forEach((pos, idx) => {
-			if (scroll >= pos + base) {
+			if (scroll >= pos) {
 				for (const btn of btns) btn.classList.remove('on');
 				for (const sec of secs) sec.classList.remove('on');
 				btns[idx].classList.add('on');

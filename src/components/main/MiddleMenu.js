@@ -2,9 +2,9 @@ import { faArrowRight, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
-function MiddleMenu({ Scrolled, currentPos }) {
+function MiddleMenu({ scrolled, currentPos }) {
 	return (
-		<section id='middle_menu' className='scroll'>
+		<section id='middle_menu' className='myScroll'>
 			<div className='container'>
 				<ul className='sub-gnb'>
 					<li>
@@ -67,8 +67,17 @@ function MiddleMenu({ Scrolled, currentPos }) {
 					</li>
 				</ul>
 				<div className='intro'>
-					<h2>WHO WE ARE</h2>
-					<h3 className='page'>
+					<h2
+						style={{
+							transform: `translateX(${(scrolled - currentPos) * 2}px)`,
+						}}
+					>
+						WHO WE ARE
+					</h2>
+					<h3
+						className='page'
+						style={{ transform: `translateX(${scrolled - currentPos}px)` }}
+					>
 						WORLD'S PREMIUM ONE-STOP SERVICED OFFICE PROVIDER,
 						<br />
 						RUN BY MULTI-CULTURAL INDUSTRY EXPERTS

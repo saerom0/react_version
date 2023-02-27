@@ -6,20 +6,26 @@ import Offer from './Offer';
 import Visual from './Visual';
 import Track from './Track';
 import Btns from './Btns';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Main({ menuOpen }) {
-	const [Scrolled, setScrolled] = useState(0);
-	const [Pos, setPos] = useState([]);
+	const [scrolled, setScrolled] = useState(0);
+	const [pos, setPos] = useState([]);
+	// console.log(Scrolled);
+	// console.log(Pos);
+
+	useEffect(() => {
+		console.log(scrolled);
+	}, [scrolled]);
 	return (
 		<main>
 			<Header type={'main'} menuOpen={menuOpen} />
 			<Visual />
-			<MiddleMenu Scrolled={Scrolled} currentPos={Pos[1]} />
+			<MiddleMenu scrolled={scrolled} currentPos={pos[1]} />
 			<Banner />
 			<Offer />
 			<Promo />
-			<Track Scrolled={Scrolled} />
+			<Track scrolled={scrolled} />
 			<Btns setScrolled={setScrolled} setPos={setPos} />
 		</main>
 	);

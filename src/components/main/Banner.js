@@ -45,7 +45,7 @@ function Banner() {
 						);
 					})}
 				</section>
-				<ul className='bn_btn' ref={bn_btn}>
+				<ul className='bn-btn on' ref={bn_btn}>
 					{banner.map((_, idx) => {
 						return (
 							<li key={idx}>
@@ -60,17 +60,6 @@ function Banner() {
 						);
 					})}
 				</ul>
-				{/* <ul className='bn_btn'>
-					<li className='on'>
-						<Link to='#'></Link>
-					</li>
-					<li>
-						<Link to='#'></Link>
-					</li>
-					<li>
-						<Link to='#'></Link>
-					</li>
-				</ul> */}
 			</div>
 		</section>
 	);
