@@ -1,10 +1,5 @@
 .Review {
-	h1 {
-		padding: 50px;
-		border-bottom: 1px solid #bbbbbb;
-		font: 40px/1 'arial';
-	}
-	> .container {
+	.container {
 		.inputBox {
 			width: 100%;
 			border: 1px solid #bbb;
@@ -49,21 +44,33 @@
 				flex-wrap: wrap;
 
 				.txt {
-					width: 88%;
+					width: calc(100% - 170px);
 					h2 {
 						margin-bottom: 10px;
 					}
+
+					input,
+					textarea {
+						width: 100%;
+						padding: 8px 10px;
+						border: 1px solid lightblue;
+						margin-bottom: 20px;
+						background: #eee;
+					}
+					textarea {
+						margin-bottom: 0;
+					}
 				}
 				.btnSet {
-					width: 10%;
+					width: 120px;
 					display: flex;
 					align-items: center;
 					margin-top: 20px;
 					justify-content: flex-end;
+					gap: 10px;
 
 					button {
 						background: transparent;
-						margin: 10px;
 						cursor: pointer;
 						border: none;
 
@@ -73,6 +80,39 @@
 						&:nth-of-type(2) {
 							color: orangered;
 						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet-origin) {
+	.Review {
+		.container {
+			.inputBox {
+				input[type='text'],
+				textarea {
+					width: 100%;
+				}
+				.btnSet {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-between;
+
+					button {
+						width: 47%;
+						margin-right: 0;
+					}
+				}
+			}
+
+			.showBox {
+				article {
+					.txt,
+					.editTxt,
+					.btnSet {
+						width: 100%;
 					}
 				}
 			}

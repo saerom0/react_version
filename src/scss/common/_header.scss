@@ -10,6 +10,7 @@ header {
 			padding-top: 25px;
 			margin-left: 10px;
 			float: left;
+			height: 100%;
 			.web-h1 {
 				float: left;
 				padding-right: 2vw;
@@ -24,7 +25,7 @@ header {
 			}
 			nav {
 				#gnb {
-					width: 50vw;
+					width: 45vw;
 					float: left;
 					> li {
 						float: left;
@@ -47,7 +48,7 @@ header {
 				margin-right: 10px;
 				li {
 					float: left;
-					height: 20px;
+					height: 30px;
 					display: flex;
 					justify-content: center;
 					align-items: center;

@@ -95,6 +95,7 @@ function SignUp() {
 		e.preventDefault();
 		setErr(check(val));
 		setSubmit(true);
+		window.scroll(0, 0);
 	};
 
 	//인풋요소 초기화 함수
@@ -232,11 +233,10 @@ function SignUp() {
 											value={val.pwd1}
 											onChange={handleChange}
 										/>
-										<p>
-											{' '}
+										<span>
 											(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~12자)
-										</p>
-										<span className='err'>{err.pwd1}</span>
+										</span>
+										<p className='err'>{err.pwd1}</p>
 									</td>
 								</tr>
 
