@@ -1,10 +1,10 @@
 #mobilePanel {
-	width: 320px;
+	width: 270px;
 	height: 100%;
 	position: fixed;
 	top: 0;
 	left: 0;
-	background: #111;
+	background: #1c1c1c;
 	padding: 50px;
 	z-index: 5;
 	display: flex;
@@ -42,17 +42,15 @@
 		display: flex;
 		justify-content: flex-start;
 		gap: 20px;
-		padding-left: 20px;
 
 		li {
 			width: 30px;
 			height: 30px;
-			border: 1px solid #555;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			color: #777;
-			font-size: 14px;
+			font-size: 20px;
 		}
 	}
 }

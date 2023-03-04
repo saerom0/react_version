@@ -2,6 +2,7 @@ import Layout from '../common/Layout';
 import { useRef, useState, useEffect } from 'react';
 
 function Community() {
+	//처음 마운트시 더미데이터에서 데이터 가져오고 이후부터 로컬스토리지의 데이터를 가져오도록 함
 	//메인에서 로컬스토리지에 저장된 값을 가져와서 리턴
 	const getLocalData = () => {
 		const data = localStorage.getItem('post');

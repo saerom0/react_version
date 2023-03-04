@@ -2,6 +2,7 @@ import { Route, Switch } from 'react-router-dom';
 //common
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
+import Menu from './components/common/MobMenu';
 //main
 import Main from './components/main/Main';
 //sub
@@ -29,8 +30,11 @@ function App() {
 	return (
 		<>
 			<Switch>
-				<Route exact path='/' component={Main} />
-				<Route path='/' render={() => <Header type={'sub'} />} />
+				<Route exact path='/' render={() => <Main menuOpen={menuOpen} />} />
+				<Route
+					path='/'
+					render={() => <Header type={'sub'} menuOpen={menuOpen} />}
+				/>
 			</Switch>
 
 			<Route path='/about' component={About} />
@@ -40,6 +44,7 @@ function App() {
 			<Route path='/contact' component={Contact} />
 			<Route path='/signup' component={SignUp} />
 			<Footer />
+			<Menu ref={menuOpen} />
 		</>
 	);
 }
