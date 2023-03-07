@@ -20,7 +20,7 @@ const Menu = forwardRef((props, ref) => {
 
 	useEffect(() => {
 		window.addEventListener('resize', () => {
-			if (window.innerWidth >= 550) setOpen(false);
+			if (window.innerWidth >= 500) setOpen(false);
 		});
 	}, []);
 

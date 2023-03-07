@@ -4,25 +4,18 @@
 	margin-top: -15vh;
 	z-index: 2;
 	overflow: hidden;
-	// &.on .container {
-	// 	.sub-gnb {
-	// 		position: fixed;
-	// 		width: 1180px;
-	// 		z-index: 3;
-	// 		> li {
-	// 			background: #353535;
-	// 			span {
-	// 				color: #ffffff;
-	// 			}
-	// 			&:hover {
-	// 				background: #bbb;
-	// 				span {
-	// 					color: #333;
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
+	&.on .container .intro {
+		h2 span {
+			animation: wave 0.5s ease-in alternate;
+			animation-fill-mode: forwards;
+			@for $i from 0 through 20 {
+				&:nth-of-type(#{$i + 1}) {
+					animation-delay: 0.2s * $i;
+				}
+			}
+		}
+	}
+
 	.container {
 		width: 1180px;
 		margin: 0 auto;
@@ -121,18 +114,21 @@
 			h2 {
 				position: absolute;
 				top: 0;
-				left: 500px;
-				width: 50%;
-				font: bold 72px/1 'Roboto';
-				color: #2a2a2a;
-				text-align: center;
-				margin: 40px auto;
+				left: 31%;
+				span {
+					position: relative;
+					display: inline-block;
+					font: bold 72px/1 'Roboto';
+					color: #2a2a2a;
+					text-align: center;
+					margin: 40px auto;
+					transform: 0.3s;
+				}
 			}
 			h3 {
 				position: absolute;
 				top: 17vh;
 				left: 250px;
-				// width: 900px;
 				font: bold 25px/35px 'Roboto';
 				color: #2a2a2a;
 				letter-spacing: 3px;
@@ -161,6 +157,17 @@
 	}
 }
 
+@keyframes wave {
+	0% {
+		top: 20px;
+	}
+	50% {
+		top: -20px;
+	}
+	100% {
+		top: 20px;
+	}
+}
 @media screen and (max-width: $tablet-plus) {
 	#middle_menu {
 		.container {
@@ -184,7 +191,7 @@
 				}
 			}
 			.intro {
-				h2 {
+				h2 span {
 					font: bold 55px/1 'Roboto';
 					margin: 20px auto;
 				}
@@ -259,7 +266,7 @@
 			}
 			.intro {
 				width: 100%;
-				h2 {
+				h2 span {
 					margin: 90px auto 40px;
 					font: bold 40px/1 'Roboto';
 				}

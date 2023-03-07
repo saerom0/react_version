@@ -1,35 +1,38 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import Anime from '../../asset/anime';
 
+/* 스크롤 함수 */
 function Btns({ setScrolled, setPos }) {
 	const pos = useRef([]);
 	const num = useRef(6);
 	const speed = useRef(500);
 	const btnRef = useRef(null);
 
-	const getPos = () => {
+	const getPos = useCallback(() => {
 		pos.current = [];
-		const secs = btnRef.current.parentElement.querySelectorAll('.myScroll');
-		for (const sec of secs) pos.current.push(sec.offsetTop);
+		const sections = btnRef.current.parentElement.querySelectorAll('.myScroll');
+		for (const section of sections) pos.current.push(section.offsetTop);
 		setPos(pos.current);
-	};
+		// console.log(pos.current);
+	}, [setPos]);
 
-	const activation = () => {
+	/* 활성화 함수 */
+	const activation = useCallback(() => {
 		const btns = btnRef.current.children;
-		const secs = btnRef.current.parentElement.querySelectorAll('.myScroll');
-		const scroll = window.scrollY;
+		const sections = btnRef.current.parentElement.querySelectorAll('.myScroll');
+		const scroll = window.scrollY || window.pageYOffset;
 		const base = -window.innerHeight / 3;
 		setScrolled(scroll);
 
 		pos.current.forEach((pos, idx) => {
-			if (scroll >= pos) {
+			if (scroll >= pos + base) {
 				for (const btn of btns) btn.classList.remove('on');
-				for (const sec of secs) sec.classList.remove('on');
-				btns[idx].classList.add('on');
-				secs[idx].classList.add('on');
+				for (const section of sections) section.classList.remove('on');
+				btns[idx]?.classList.add('on');
+				sections[idx].classList.add('on');
 			}
 		});
-	};
+	}, [setScrolled]);
 
 	useEffect(() => {
 		window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });

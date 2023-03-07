@@ -34,7 +34,7 @@ function Visual() {
 	}, [rolling]);
 
 	const stopRolling = () => {
-		console.log('stop');
+		// console.log('stop');
 		clearInterval(timer.current);
 
 		// btnStop.current && btnStop.current.classList.add('on');
@@ -42,7 +42,6 @@ function Visual() {
 	};
 
 	useEffect(() => {
-		console.log('init');
 		btns.current.children[0].classList.add('on');
 		startRolling();
 

@@ -1,5 +1,6 @@
 import { faArrowRight, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function MiddleMenu({ scrolled, currentPos }) {
@@ -67,12 +68,17 @@ function MiddleMenu({ scrolled, currentPos }) {
 					</li>
 				</ul>
 				<div className='intro'>
-					<h2
-						style={{
-							transform: `translateX(${(scrolled - currentPos) * 2}px)`,
-						}}
-					>
-						WHO WE ARE
+					<h2>
+						<span>W</span>
+						<span>H</span>
+						<span>O</span>
+						<span>&nbsp;</span>
+						<span>W</span>
+						<span>E</span>
+						<span>&nbsp;</span>
+						<span>A</span>
+						<span>R</span>
+						<span>E</span>
 					</h2>
 					<h3
 						className='page'
