@@ -102,7 +102,6 @@ function Videos() {
 										transform: `rotate(${
 											(360 / len) * idx
 										}deg) translateY(-135%)`,
-										// -36vw
 									}}
 								>
 									<div className='wrap'>

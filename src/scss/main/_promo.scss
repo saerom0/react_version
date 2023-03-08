@@ -4,7 +4,10 @@
 	background: url(../../../public/img/promo2.jpg) no-repeat center/cover fixed;
 	filter: grayscale(1);
 	background-attachment: fixed;
-
+	&.on .container .wrap2 p {
+		transform: translateY(0);
+		opacity: 1;
+	}
 	.container {
 		width: 1180px;
 		margin: 0 auto;
@@ -59,6 +62,14 @@
 			opacity: 0.9;
 			p {
 				line-height: 2.3;
+				opacity: 0;
+				transform: translateY(80px);
+				transition-duration: 0.5s;
+				@for $i from 0 through 7 {
+					&:nth-of-type(#{$i + 1}) {
+						transition-delay: $i * 0.1s;
+					}
+				}
 			}
 		}
 	}

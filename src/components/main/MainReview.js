@@ -15,7 +15,7 @@ function MainReview() {
 	return (
 		<section id='mainReview' className='myScroll'>
 			<div className='container'>
-				<h1>SPECIAL OFFER</h1>
+				<h1>CUSTOMER REVIEW</h1>
 				<section className='wrap'>
 					{offer.map((el, idx) => {
 						return (
@@ -31,7 +31,9 @@ function MainReview() {
 											{icon_star}
 										</div>
 									</div>
-									<button className='btn_offer'>VIEW MORE</button>
+									<Link to='/review' className='btn-review'>
+										VIEW MORE
+									</Link>
 								</div>
 
 								<h2>
