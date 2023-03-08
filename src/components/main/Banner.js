@@ -8,30 +8,27 @@ function Banner() {
 		'FIRST CHOICE FOR GLOBAL WORKPLAC',
 		'OFFICES WITH THE LATEST FACILITIES',
 	]);
-	const bn_btn = useRef(null);
-	const bn_div = useRef(null);
+	const bnBtn = useRef(null);
+	const bnDiv = useRef(null);
 
 	function activate(index) {
-		console.log(bn_div);
-		new Anime(bn_div.current, {
+		console.log(bnDiv);
+		new Anime(bnDiv.current, {
 			prop: 'margin-left',
 			value: -100 * index + '%',
 			duration: 1000,
 		});
-		for (let btn of bn_btn.current.children) btn.classList.remove('on');
-		bn_btn.current.children[index].classList.add('on');
+		for (let btn of bnBtn.current.children) btn.classList.remove('on');
+		bnBtn.current.children[index].classList.add('on');
 
-		let isOn = bn_btn.current.children[index].classList.contains('on');
+		let isOn = bnBtn.current.children[index].classList.contains('on');
 		if (isOn) return;
 	}
-
-	// let isOn = el.classList.contains('on');
-	// if (isOn) return;
 
 	return (
 		<section id='banner' className='myScroll'>
 			<div className='container'>
-				<section ref={bn_div}>
+				<section ref={bnDiv}>
 					{banner.map((el, idx) => {
 						return (
 							<div key={idx}>
@@ -45,7 +42,7 @@ function Banner() {
 						);
 					})}
 				</section>
-				<ul className='bn-btn on' ref={bn_btn}>
+				<ul className='bn-btn on' ref={bnBtn}>
 					{banner.map((_, idx) => {
 						return (
 							<li key={idx}>

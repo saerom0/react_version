@@ -1,4 +1,4 @@
-#offer {
+#mainReview {
 	padding: 150px 0;
 	overflow: hidden;
 	.container {
@@ -113,7 +113,7 @@
 	}
 }
 @media screen and (max-width: $tablet-plus) {
-	#offer {
+	#mainReview {
 		padding: 100px 30px;
 		.container {
 			width: 100%;
@@ -148,7 +148,7 @@
 
 //$tablet-origin (500px~849px)
 @media screen and (max-width: $tablet-origin) {
-	#offer {
+	#mainReview {
 		.container {
 			.wrap {
 				article {
@@ -170,7 +170,7 @@
 
 //$mobile (~499px)
 @media screen and (max-width: $mobile) {
-	#offer {
+	#mainReview {
 		.container {
 			.wrap {
 				article {

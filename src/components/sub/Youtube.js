@@ -1,5 +1,5 @@
 import Layout from '../common/Layout';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Modal from '../common/Modal';
 
@@ -8,6 +8,9 @@ function Youtube() {
 	const [Index, setIndex] = useState(0);
 	const Vids = useSelector((store) => store.youtube.data);
 
+	useEffect(() => {
+		window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+	});
 	return (
 		<>
 			<Layout name={'Youtube'}>

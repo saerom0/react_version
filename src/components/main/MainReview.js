@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Offer() {
+function MainReview() {
 	const [offer] = useState([
 		'VESTIBULUM AENEAN',
 		'NONUMMY ENDRERIT',
@@ -13,7 +13,7 @@ function Offer() {
 	const icon_star = <FontAwesomeIcon className='star' icon={faStar} />;
 	const url = process.env.PUBLIC_URL;
 	return (
-		<section id='offer' className='myScroll'>
+		<section id='mainReview' className='myScroll'>
 			<div className='container'>
 				<h1>SPECIAL OFFER</h1>
 				<section className='wrap'>
@@ -47,4 +47,4 @@ function Offer() {
 	);
 }
 
-export default Offer;
+export default MainReview;

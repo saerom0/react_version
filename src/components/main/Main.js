@@ -2,7 +2,7 @@ import Header from '../common/Header';
 import Promo from './Promo';
 import MiddleMenu from './MiddleMenu';
 import Banner from './Banner';
-import Offer from './Offer';
+import MainReview from './MainReview';
 import Visual from './Visual';
 import Videos from './Videos';
 import Btns from './Btns';
@@ -18,7 +18,7 @@ function Main({ menuOpen }) {
 			<Visual />
 			<MiddleMenu scrolled={scrolled} currentPos={pos[1]} />
 			<Banner />
-			<Offer />
+			<MainReview />
 			<Promo />
 			<Videos />
 			<Btns setScrolled={setScrolled} setPos={setPos} />

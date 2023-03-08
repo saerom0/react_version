@@ -45,6 +45,7 @@ function Gallery() {
 			frame.current.classList.add('on');
 			setLoading(false);
 		}, 500);
+		window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 	}, [Items]);
 
 	return (
