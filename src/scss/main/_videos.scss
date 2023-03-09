@@ -5,19 +5,18 @@
 	background: #333;
 	overflow: hidden;
 	.container {
-		padding: 7vw 0;
+		width: 1180px;
 		height: 100%;
-		overflow: hidden;
-
+		margin: 0 auto;
+		padding: 7vw 0;
 		#vidList {
 			width: 580px;
 			height: 480px;
-			position: absolute;
-			top: 30%;
-			left: 0%;
-			margin-top: -0px;
-			transform: rotate(0deg);
+			position: relative;
+			top: 14%;
+			left: -20%;
 			opacity: 0;
+			z-index: 2;
 			transition: opacity 0.3s, transform 0.5s;
 
 			article {
@@ -165,11 +164,10 @@
 			}
 		}
 		.vidIntro {
-			width: 500px;
+			width: 450px;
 			position: absolute;
-			top: 20%;
+			top: 23%;
 			left: 10%;
-			z-index: 2;
 			h1 {
 				font-size: 100px;
 				margin-bottom: 30px;
@@ -181,18 +179,18 @@
 		.navi {
 			position: absolute;
 			left: 10%;
-			bottom: 25%;
+			z-index: 2;
 			display: flex;
 			gap: 5vw;
 			li {
 				display: inline-block;
 				width: 70px;
 				height: 70px;
-				cursor: pointer;
 				color: #fff;
 				position: relative;
 				text-align: center;
 				line-height: 70px;
+				cursor: pointer;
 			}
 			.prev {
 				width: 20px;
@@ -301,7 +299,6 @@
 		.container {
 			#vidList,
 			#vidListMo {
-				transform: rotate(0deg);
 				opacity: 1;
 			}
 		}
@@ -345,38 +342,87 @@
 		opacity: 1;
 	}
 }
-@media screen and (max-width: $tablet-origin) {
+
+@media screen and (max-width: $tablet-plus) {
 	#videos {
 		.container {
 			width: 100%;
-			padding: 10vw 7vw;
+			overflow: hidden;
 			#vidList {
-				left: 70%;
+				width: 500px;
+				height: 400px;
+				top: 20%;
+				left: -50%;
 				article {
 					.img-wrap {
-						transform: scale(0.65);
-						margin-left: 50px;
-					}
-					&.on {
-						> .wrap {
-							transform: scale(0.85);
+						.thumb {
+							height: 270px;
+						}
+						.content {
+							padding: 18px;
+							h3 {
+								font-size: 28px;
+							}
 						}
 					}
 				}
 			}
-			.navi {
-				gap: 5vw;
-				bottom: 17vw;
-				left: 65%;
-				transform: translateX(-50%);
-			}
-			> article {
-				width: 40%;
-				top: 20%;
-				left: 55%;
+			.vidIntro {
+				top: 3%;
+				left: 50%;
 				h1 {
-					font-size: 100px;
+					text-align: right;
 				}
+				.vidDesc {
+					display: none;
+				}
+			}
+			.navi {
+				left: 30%;
+				bottom: 80%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet-origin) {
+	#videos {
+		.container {
+			#vidList {
+				width: 300px;
+				height: 250px;
+				top: 20%;
+				left: 0%;
+				article {
+					.img-wrap {
+						.thumb {
+							height: 150px;
+						}
+						.content {
+							padding: 10px;
+							h3 {
+								font-size: 16px;
+							}
+							p {
+								font-size: 12px;
+							}
+						}
+					}
+				}
+			}
+			.vidIntro {
+				top: 3%;
+				left: 40%;
+				h1 {
+					opacity: 0;
+				}
+				.vidDesc {
+					display: none;
+				}
+			}
+			.navi {
+				left: 30%;
+				bottom: 80%;
 			}
 		}
 	}
