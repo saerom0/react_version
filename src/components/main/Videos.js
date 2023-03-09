@@ -25,10 +25,10 @@ function Videos() {
 		activeBtn(e);
 	};
 
-	const vidRotate = (num) => {
-		setNum(num);
+	const vidRotate = (number) => {
+		setNum(number);
 		frame.current.style.transform = `rotate(${(360 / len) * num}deg)`;
-		frameMo.current.style.transform = `rotate(${(360 / len) * num}deg)`;
+		// frameMo.current.style.transform = `rotate(${(360 / len) * -num}deg)`;
 	};
 
 	const activeBtn = (e) => {
@@ -57,10 +57,10 @@ function Videos() {
 									style={{
 										transform: `rotate(${
 											(360 / len) * idx
-										}deg) translateX(-135%)`,
+										}deg) translateX(135%)`,
 									}}
 								>
-									<div className='wrap'>
+									<div className='img-wrap'>
 										<div
 											className='thumb'
 											onClick={() => {
@@ -86,7 +86,7 @@ function Videos() {
 							);
 						})}
 					</div>
-					<div id='vidListMo' ref={frameMo}>
+					{/* <div id='vidListMo' ref={frameMo}>
 						{vids.map((data, idx) => {
 							const tit = data.snippet.title;
 							const desc = data.snippet.description;
@@ -129,10 +129,10 @@ function Videos() {
 								</article>
 							);
 						})}
-					</div>
-					<article>
+					</div> */}
+					<article className='vidIntro'>
 						<h1>Shared Office</h1>
-						<p>
+						<p className='vidDesc'>
 							Our professional support team are highly trained to anticipate,
 							meet your needs, whatever they may be.
 						</p>
