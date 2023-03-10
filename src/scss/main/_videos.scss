@@ -85,28 +85,28 @@
 				}
 			}
 		}
-		#vidListMo {
+		#vidListMob {
 			display: none;
-			width: 580px;
-			height: 470px;
-			position: absolute;
-			bottom: -64%;
-			left: 50%;
-			margin-left: -290px;
-			transform: rotate(0deg);
-			opacity: 0;
+			width: 80%;
+			height: 50%;
+			position: relative;
+			top: 45%;
+			left: -75%;
+			opacity: 1;
 			transition: opacity 0.3s, transform 0.5s;
+			z-index: 2;
 			article {
+				position: absolute;
 				width: 100%;
 				height: 100%;
-				position: absolute;
 				top: 0;
 				left: 0;
+				cursor: pointer;
 				&:hover {
 					.img-wrap {
 						.thumb {
 							img {
-								transform: scale(1.2);
+								transform: scale(1.1);
 							}
 						}
 					}
@@ -121,12 +121,11 @@
 					background: #fff;
 					box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 					opacity: 0.5;
-					margin-top: -70px;
-					transform: scale(0.6);
+					transform: scale(0.5);
 					transition: 0.5s;
 					.thumb {
 						width: 100%;
-						height: 320px;
+						height: 70%;
 						overflow: hidden;
 						cursor: pointer;
 						img {
@@ -139,26 +138,25 @@
 					}
 					.content {
 						width: 100%;
-						padding: 30px;
+						padding: 10px;
 						h3 {
 							width: 100%;
 							font-family: 'Roboto';
-							font-size: 30px;
+							font-size: 16px;
 							margin-bottom: 10px;
 						}
 						p {
 							width: 100%;
 							font-weight: 300;
-							font-size: 15px;
+							font-size: 12px;
 							line-height: 1.5;
 						}
 					}
 				}
 				&.on {
-					z-index: 5;
 					.img-wrap {
 						opacity: 1;
-						transform: scale(0.75);
+						transform: scale(0.9);
 					}
 				}
 			}
@@ -184,12 +182,12 @@
 			gap: 5vw;
 			li {
 				display: inline-block;
-				width: 70px;
-				height: 70px;
+				width: 60px;
+				height: 60px;
 				color: #fff;
 				position: relative;
 				text-align: center;
-				line-height: 70px;
+				line-height: 60px;
 				cursor: pointer;
 			}
 			.prev {
@@ -387,42 +385,44 @@
 
 @media screen and (max-width: $tablet-origin) {
 	#videos {
+		height: 80vh;
+		&::before {
+			position: absolute;
+			left: 0;
+			top: 0;
+			content: '';
+			display: block;
+			width: 100%;
+			height: 25vh;
+			background: #333;
+			z-index: 3;
+		}
 		.container {
 			#vidList {
-				width: 300px;
-				height: 250px;
-				top: 20%;
-				left: 0%;
-				article {
-					.img-wrap {
-						.thumb {
-							height: 150px;
-						}
-						.content {
-							padding: 10px;
-							h3 {
-								font-size: 16px;
-							}
-							p {
-								font-size: 12px;
-							}
-						}
-					}
-				}
+				display: none;
+			}
+			#vidListMob {
+				display: block;
 			}
 			.vidIntro {
+				width: 390px;
 				top: 3%;
-				left: 40%;
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: 3;
 				h1 {
-					opacity: 0;
+					text-align: left;
+					font-size: 60px;
 				}
 				.vidDesc {
 					display: none;
 				}
 			}
 			.navi {
-				left: 30%;
-				bottom: 80%;
+				left: 50%;
+				bottom: 70%;
+				transform: translateX(-50%);
+				z-index: 4;
 			}
 		}
 	}
@@ -430,51 +430,38 @@
 
 @media screen and (max-width: $mobile) {
 	#videos {
-		height: 78vh;
+		height: 62vh;
 		&::before {
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			content: '';
-			display: block;
-			width: 100%;
-			height: 30vh;
-			background: #1f6089;
+			height: 20vh;
 		}
 		.container {
-			padding: 15vw 0;
-			&::before {
-				display: none;
+			#vidListMob {
+				width: 90%;
+				height: 55%;
+				left: -95%;
+				article {
+					.img-wrap {
+						.thumb {
+							height: 60%;
+						}
+					}
+				}
 			}
-			&::after {
-				display: none;
-			}
-
-			#vidList {
-				display: none;
-			}
-			#vidListMo {
-				display: block;
+			.vidIntro {
+				width: 200px;
+				top: 6%;
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: 3;
+				h1 {
+					font-size: 30px;
+				}
 			}
 			.navi {
-				gap: 12vw;
-				bottom: 10vw;
 				left: 50%;
+				bottom: 70%;
 				transform: translateX(-50%);
-			}
-			> article {
-				width: 80%;
-				position: relative;
-				top: 7vw;
-				left: 50%;
-				transform: translateX(-50%);
-				h1 {
-					font-size: 80px;
-					text-align: center;
-				}
-				p {
-					text-align: center;
-				}
+				z-index: 4;
 			}
 		}
 	}

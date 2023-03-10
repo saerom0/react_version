@@ -28,7 +28,7 @@ function Videos() {
 	const vidRotate = (number) => {
 		setNum(number);
 		frame.current.style.transform = `rotate(${(360 / len) * num}deg)`;
-		frameMo.current.style.transform = `rotate(${(360 / len) * -num}deg)`;
+		frameMo.current.style.transform = `rotate(${(360 / len) * num}deg)`;
 	};
 
 	const activeBtn = (e) => {
@@ -86,7 +86,7 @@ function Videos() {
 							);
 						})}
 					</div>
-					<div id='vidListMo' ref={frameMo}>
+					<div id='vidListMob' ref={frameMo}>
 						{vids.map((data, idx) => {
 							const tit = data.snippet.title;
 							const desc = data.snippet.description;
@@ -101,10 +101,10 @@ function Videos() {
 									style={{
 										transform: `rotate(${
 											(360 / len) * idx
-										}deg) translateY(-135%)`,
+										}deg) translateX(110%)`,
 									}}
 								>
-									<div className='wrap'>
+									<div className='img-wrap'>
 										<div
 											className='thumb'
 											onClick={() => {
