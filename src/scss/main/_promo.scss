@@ -84,11 +84,11 @@
 				width: 100%;
 				margin-right: 0;
 				h1 {
-					font: 700 60px/1.2 'Roboto', sans-serif;
+					font: 700 60px/1.2 'Roboto';
 					text-align: center;
 				}
 				p {
-					font: 50px/1.3 'Roboto', sans-serif;
+					font: 50px/1.3 'Roboto';
 					text-align: center;
 				}
 				a {
@@ -148,10 +148,14 @@
 //$mobile (~499px)
 @media screen and (max-width: $mobile) {
 	#promo {
-		padding: 50px 20px;
+		padding: 80px 20px;
 		.container {
 			.wrap {
 				margin: auto;
+				h1 {
+					font: 700 56px/1.2 'Roboto';
+					text-align: center;
+				}
 			}
 		}
 	}
