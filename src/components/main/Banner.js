@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Anime from '../../asset/anime';
 
@@ -9,11 +9,10 @@ function Banner() {
 		'OFFICES WITH THE LATEST FACILITIES',
 	]);
 	const bnBtn = useRef(null);
-	const bnDiv = useRef(null);
+	const bnImg = useRef(null);
 
 	function activate(index) {
-		console.log(bnDiv);
-		new Anime(bnDiv.current, {
+		new Anime(bnImg.current, {
 			prop: 'margin-left',
 			value: -100 * index + '%',
 			duration: 1000,
@@ -24,14 +23,17 @@ function Banner() {
 		let isOn = bnBtn.current.children[index].classList.contains('on');
 		if (isOn) return;
 	}
+	useEffect(() => {
+		bnBtn.current.children[0].classList.add('on');
+	}, []);
 
 	return (
 		<section id='banner' className='myScroll'>
 			<div className='container'>
-				<section ref={bnDiv}>
+				<section className='bnImgs' ref={bnImg}>
 					{banner.map((el, idx) => {
 						return (
-							<div key={idx}>
+							<div className='panel' key={idx}>
 								<img
 									src={`${process.env.PUBLIC_URL}/img/office${idx + 1}.jpg`}
 									alt={`office${idx}`}
@@ -42,7 +44,7 @@ function Banner() {
 						);
 					})}
 				</section>
-				<ul className='bn-btn on' ref={bnBtn}>
+				<ul className='bnBtn' ref={bnBtn}>
 					{banner.map((_, idx) => {
 						return (
 							<li key={idx}>

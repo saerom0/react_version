@@ -14,13 +14,13 @@ $kr-font: 'Gowun Dodum', sans-serif;
 @import 'common/layout';
 @import 'common/footer';
 @import 'common/modal';
-@import 'common/mob_menu';
+@import 'common/mobMenu';
 
 //main
 @import 'main/visual';
-@import 'main/middle_menu';
+@import 'main/middleMenu';
 @import 'main/banner';
-@import 'main/main_review';
+@import 'main/mainReview';
 @import 'main/promo';
 @import 'main/videos';
 @import 'main/btns';
@@ -30,5 +30,5 @@ $kr-font: 'Gowun Dodum', sans-serif;
 @import 'sub/about';
 @import 'sub/gallery';
 @import 'sub/contact';
-@import 'sub/sign_up';
+@import 'sub/signUp';
 @import 'sub/youtube';

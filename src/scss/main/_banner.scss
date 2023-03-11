@@ -7,10 +7,10 @@
 		position: relative;
 		margin: 0 auto;
 		overflow: hidden;
-		> section {
+		.bnImgs {
 			width: calc(100% * 3);
 			height: 480px;
-			div {
+			.panel {
 				width: calc(100% / 3);
 				height: 100%;
 				position: relative;
@@ -22,13 +22,10 @@
 				&:hover img {
 					filter: grayscale(0);
 				}
-				span {
-					font: red;
-				}
 				img {
+					position: relative;
 					width: 100%;
 					height: 100%;
-					position: relative;
 					object-fit: cover;
 					background: no-repeat center/cover;
 					opacity: 0.8;
@@ -41,7 +38,7 @@
 					top: 15%;
 					left: 50%;
 					transform: translateX(-50%);
-					font: 700 72px/1.5 'Roboto', sans-serif;
+					font: 700 72px/1.5 'Roboto';
 					text-align: center;
 					padding: 0 10px;
 					color: #fff;
@@ -50,7 +47,7 @@
 				a {
 					display: block;
 					border: 1px solid #fff;
-					font: bold 14px/1.2 'Roboto', sans-serif;
+					font: bold 14px/1.2 'Roboto';
 					color: #000;
 					letter-spacing: 4px;
 					background: #fff;
@@ -62,7 +59,7 @@
 				}
 			}
 		}
-		.bn-btn {
+		.bnBtn {
 			position: absolute;
 			left: 50%;
 			bottom: 5%;
@@ -96,17 +93,18 @@
 		padding: 0 30px;
 		.container {
 			width: 100%;
-			section {
+			.bnImgs {
 				height: 430px;
-				div {
+				.panel {
 					margin-bottom: 80px;
 					p {
 						top: 10%;
-						font: 900 65px/1.4 'Roboto', sans-serif;
+						font: 900 65px/1.4 'Roboto';
 					}
 				}
 			}
-			.bn-btn {
+			.bnBtn {
+				width: 233px;
 				li {
 					width: 75px;
 				}
@@ -119,11 +117,14 @@
 @media screen and (max-width: $tablet-origin) {
 	#banner {
 		.container {
-			section {
-				div {
+			.bnImgs {
+				.panel {
 					p {
 						font: 900 55px/1.3 'Roboto', sans-serif;
 						letter-spacing: 15px;
+					}
+					a {
+						font: bold 13px/1 'Roboto';
 					}
 				}
 			}
@@ -135,9 +136,9 @@
 @media screen and (max-width: $mobile) {
 	#banner {
 		.container {
-			section {
+			.bnImgs {
 				height: 380px;
-				div {
+				.panel {
 					p {
 						top: 10%;
 						font: 900 45px/1.3 'Roboto', sans-serif;
@@ -150,7 +151,8 @@
 					}
 				}
 			}
-			.bn-btn {
+			.bnBtn {
+				width: 158px;
 				li {
 					width: 50px;
 				}
