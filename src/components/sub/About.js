@@ -15,7 +15,7 @@ function About() {
 			className='check-icon'
 		></FontAwesomeIcon>
 	);
-	const [cstype] = useState([
+	const [cs_type] = useState([
 		'SERVICED OFFICE',
 		'CO-WORKING SPACE',
 		'VIRTUAL OFFICE',
@@ -85,7 +85,7 @@ function About() {
 							<section id='service_type'>
 								<nav>
 									<ul>
-										{cstype.map((el) => {
+										{cs_type.map((el) => {
 											return (
 												<li onClick={activation}>
 													<h3>{el}</h3>
@@ -234,109 +234,8 @@ function About() {
 					</section>
 				</div>
 			</section>
-			<Store />
 		</Layout>
 	);
 }
 
-function Store() {
-	/* 카카오맵 변수 선언 */
-	const [Store, setStore] = useState([]);
-	const [IndexExp, setIndexExp] = useState(0);
-	const [Index, setIndex] = useState(0);
-	const option = useRef(null);
-	const info = useRef(null);
-	const { kakao } = window;
-
-	/* 매장 정보 */
-	// info.current = [
-	// 	{
-	// 		title: 'LUSH Myeongdong Store',
-	// 		location: '5, Myeongdong 8ga-gil, Jung-gu, Seoul',
-	// 		latlng: new kakao.maps.LatLng(37.561652, 126.985299),
-	// 		imgUrl: `${process.env.PUBLIC_URL}/img/marker1.png`,
-	// 		imgSize: new kakao.maps.Size(90, 109),
-	// 		imgPos: { offset: new kakao.maps.Point(45, 109) },
-	// 	},
-	// 	{
-	// 		title: 'LUSH Gangnam Store',
-	// 		location: '433, Gangnam-daero, Seocho-gu, Seoul',
-	// 		latlng: new kakao.maps.LatLng(37.500998, 127.0256544),
-	// 		imgUrl: `${process.env.PUBLIC_URL}/img/marker2.png`,
-	// 		imgSize: new kakao.maps.Size(90, 109),
-	// 		imgPos: { offset: new kakao.maps.Point(45, 109) },
-	// 	},
-	// 	{
-	// 		title: 'LUSH SPA Gyeonglidan',
-	// 		location: '10, Hoenamu-ro 42-gil, Yongsan-gu, Seoul',
-	// 		latlng: new kakao.maps.LatLng(37.5406277, 126.9956342),
-	// 		imgUrl: `${process.env.PUBLIC_URL}/img/marker3.png`,
-	// 		imgSize: new kakao.maps.Size(90, 109),
-	// 		imgPos: { offset: new kakao.maps.Point(45, 109) },
-	// 	},
-	// ];
-	// option.current = {
-	// 	center: info.current[Index].latlng,
-	// 	level: 3,
-	// };
-
-	const getData = async () => {
-		const result = await axios.get(pub + '/DB/content.json');
-		setStore(result.data.store);
-	};
-
-	useEffect(() => {
-		getData();
-	}, []);
-
-	return (
-		<Layout name={'Store'}>
-			<section className='experience'>
-				<h2>Our Experience</h2>
-				<div className='wrap'>
-					<ul className='tabs'>
-						{Store.map((el, idx) => {
-							let isOn = '';
-							IndexExp === idx && (isOn = 'on');
-							return (
-								<li
-									key={`tab${idx}`}
-									className={isOn}
-									onClick={() => setIndexExp(idx)}
-								>
-									<h3>{el.title}</h3>
-								</li>
-							);
-						})}
-					</ul>
-
-					<div className='tabBox'>
-						{Store.map((el, idx) => {
-							let isOn = '';
-							IndexExp === idx && (isOn = 'on');
-							return (
-								<article key={`box${idx}`} className={isOn}>
-									<div className='pic'>
-										<img src={`${pub}/img/${el.image}`} alt={el.title} />
-									</div>
-									<div className='txt'>
-										<h4>{el.title}</h4>
-										<p>{el.content}</p>
-										<span>
-											{el.shop} <br />
-											{el.time}
-										</span>
-										{/* <Link to='/' className='btnMore'>
-											VIEW MORE
-										</Link> */}
-									</div>
-								</article>
-							);
-						})}
-					</div>
-				</div>
-			</section>
-		</Layout>
-	);
-}
 export default About;

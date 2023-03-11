@@ -1,4 +1,4 @@
-#middle_menu {
+#middleMenu {
 	width: 100%;
 	position: relative;
 	margin-top: -15vh;
@@ -20,7 +20,7 @@
 		width: 1180px;
 		margin: 0 auto;
 		background: #fff;
-		.sub-gnb {
+		.subGnb {
 			width: 100%;
 			height: 80px;
 			top: 0;
@@ -40,7 +40,7 @@
 				span {
 					display: block;
 					padding: auto;
-					font: bold 20px/78px 'Roboto', sans-serif;
+					font: bold 20px/78px 'Roboto';
 					color: #353535;
 					text-align: center;
 					position: relative;
@@ -50,7 +50,7 @@
 					span {
 						color: #fff;
 					}
-					.sub-menu {
+					.subMenu {
 						width: 100%;
 						display: block;
 						background: #fff;
@@ -73,12 +73,12 @@
 									}
 								}
 								a {
-									font: 15px/ 40px 'Roboto', sans-serif;
+									font: 15px/ 40px 'Roboto';
 									display: inline-block;
 									color: #333;
 									letter-spacing: 2px;
 								}
-								&.isSub:hover .sub-menu-2 {
+								&.isSub:hover .subMenu2 {
 									position: absolute;
 									display: block;
 									margin-top: -120px;
@@ -90,7 +90,7 @@
 										}
 									}
 								}
-								.sub-menu-2 ul li a {
+								.subMenu2 ul li a {
 									color: #333;
 								}
 							}
@@ -98,10 +98,10 @@
 					}
 				}
 
-				.sub-menu {
+				.subMenu {
 					display: none;
 
-					.sub-menu-2 {
+					.subMenu2 {
 						display: none;
 					}
 				}
@@ -135,7 +135,7 @@
 				margin: 0 auto 40px;
 				text-align: center;
 			}
-			.p-wrap {
+			.pWrap {
 				position: absolute;
 				top: 29vh;
 				display: flex;
@@ -168,13 +168,14 @@
 		top: 10px;
 	}
 }
+
 @media screen and (max-width: $tablet-plus) {
-	#middle_menu {
+	#middleMenu {
 		.container {
 			width: 100%;
 			padding: 0px 30px;
 			background: #fff;
-			.sub-gnb {
+			.subGnb {
 				width: 100%;
 				height: 65px;
 				> li {
@@ -182,7 +183,7 @@
 						font: bold 18px/65px 'Roboto';
 					}
 					&:hover {
-						.sub-menu {
+						.subMenu {
 							ul {
 								top: 65px;
 							}
@@ -200,7 +201,6 @@
 				}
 				h3 {
 					width: 100%;
-					top: 25vh;
 					font: bold 20px/35px 'Roboto';
 				}
 				span {
@@ -210,8 +210,7 @@
 					margin: 0 auto 40px;
 					text-align: center;
 				}
-				.p-wrap {
-					top: 40vh;
+				.pWrap {
 					p {
 						font: 13px/1.5 'Roboto';
 					}
@@ -223,19 +222,19 @@
 
 //$tablet-origin (500px~849px)
 @media screen and (max-width: $tablet-origin) {
-	#middle_menu {
+	#middleMenu {
 		.container {
-			.sub-gnb {
+			.subGnb {
 				> li {
 					&:hover {
-						.sub-menu {
+						.subMenu {
 							ul {
 								width: 200px;
 								li {
-									&isSub:hover .sub-menu-2 {
+									&isSub:hover .subMenu2 {
 										margin-left: 399px;
 									}
-									.sub-menu-2 {
+									.subMenu2 {
 										margin-top: 0px;
 										ul {
 											width: 200px;
@@ -253,8 +252,21 @@
 				}
 			}
 			.intro {
-				.p-wrap {
-					margin-bottom: 20px;
+				height: 420px;
+				h2 {
+					span {
+						font: bold 40px/1 'Roboto';
+					}
+				}
+				h3 {
+					top: 15vh;
+					font: bold 16px/30px 'Roboto';
+				}
+				.pWrap {
+					top: 28vh;
+					p {
+						font: 13px/1.5 'Roboto';
+					}
 				}
 			}
 		}
@@ -263,29 +275,24 @@
 
 //$mobile (~499px)
 @media screen and (max-width: $mobile) {
-	#middle_menu {
+	#middleMenu {
 		z-index: 1;
 		.container {
-			.sub-gnb {
+			.subGnb {
 				display: none;
 			}
 			.intro {
-				width: 100%;
+				height: 460px;
 				h2 {
-					margin: 0px auto 40px;
-					span {
-						font: bold 40px/1 'Roboto';
-					}
+					top: 15px;
+					z-index: 6;
 				}
 				h3 {
+					top: 12vh;
 					font: bold 15px/1.2 'Roboto';
-					margin-bottom: 30px;
 				}
-				span {
-					width: 100%;
-					margin: 20px auto;
-				}
-				.p-wrap {
+				.pWrap {
+					top: 24vh;
 					flex-wrap: wrap;
 					p {
 						width: 100%;

@@ -1,9 +1,9 @@
 import Header from '../common/Header';
-import Promo from './Promo';
+import Visual from './Visual';
 import MiddleMenu from './MiddleMenu';
 import Banner from './Banner';
 import MainReview from './MainReview';
-import Visual from './Visual';
+import Promo from './Promo';
 import Videos from './Videos';
 import Btns from './Btns';
 import { useState } from 'react';

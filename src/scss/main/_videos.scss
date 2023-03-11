@@ -17,6 +17,7 @@
 			left: -20%;
 			opacity: 0;
 			z-index: 2;
+			transform: rotate(-30deg);
 			transition: opacity 0.3s, transform 0.5s;
 
 			article {
@@ -93,6 +94,7 @@
 			top: 45%;
 			left: -75%;
 			opacity: 1;
+			transform: rotate(-30deg);
 			transition: opacity 0.3s, transform 0.5s;
 			z-index: 2;
 			article {
@@ -297,6 +299,7 @@
 		.container {
 			#vidList,
 			#vidListMo {
+				transform: rotate(0deg);
 				opacity: 1;
 			}
 		}

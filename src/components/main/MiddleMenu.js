@@ -1,16 +1,15 @@
 import { faArrowRight, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function MiddleMenu({ scrolled, currentPos }) {
 	return (
-		<section id='middle_menu' className='myScroll'>
+		<section id='middleMenu' className='myScroll'>
 			<div className='container'>
-				<ul className='sub-gnb'>
+				<ul className='subGnb'>
 					<li>
 						<span>OFFICES</span>
-						<div className='sub-menu'>
+						<div className='subMenu'>
 							<ul>
 								<li>
 									<Link to='office.html'>KOREA</Link>
@@ -34,7 +33,7 @@ function MiddleMenu({ scrolled, currentPos }) {
 
 					<li>
 						<span>SERVICES</span>
-						<div className='sub-menu'>
+						<div className='subMenu'>
 							<ul>
 								<li>
 									<Link to='office.html'>BUSINESS SUPPORT</Link>
@@ -48,7 +47,7 @@ function MiddleMenu({ scrolled, currentPos }) {
 										<FontAwesomeIcon icon={faAngleRight} />
 									</Link>
 
-									<div className='sub-menu-2'>
+									<div className='subMenu2'>
 										<ul>
 											<li>
 												<Link to='office.html'>MEETING ROOM</Link>
@@ -88,7 +87,7 @@ function MiddleMenu({ scrolled, currentPos }) {
 						<br />
 						RUN BY MULTI-CULTURAL INDUSTRY EXPERTS
 					</h3>
-					<div className='p-wrap'>
+					<div className='pWrap'>
 						<p className='left'>
 							Located in some of the most prestigious buildings in the
 							Asia-Pacific region, we offer an unparalleled range of services,

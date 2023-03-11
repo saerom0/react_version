@@ -1,6 +1,10 @@
 #mainReview {
 	padding: 150px 0;
 	overflow: hidden;
+	&.on .container .wrap article {
+		transform: rotateY(0deg) translateY(0px);
+		opacity: 1;
+	}
 	.container {
 		width: 1180px;
 		margin: 0 auto;
@@ -19,11 +23,19 @@
 				clear: both;
 			}
 			article {
+				transform: rotateY(180deg) translateY(-50px);
 				width: 280px;
+				opacity: 0;
 				margin-right: 20px;
 				float: left;
+				transition: opacity 0.1s, transform 1s;
 				&:last-child {
 					margin-right: 0px;
+				}
+				@for $i from 0 through 7 {
+					&:nth-of-type(#{$i + 1}) {
+						transition-delay: $i * 0.1s;
+					}
 				}
 				.frame {
 					width: 100%;

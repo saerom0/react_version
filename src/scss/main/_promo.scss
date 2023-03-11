@@ -63,7 +63,7 @@
 			p {
 				line-height: 2.3;
 				opacity: 0;
-				transform: translateY(80px);
+				transform: translateY(-80px);
 				transition-duration: 0.5s;
 				@for $i from 0 through 7 {
 					&:nth-of-type(#{$i + 1}) {
