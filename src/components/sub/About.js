@@ -8,29 +8,26 @@ import { faCheckCircle, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 const pub = process.env.PUBLIC_URL;
 
 function About() {
-	const [qna, setQna] = useState([]);
+	const [type, setType] = useState([]);
+	const [index, setIndex] = useState(0);
 	const [check_icon] = useState(
 		<FontAwesomeIcon
 			icon={faCheckCircle}
 			className='check-icon'
 		></FontAwesomeIcon>
 	);
-	const [cs_type] = useState([
-		'SERVICED OFFICE',
-		'CO-WORKING SPACE',
-		'VIRTUAL OFFICE',
-		'MEETING ROOMS & CONFERENCE FACILITIES',
-		'BUSINESS SUPPORT SERVICES',
-	]);
 
-	const activation = (el, e) => {
-		el.classList.remove('on');
-		!e.target.classList.contains('on') && e.target.classList.add('on');
-	};
+	const [Store, setStore] = useState([]);
+
+	// const getData = async () => {
+	// 	const result = await axios.get(pub + '/DB/contents.json');
+	// 	setType(result.data.service);
+	// };
 
 	useEffect(() => {
-		axios.get(`${pub}/DB/qna.json`).then((json) => {
-			setQna(json.data.qna);
+		axios.get(`${pub}/DB/contents.json`).then((json) => {
+			setType(json.data.service);
+			console.log(setType);
 		});
 	}, []);
 
@@ -39,7 +36,7 @@ function About() {
 			<section>
 				<div className='container'>
 					<h1>Shared Office</h1>
-					<section className='wrap-1'>
+					<section className='wrap1'>
 						<h2>BESPOKE PREMIUM SERVICED OFFICES THROUGHOUT ASIA</h2>
 						<div className='intro'>
 							<h3>01. Serviced Office</h3>
@@ -64,7 +61,7 @@ function About() {
 							</article>
 						</div>
 					</section>
-					<section className='wrap-2'>
+					<section className='wrap2'>
 						<article>
 							<h2>
 								PREMIUM SERVICED
@@ -76,8 +73,8 @@ function About() {
 							/>
 						</article>
 					</section>
-					<section className='wrap-3'>
-						<div className='contents'>
+					<section className='wrap3'>
+						<div className='inner'>
 							<p className='sub-title'>
 								Learn more <br />
 								about service types
@@ -85,81 +82,37 @@ function About() {
 							<section id='service_type'>
 								<nav>
 									<ul>
-										{cs_type.map((el) => {
+										{type.map((el, idx) => {
+											let isOn = '';
+											index === idx && (isOn = 'on');
 											return (
-												<li onClick={activation}>
-													<h3>{el}</h3>
+												<li
+													key={idx}
+													className={isOn}
+													onClick={() => setIndex(idx)}
+												>
+													<h3>{el.title}</h3>
 												</li>
 											);
 										})}
-										<li className='on'>
-											<h3>SERVICED OFFICE</h3>
-										</li>
-										<li>
-											<h3>CO-WORKING SPACE</h3>
-										</li>
-										<li>
-											<h3>VIRTUAL OFFICE</h3>
-										</li>
-										<li>
-											<h3>MEETING ROOMS & CONFERENCE FACILITIES</h3>
-										</li>
-										<li>
-											<h3>BUSINESS SUPPORT SERVICES</h3>
-										</li>
 									</ul>
 
-									<article className='on'>
-										<h3>IDEAL FOR</h3>
-										<p>{check_icon}Business corporations and multinationals</p>
-										<p>{check_icon}Representative office and SMEs</p>
-										<p>{check_icon}Flexible project space</p>
-										<p>{check_icon}Short-term swing space</p>
-										<p>{check_icon}Risk-free new market entry</p>
-										<p>KRW 800,000 /PER MONTH</p>
-									</article>
-
-									<article>
-										<h3>IDEAL FOR</h3>
-										<p>{check_icon}Individuals and freelancers</p>
-										<p>{check_icon}Business networking</p>
-										<p>{check_icon}Innovative start-ups</p>
-										<p>{check_icon}Vibrant community event space</p>
-										<p>COWORKING DAY PASS : KRW 50,000 /PER DAY</p>
-										<p>DEDICATED WORKSTATION : KRW 650,000 /PER MONTH</p>
-									</article>
-
-									<article>
-										<h3>IDEAL FOR</h3>
-										<p>{check_icon}Entrepreneurs working from home</p>
-										<p>{check_icon}Start-ups with a limited budget</p>
-										<p>{check_icon}SMEs with a regional presence</p>
-										<p>{check_icon}Company registration address</p>
-										<p>KRW 95,000 /PER MONTH</p>
-									</article>
-
-									<article>
-										<h3>IDEAL FOR</h3>
-										<p>{check_icon}Business meetings</p>
-										<p>{check_icon}Corporate trainings</p>
-										<p>{check_icon}Business travellers</p>
-										<p>{check_icon}Home office users</p>
-										<p>{check_icon}Training venue</p>
-										<p>MEETING ROOMS : KRW 60,000 /PER HOUR</p>
-										<p>VIDEO CONFERENCING : KRW 250,000 /PER HOUR</p>
-									</article>
-
-									<article>
-										<p>{check_icon}Business Concierge</p>
-										<p>{check_icon}Accounting & Tax consultation</p>
-										<p>{check_icon}Web design and hosting</p>
-										<p>{check_icon}New market entry support</p>
-									</article>
+									<div className='tabBox'>
+										{type.map((el, idx) => {
+											let isOn = '';
+											index === idx && (isOn = 'on');
+											return (
+												<article key={idx} className={isOn}>
+													<p>{el.content}</p>
+												</article>
+											);
+										})}
+									</div>
 								</nav>
 							</section>
 						</div>
 					</section>
-					<section className='wrap-4'>
+					<section className='wrap4'>
 						<h2>
 							LOREM, IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. NOBIS
 							SEQUI EXERCITATIONEM ILLO.
@@ -239,3 +192,50 @@ function About() {
 }
 
 export default About;
+
+// <article className='on'>
+// <h3>IDEAL FOR</h3>
+// <p>{check_icon}Business corporations and multinationals</p>
+// <p>{check_icon}Representative office and SMEs</p>
+// <p>{check_icon}Flexible project space</p>
+// <p>{check_icon}Short-term swing space</p>
+// <p>{check_icon}Risk-free new market entry</p>
+// <p>KRW 800,000 /PER MONTH</p>
+// </article>
+
+// <article>
+// <h3>IDEAL FOR</h3>
+// <p>{check_icon}Individuals and freelancers</p>
+// <p>{check_icon}Business networking</p>
+// <p>{check_icon}Innovative start-ups</p>
+// <p>{check_icon}Vibrant community event space</p>
+// <p>COWORKING DAY PASS : KRW 50,000 /PER DAY</p>
+// <p>DEDICATED WORKSTATION : KRW 650,000 /PER MONTH</p>
+// </article>
+
+// <article>
+// <h3>IDEAL FOR</h3>
+// <p>{check_icon}Entrepreneurs working from home</p>
+// <p>{check_icon}Start-ups with a limited budget</p>
+// <p>{check_icon}SMEs with a regional presence</p>
+// <p>{check_icon}Company registration address</p>
+// <p>KRW 95,000 /PER MONTH</p>
+// </article>
+
+// <article>
+// <h3>IDEAL FOR</h3>
+// <p>{check_icon}Business meetings</p>
+// <p>{check_icon}Corporate trainings</p>
+// <p>{check_icon}Business travellers</p>
+// <p>{check_icon}Home office users</p>
+// <p>{check_icon}Training venue</p>
+// <p>MEETING ROOMS : KRW 60,000 /PER HOUR</p>
+// <p>VIDEO CONFERENCING : KRW 250,000 /PER HOUR</p>
+// </article>
+
+// <article>
+// <p>{check_icon}Business Concierge</p>
+// <p>{check_icon}Accounting & Tax consultation</p>
+// <p>{check_icon}Web design and hosting</p>
+// <p>{check_icon}New market entry support</p>
+// </article>

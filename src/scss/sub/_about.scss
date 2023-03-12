@@ -5,7 +5,7 @@
 		font: 40px/1 'arial';
 	}
 	.container {
-		.wrap-1 {
+		.wrap1 {
 			position: relative;
 			width: 100%;
 			&::after {
@@ -59,7 +59,7 @@
 				}
 			}
 		}
-		.wrap-2 {
+		.wrap2 {
 			position: relative;
 			width: 100%;
 			padding: 0 50px;
@@ -96,10 +96,10 @@
 			}
 		}
 
-		.wrap-3 {
+		.wrap3 {
 			position: relative;
 			margin-bottom: 100px;
-			.contents {
+			.inner {
 				margin: 0 50px 80px;
 				display: flex;
 				flex-direction: column;
@@ -118,7 +118,7 @@
 						margin-bottom: 50px;
 						box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 						ul {
-							width: 45%;
+							width: 100%;
 							li {
 								display: flex;
 								justify-content: center;
@@ -142,21 +142,23 @@
 								}
 							}
 						}
-						article {
-							padding: 45px;
-							display: none;
-							&.on {
-								display: block;
-							}
-							h3 {
-								font: 30px/1 'arial';
-								margin-bottom: 20px;
-							}
-							p {
-								font: 20px/1 $main-font;
-								margin-bottom: 20px;
-								.check {
-									margin-right: 10px;
+						.tabBox {
+							article {
+								padding: 45px;
+								display: none;
+								&.on {
+									display: block;
+								}
+								h3 {
+									font: 30px/1 'arial';
+									margin-bottom: 20px;
+								}
+								p {
+									font: 20px/1 $main-font;
+									margin-bottom: 20px;
+									.check {
+										margin-right: 10px;
+									}
 								}
 							}
 						}
@@ -164,7 +166,7 @@
 				}
 			}
 		}
-		.wrap-4 {
+		.wrap4 {
 			position: relative;
 			padding: 0 50px;
 			&::after {
@@ -255,7 +257,7 @@
 	.About {
 		.container {
 			width: 100%;
-			.wrap-1 {
+			.wrap1 {
 				h2 {
 					width: 57%;
 					font: 40px/50px 'arial';
@@ -272,7 +274,7 @@
 					}
 				}
 			}
-			.wrap-2 {
+			.wrap2 {
 				article {
 					height: 450px;
 					h2 {
@@ -280,7 +282,7 @@
 					}
 				}
 			}
-			.wrap-4 {
+			.wrap4 {
 				h2 {
 					font: 30px/1.3 'arial';
 				}
@@ -296,7 +298,7 @@
 @media screen and (max-width: $tablet-origin) {
 	.About {
 		.container {
-			.wrap-1 {
+			.wrap1 {
 				padding-bottom: 150px;
 				h2 {
 					width: 100%;
@@ -318,13 +320,13 @@
 					}
 				}
 			}
-			.wrap-2 {
+			.wrap2 {
 				margin: 50px 0 0 0;
 				h2 {
 					font: 40px/1.3 'arial';
 				}
 			}
-			.wrap-3 .contents {
+			.wrap3 .inner {
 				.sub-title {
 					font: 30px/1.3 'arial';
 				}
@@ -332,7 +334,7 @@
 					width: 70%;
 				}
 			}
-			.wrap-4 {
+			.wrap4 {
 				h2 {
 					width: 100%;
 					font: 30px/1.3 'arial';
@@ -347,15 +349,15 @@
 
 @media screen and (max-width: $mobile) {
 	.About .container {
-		.wrap-1 {
+		.wrap1 {
 			h2 {
 				margin: 0;
 			}
 		}
-		.wrap-2 article h2 {
+		.wrap2 article h2 {
 			font: 40px/1.3 'arial';
 		}
-		.wrap-4 {
+		.wrap4 {
 			text-align: center;
 			article {
 				width: 100%;

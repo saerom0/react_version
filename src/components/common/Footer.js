@@ -33,7 +33,7 @@ function Footer() {
 					</ul>
 				</section>
 
-				<section className='web-wrap2'>
+				<section className='webWrap2'>
 					<h1 className='hidden'>REAL SUITE</h1>
 					<img
 						src={`${process.env.PUBLIC_URL}/img/company_logo.png`}
@@ -41,17 +41,17 @@ function Footer() {
 					/>
 					<p>Copyright © 2023 REAL SUITE ALL Right reserved.</p>
 				</section>
-				<section className='mob-wrap2'>
+				<section className='mobWrap2'>
 					<h1>REAL SUITE</h1>
 					<p>Copyright © 2023 REAL SUITE ALL Right reserved.</p>
 				</section>
 
 				<section className='wrap3'>
-					<div className='sns-icons'>
-						<FontAwesomeIcon icon={faTwitterSquare} className='sns-icon' />
-						<FontAwesomeIcon icon={faInstagramSquare} className='sns-icon' />
-						<FontAwesomeIcon icon={faFacebookSquare} className='sns-icon' />
-						<FontAwesomeIcon icon={faYoutube} className='sns-icon' />
+					<div className='snsIcons'>
+						<FontAwesomeIcon icon={faTwitterSquare} className='snsIcon' />
+						<FontAwesomeIcon icon={faInstagramSquare} className='snsIcon' />
+						<FontAwesomeIcon icon={faFacebookSquare} className='snsIcon' />
+						<FontAwesomeIcon icon={faYoutube} className='snsIcon' />
 					</div>
 					<address>
 						Lorem ipsum dolor sit amet B/D consectetur adipisicing elit. Sint.
