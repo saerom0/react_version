@@ -102,40 +102,6 @@
 
 //$tablet-origin (500px~849px)
 @media screen and (max-width: $tablet-origin) {
-	//header
-	#header {
-		.container {
-			.web-menu {
-				position: relative;
-				width: 100%;
-				height: 100%;
-				margin-left: 0;
-				.web-h1 {
-					padding-right: 3vw;
-					a {
-						font: bold 13px/1 $main-font;
-					}
-				}
-				nav {
-					#gnb {
-						width: 62vw;
-						li {
-							margin-left: 5px;
-							a {
-								font: bold 13px/1 $main-font;
-							}
-						}
-					}
-				}
-				.log {
-					display: none;
-				}
-				.tablet-log {
-					display: block;
-				}
-			}
-		}
-	}
 	#promo {
 		.container {
 			.wrap2 {
@@ -154,7 +120,9 @@
 				margin: auto;
 				h1 {
 					font: 700 56px/1.2 'Roboto';
-					text-align: center;
+				}
+				p {
+					font: 47px/1.3 'Roboto';
 				}
 			}
 		}

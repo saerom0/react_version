@@ -17,18 +17,12 @@ function About() {
 		></FontAwesomeIcon>
 	);
 
-	const [Store, setStore] = useState([]);
-
-	// const getData = async () => {
-	// 	const result = await axios.get(pub + '/DB/contents.json');
-	// 	setType(result.data.service);
-	// };
-
 	useEffect(() => {
-		axios.get(`${pub}/DB/contents.json`).then((json) => {
-			setType(json.data.service);
-			console.log(setType);
-		});
+		const getData = async () => {
+			const result = await axios.get(`${pub}/DB/contents.json`);
+			setType(result.data.service);
+		};
+		getData();
 	}, []);
 
 	return (
