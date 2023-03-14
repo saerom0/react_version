@@ -1,181 +1,227 @@
 .Gallery {
-	h1 {
-		padding: 50px;
-		border-bottom: 1px solid #bbbbbb;
-		font: 40px/1 'arial';
-	}
-	#gallery {
-		position: relative;
-		h2 {
-			display: block;
-			font: bold 70px/1 'arial';
-			padding: 0px 50px 50px;
-			color: #000;
+	.container {
+		h1 {
+			padding: 30px 50px;
+			border-bottom: 1px solid #bbbbbb;
+			font: 40px/1 'arial';
 		}
-		.search_box {
-			position: absolute;
-			width: 265px;
-			top: 0px;
-			right: 50px;
-			input {
-				width: 180px;
-				height: 30px;
-				padding: 10px;
-				border: 1px solid #333;
-			}
-			.search-btn {
-				width: 70px;
-				height: 30px;
-				border: none;
-				background: #333;
-				font: bold 13px/30px $kr-font;
-				color: #fff;
+		#gallery {
+			position: relative;
+			h2 {
+				display: block;
+				font: bold 70px/1 'arial';
+				padding: 0px 50px 50px;
+				color: #000;
 				cursor: pointer;
-				margin-left: 5px;
-				vertical-align: top;
 			}
-			.interest-btn {
-				color: #333;
-				background: #fff;
-				font-size: 16px;
-				margin-bottom: 10px;
-				font-style: italic;
-				transition: 0.5s;
-				border: none;
-				.arrow {
-					margin-right: 8px;
+			.searchBox {
+				position: absolute;
+				width: 265px;
+				top: 0px;
+				right: 50px;
+				input {
+					width: 180px;
+					height: 30px;
+					padding: 10px;
+					border: 1px solid #333;
 				}
-				&:hover {
-					transform: translateX(10px);
-					text-decoration: underline;
-					text-underline-position: under;
+				.searchBtn {
+					width: 70px;
+					height: 30px;
+					border: none;
+					background: #333;
+					font: bold 13px/30px $kr-font;
+					color: #fff;
+					cursor: pointer;
+					margin-left: 5px;
+					vertical-align: top;
+				}
+				.interestBtn {
+					color: #333;
+					background: #fff;
+					font-size: 16px;
+					margin-bottom: 10px;
+					font-style: italic;
+					transition: 0.5s;
+					border: none;
+					cursor: pointer;
+					.arrow {
+						margin-right: 8px;
+					}
+					&:hover {
+						transform: translateX(10px);
+						text-decoration: underline;
+						text-underline-position: under;
+					}
+				}
+			}
+
+			.galleryTitle {
+				position: relative;
+				padding: 0 50px;
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
+				}
+				font: 14px/1.5 'arial';
+				p {
+					float: left;
+					&:nth-of-type(1) {
+						width: 50%;
+						text-align: left;
+						padding-right: 18%;
+					}
+					&:nth-of-type(2) {
+						width: 25%;
+						padding-right: 5%;
+					}
+					&:nth-of-type(3) {
+						width: 25%;
+						text-align: right;
+						padding-left: 3%;
+					}
 				}
 			}
 		}
 
-		.gallery-title {
-			position: relative;
-			padding: 0 50px;
+		.loading {
+			position: absolute;
+			top: 20%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.frame {
+			padding: 30px;
+			opacity: 0;
+			transform: translateY(200px);
+			transition: opacity 0.5s, transform 0.5s;
+			&.on {
+				opacity: 1;
+				transform: translateY(0px);
+			}
 			&::after {
 				content: '';
 				display: block;
 				clear: both;
 			}
-			font: 14px/1.5 'arial';
-			p {
+			article {
 				float: left;
-				&:nth-of-type(1) {
-					width: 50%;
-					text-align: left;
-					padding-right: 20%;
-				}
-				&:nth-of-type(2) {
-					width: 25%;
-					padding-right: 5%;
-				}
-				&:nth-of-type(3) {
-					width: 25%;
-					text-align: right;
-					padding-left: 5%;
+				width: calc(100% / 3);
+				padding: 15px;
+
+				.inner {
+					position: relative;
+					width: 100%;
+					padding: 10px;
+					background: #fff;
+					box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+					&::after {
+						display: block;
+						content: '';
+						clear: both;
+					}
+					.pic {
+						width: 100%;
+						margin-bottom: 10px;
+
+						img {
+							width: 100%;
+						}
+					}
+
+					span {
+						display: block;
+						float: left;
+						width: 80%;
+						font: normal 14px/1.2 'arial';
+						color: #777;
+						margin-bottom: 30px;
+					}
+
+					.profile {
+						float: right;
+						width: 33px;
+						margin-right: 5px;
+						border-radius: 50%;
+					}
 				}
 			}
 		}
 	}
+}
 
-	.loading {
-		position: absolute;
-		top: 20%;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-
-	.frame {
-		padding: 30px;
-		opacity: 0;
-		transform: translateY(200px);
-		transition: opacity 0.5s, transform 0.5s;
-		&.on {
-			opacity: 1;
-			transform: translateY(0px);
-		}
-		&::after {
-			content: '';
-			display: block;
-			clear: both;
-		}
-		article {
-			float: left;
-			width: calc(100% / 3);
-			padding: 15px;
-
-			.inner {
-				width: 100%;
-				padding: 10px;
-				background: #fff;
-				box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
-
-				.pic {
-					width: 100%;
-					margin-bottom: 10px;
-
-					img {
-						width: 100%;
+@media screen and (max-width: $tablet-plus) {
+	.Gallery {
+		.container {
+			#gallery {
+				.searchBox {
+					width: 200px;
+					input {
+						width: 120px;
 					}
 				}
-
-				span {
-					font: normal 14px/1.2 'arial';
-					color: #777;
-					margin-bottom: 30px;
-				}
-
-				.profile {
-					width: 36px;
-					display: flex;
-					gap: 10px;
-					align-items: center;
-				}
+			}
+			.frame article {
+				width: 50%;
 			}
 		}
 	}
 }
 
 @media screen and (max-width: $tablet-origin) {
-	.Gallery .frame article {
-		width: 50%;
+	.Gallery {
+		.container {
+			#gallery {
+				h2 {
+					font: bold 60px/1 'arial';
+					padding: 0px 45px 120px;
+				}
+				.searchBox {
+					width: 265px;
+					top: 90px;
+					right: calc(100% - 315px);
+					input {
+						width: 120px;
+					}
+				}
+			}
+		}
 	}
 }
 
 @media screen and (max-width: $mobile) {
 	.Gallery {
-		.controls {
-			.searchBox {
-				width: 100%;
-
-				input {
-					width: 100%;
-					margin-bottom: 5px;
+		.container {
+			#gallery {
+				h2 {
+					font: bold 42px/1 'arial';
 				}
-				button {
-					width: 100%;
-					margin-bottom: 20px;
-					margin-left: 0px;
+
+				.galleryTitle {
+					p {
+						&:nth-of-type(1) {
+							width: 100%;
+							padding-right: 0;
+							margin-bottom: 20px;
+						}
+						&:nth-of-type(2) {
+							width: 100%;
+							padding-right: 0;
+							margin-bottom: 20px;
+						}
+						&:nth-of-type(3) {
+							width: 100%;
+							text-align: left;
+							padding-left: 0;
+						}
+					}
 				}
 			}
-
-			nav {
+			.frame article {
 				width: 100%;
-				display: flex;
-				justify-content: space-between;
-				button {
-					width: 48%;
-					margin-left: 0px;
-				}
 			}
-		}
-
-		.frame article {
-			width: 100%;
 		}
 	}
 }
