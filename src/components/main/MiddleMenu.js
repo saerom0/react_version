@@ -12,19 +12,19 @@ function MiddleMenu({ scrolled, currentPos }) {
 						<div className='subMenu'>
 							<ul>
 								<li>
-									<Link to='office.html'>KOREA</Link>
+									<Link to='/about'>KOREA</Link>
 								</li>
 								<li>
-									<Link to='office.html'>AMERICA</Link>
+									<Link to='/about'>AMERICA</Link>
 								</li>
 								<li>
-									<Link to='office.html'>ENGLAND</Link>
+									<Link to='/about'>ENGLAND</Link>
 								</li>
 								<li>
-									<Link to='office.html'>HONGKONG</Link>
+									<Link to='/about'>HONGKONG</Link>
 								</li>
 								<li>
-									<Link to='office.html'>VIEW MORE</Link>
+									<Link to='/about'>VIEW MORE</Link>
 									<FontAwesomeIcon icon={faArrowRight} />
 								</li>
 							</ul>
@@ -36,13 +36,13 @@ function MiddleMenu({ scrolled, currentPos }) {
 						<div className='subMenu'>
 							<ul>
 								<li>
-									<Link to='office.html'>BUSINESS SUPPORT</Link>
+									<Link to='/about'>BUSINESS SUPPORT</Link>
 								</li>
 								<li>
-									<Link to='office.html'>VIRTUAL OFFICE</Link>
+									<Link to='/about'>VIRTUAL OFFICE</Link>
 								</li>
 								<li className='isSub'>
-									<Link to='office.html'>
+									<Link to='/gallery'>
 										CO-WORKING SPACE
 										<FontAwesomeIcon icon={faAngleRight} />
 									</Link>
@@ -50,10 +50,10 @@ function MiddleMenu({ scrolled, currentPos }) {
 									<div className='subMenu2'>
 										<ul>
 											<li>
-												<Link to='office.html'>MEETING ROOM</Link>
+												<Link to='/gallery'>MEETING ROOM</Link>
 											</li>
 											<li>
-												<Link to='office.html'>CONFERENCE FACILITIES</Link>
+												<Link to='/gallery'>CONFERENCE FACILITIES</Link>
 											</li>
 										</ul>
 									</div>
