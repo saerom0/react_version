@@ -12,7 +12,7 @@ import {
 const Menu = forwardRef((props, ref) => {
 	const pub = process.env.PUBLIC_URL;
 	const [Open, setOpen] = useState(false);
-	const active = { color: 'orange' };
+	const active = { color: 'violet' };
 
 	useImperativeHandle(ref, () => {
 		return { toggle: () => setOpen(!Open) };

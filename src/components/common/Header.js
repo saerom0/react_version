@@ -8,8 +8,6 @@ import {
 
 function Header(props) {
 	const pub = process.env.PUBLIC_URL;
-	// const dispatch = useDispatch();
-	// const menu = useSelector((store) => store.menu.open);
 	return (
 		<header className={props.type}>
 			<div className='container'>
@@ -64,13 +62,12 @@ function Header(props) {
 					</ul>
 				</div>
 
-				<NavLink
-					to='/'
+				<div
 					className='btn-call'
 					onClick={() => props.menuOpen.current.toggle()}
 				>
 					<span>메뉴호출</span>
-				</NavLink>
+				</div>
 
 				<div className='mob-menu'>
 					<div className='mob-logo'>

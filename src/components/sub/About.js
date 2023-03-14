@@ -27,158 +27,156 @@ function About() {
 
 	return (
 		<Layout name={'About'}>
-			<div className='container'>
-				<h1>Shared Office</h1>
-				<section className='wrap1'>
-					<h2>BESPOKE PREMIUM SERVICED OFFICES THROUGHOUT ASIA</h2>
-					<div className='intro'>
-						<h3>01. Serviced Office</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-							fugiat maxime dignissimos unde sit! Hic.
-						</p>
-						<h3>02. Co-working Space</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-							fugiat maxime dignissimos unde sit! Hic.
-						</p>
-						<h3>03. Virtual Office</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-							fugiat maxime dignissimos unde sit! Hic.
-						</p>
-					</div>
-					<div className='move'>
-						<article className='circle'>
-							<Link to='/review'>150+ OFFERS</Link>
-						</article>
-					</div>
-				</section>
-				<section className='wrap2'>
-					<article>
-						<h2>
-							PREMIUM SERVICED
-							<br /> RUN BY MULTI-CULTURAL INDUSTRY EXPERTS
-						</h2>
-						<img
-							src={`${process.env.PUBLIC_URL}/img/random.jpg`}
-							alt='About page wrap2 image'
-						/>
+			<h1>Shared Office</h1>
+			<section className='wrap1'>
+				<h2>BESPOKE PREMIUM SERVICED OFFICES THROUGHOUT ASIA</h2>
+				<div className='intro'>
+					<h3>01. Serviced Office</h3>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt fugiat
+						maxime dignissimos unde sit! Hic.
+					</p>
+					<h3>02. Co-working Space</h3>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt fugiat
+						maxime dignissimos unde sit! Hic.
+					</p>
+					<h3>03. Virtual Office</h3>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt fugiat
+						maxime dignissimos unde sit! Hic.
+					</p>
+				</div>
+				<div className='move'>
+					<article className='circle'>
+						<Link to='/review'>150+ OFFERS</Link>
 					</article>
-				</section>
-				<section className='wrap3'>
-					<div className='inner'>
-						<p className='sub-title'>
-							Learn more <br />
-							about service types
-						</p>
-						<section id='service_type'>
-							<nav>
-								<ul>
-									{type.map((el, idx) => {
-										let isOn = '';
-										index === idx && (isOn = 'on');
-										return (
-											<li
-												key={idx}
-												className={isOn}
-												onClick={() => setIndex(idx)}
-											>
-												<h3>{el.title}</h3>
-											</li>
-										);
-									})}
-								</ul>
-
-								<div className='tabBox'>
-									{type.map((el, idx) => {
-										let isOn = '';
-										index === idx && (isOn = 'on');
-										return (
-											<article key={idx} className={isOn}>
-												<p>{el.content}</p>
-											</article>
-										);
-									})}
-								</div>
-							</nav>
-						</section>
-					</div>
-				</section>
-				<section className='wrap4'>
+				</div>
+			</section>
+			<section className='wrap2'>
+				<article>
 					<h2>
-						LOREM, IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. NOBIS
-						SEQUI EXERCITATIONEM ILLO.
+						PREMIUM SERVICED
+						<br /> RUN BY MULTI-CULTURAL INDUSTRY EXPERTS
 					</h2>
-					<article>
-						<h3>Our ipsum sit amet consectetur.</h3>
-						<h3>
-							Quote culpa veniam sedesse sequi ratione accusantium evenent
-							nesciunt, temporibus in incidunt voluptate similique.
-						</h3>
-						<h3>
-							accusamus nostrum expedita aliquid facilis reiciendis patiatur!
-						</h3>
-						<strong>All exports</strong>
-					</article>
-					<article>
-						<img
-							src={`${process.env.PUBLIC_URL}/img/member1.jpg`}
-							alt='member1'
-						/>
-						<p className='member-name'>
-							Susan
-							<FontAwesomeIcon
-								icon={faEnvelope}
-								className='envelope'
-							></FontAwesomeIcon>
-						</p>
-						<p className='member-position'>President, CEO</p>
-					</article>
-					<article>
-						<img
-							src={`${process.env.PUBLIC_URL}/img/member2.jpg`}
-							alt='member2'
-						/>
-						<p className='member-name'>
-							James
-							<FontAwesomeIcon
-								icon={faEnvelope}
-								className='envelope'
-							></FontAwesomeIcon>
-						</p>
-						<p className='member-position'>General Manager</p>
-					</article>
-					<article>
-						<img
-							src={`${process.env.PUBLIC_URL}/img/member3.jpg`}
-							alt='member3'
-						/>
-						<p className='member-name'>
-							Zoe
-							<FontAwesomeIcon
-								icon={faEnvelope}
-								className='envelope'
-							></FontAwesomeIcon>
-						</p>
-						<p className='member-position'>Assistant Manager</p>
-					</article>
-					<article>
-						<img
-							src={`${process.env.PUBLIC_URL}/img/member4.jpg`}
-							alt='member4'
-						/>
-						<p className='member-name'>
-							Sam
-							<FontAwesomeIcon
-								icon={faEnvelope}
-								className='envelope'
-							></FontAwesomeIcon>
-						</p>
-						<p className='member-position'>Senior Staff</p>
-					</article>
-				</section>
-			</div>
+					<img
+						src={`${process.env.PUBLIC_URL}/img/random.jpg`}
+						alt='About page wrap2 image'
+					/>
+				</article>
+			</section>
+			<section className='wrap3'>
+				<div className='inner'>
+					<p className='sub-title'>
+						Learn more <br />
+						about service types
+					</p>
+					<section id='service_type'>
+						<nav>
+							<ul>
+								{type.map((el, idx) => {
+									let isOn = '';
+									index === idx && (isOn = 'on');
+									return (
+										<li
+											key={idx}
+											className={isOn}
+											onClick={() => setIndex(idx)}
+										>
+											<h3>{el.title}</h3>
+										</li>
+									);
+								})}
+							</ul>
+
+							<div className='tabBox'>
+								{type.map((el, idx) => {
+									let isOn = '';
+									index === idx && (isOn = 'on');
+									return (
+										<article key={idx} className={isOn}>
+											<p>{el.content}</p>
+										</article>
+									);
+								})}
+							</div>
+						</nav>
+					</section>
+				</div>
+			</section>
+			<section className='wrap4'>
+				<h2>
+					LOREM, IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. NOBIS SEQUI
+					EXERCITATIONEM ILLO.
+				</h2>
+				<article>
+					<h3>Our ipsum sit amet consectetur.</h3>
+					<h3>
+						Quote culpa veniam sedesse sequi ratione accusantium evenent
+						nesciunt, temporibus in incidunt voluptate similique.
+					</h3>
+					<h3>
+						accusamus nostrum expedita aliquid facilis reiciendis patiatur!
+					</h3>
+					<strong>All exports</strong>
+				</article>
+				<article>
+					<img
+						src={`${process.env.PUBLIC_URL}/img/member1.jpg`}
+						alt='member1'
+					/>
+					<p className='member-name'>
+						Susan
+						<FontAwesomeIcon
+							icon={faEnvelope}
+							className='envelope'
+						></FontAwesomeIcon>
+					</p>
+					<p className='member-position'>President, CEO</p>
+				</article>
+				<article>
+					<img
+						src={`${process.env.PUBLIC_URL}/img/member2.jpg`}
+						alt='member2'
+					/>
+					<p className='member-name'>
+						James
+						<FontAwesomeIcon
+							icon={faEnvelope}
+							className='envelope'
+						></FontAwesomeIcon>
+					</p>
+					<p className='member-position'>General Manager</p>
+				</article>
+				<article>
+					<img
+						src={`${process.env.PUBLIC_URL}/img/member3.jpg`}
+						alt='member3'
+					/>
+					<p className='member-name'>
+						Zoe
+						<FontAwesomeIcon
+							icon={faEnvelope}
+							className='envelope'
+						></FontAwesomeIcon>
+					</p>
+					<p className='member-position'>Assistant Manager</p>
+				</article>
+				<article>
+					<img
+						src={`${process.env.PUBLIC_URL}/img/member4.jpg`}
+						alt='member4'
+					/>
+					<p className='member-name'>
+						Sam
+						<FontAwesomeIcon
+							icon={faEnvelope}
+							className='envelope'
+						></FontAwesomeIcon>
+					</p>
+					<p className='member-position'>Senior Staff</p>
+				</article>
+			</section>
 		</Layout>
 	);
 }
