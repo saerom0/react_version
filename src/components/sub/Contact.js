@@ -11,50 +11,45 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Contact() {
 	return (
 		<Layout name={'Contact'}>
-			<div className='container'>
-				<h1>Contact Us</h1>
-				<div className='enquire'>
-					<h2>Request for consultation</h2>
-					<form className='form'>
-						<input type='text' placeholder={'Name'} required />
-						<input type={'text'} placeholder={'Phone Number'} required />
-						<input type={'text'} placeholder='email' required />
-						<input type={'text'} placeholder={'Enquire contents'} required />
-						<input type={'submit'} value={'SUBMIT'} />
-					</form>
-					<section className='info'>
-						<div>
-							<p className='contact-subtitle'>Office hours</p>
-							<span>Weekday: From 9 to 18</span>
-							<p className='contact-contents'>
-								Closed weekends & public holidays
-							</p>
+			<h1>Contact Us</h1>
+			<div className='enquire'>
+				<h2>Request for consultation</h2>
+				<form className='form'>
+					<input type='text' placeholder={'Name'} required />
+					<input type={'text'} placeholder={'Phone Number'} required />
+					<input type={'text'} placeholder='email' required />
+					<input type={'text'} placeholder={'Enquire contents'} required />
+					<input type={'submit'} value={'SUBMIT'} />
+				</form>
+				<section className='info'>
+					<div>
+						<p className='contact-subtitle'>Office hours</p>
+						<span>Weekday: From 9 to 18</span>
+						<p className='contact-contents'>
+							Closed weekends & public holidays
+						</p>
+					</div>
+					<div>
+						<p className='contact-subtitle'>Email Us</p>
+						<p className='contact-contents'>jinxinsr@naver.com</p>
+					</div>
+					<div>
+						<p className='contact-subtitle'>Call Us</p>
+						<p className='contact-contents'>(254) 3968 5687</p>
+					</div>
+					<div>
+						<p className='contact-subtitle'>Follow</p>
+						<div className='sns-icons'>
+							<FontAwesomeIcon icon={faTwitterSquare} className='sns-icon' />
+							<FontAwesomeIcon icon={faInstagramSquare} className='sns-icon' />
+							<FontAwesomeIcon icon={faFacebookSquare} className='sns-icon' />
+							<FontAwesomeIcon icon={faYoutube} className='sns-icon' />
 						</div>
-						<div>
-							<p className='contact-subtitle'>Email Us</p>
-							<p className='contact-contents'>jinxinsr@naver.com</p>
-						</div>
-						<div>
-							<p className='contact-subtitle'>Call Us</p>
-							<p className='contact-contents'>(254) 3968 5687</p>
-						</div>
-						<div>
-							<p className='contact-subtitle'>Follow</p>
-							<div className='sns-icons'>
-								<FontAwesomeIcon icon={faTwitterSquare} className='sns-icon' />
-								<FontAwesomeIcon
-									icon={faInstagramSquare}
-									className='sns-icon'
-								/>
-								<FontAwesomeIcon icon={faFacebookSquare} className='sns-icon' />
-								<FontAwesomeIcon icon={faYoutube} className='sns-icon' />
-							</div>
-						</div>
-					</section>
-				</div>
-				<Map />
-				<Qna />
+					</div>
+				</section>
 			</div>
+			<Map />
+			<Qna />
 		</Layout>
 	);
 }

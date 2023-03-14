@@ -5,13 +5,13 @@
 		border-bottom: 1px solid #bbbbbb;
 		font: 40px/1 'arial';
 	}
-	.youtube-title-left {
+	.youtubeTitleLeft {
 		position: relative;
 		float: left;
 		width: 55%;
 		padding: 30px 0 0 50px;
 
-		.title-sub1 {
+		.titleSub1 {
 			width: 45%;
 			margin-right: 2%;
 			float: left;
@@ -32,10 +32,10 @@
 			text-align: right;
 		}
 	}
-	.youtube-title-right {
+	.youtubeTitleRight {
 		position: relative;
 		float: right;
-		width: 45%;
+		width: 40%;
 		padding-right: 50px;
 		margin-bottom: 60px;
 		span {
@@ -73,10 +73,10 @@
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-
+		padding: 0 50px;
 		article {
 			border-top: 1px solid #ddd;
-			padding: 20px 0px;
+			padding: 30px 0px;
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
@@ -88,7 +88,7 @@
 				color: #555;
 			}
 			.txt {
-				width: 38%;
+				width: 35%;
 				display: flex;
 				flex-wrap: wrap;
 				align-content: space-between;
@@ -102,7 +102,7 @@
 				}
 			}
 			.pic {
-				width: 35%;
+				width: 38%;
 				height: 200px;
 				cursor: pointer;
 
@@ -116,19 +116,87 @@
 	}
 }
 
+@media screen and (max-width: $tablet-plus) {
+	.Youtube {
+		.youtubeTitleLeft {
+			h2 {
+				font: 85px/1 'arial';
+				margin-bottom: 0;
+			}
+			h3 {
+				font: 85px/1 'arial';
+			}
+		}
+		.youtubeTitleRight {
+			figure {
+				left: 10px;
+				width: 300px;
+				height: 150px;
+			}
+		}
+	}
+}
+
 @media screen and (max-width: $tablet-origin) {
 	.Youtube {
-		article {
-			h4 {
-				width: 48%;
+		.youtubeTitleLeft {
+			width: 100%;
+			padding: 30px;
+			.titleSub1 {
+				display: none;
 			}
-			.txt {
-				width: 50%;
+			h2 {
+				float: left;
+				text-align: left;
+				font: 60px/1 'arial';
 			}
-			.pic {
-				width: 100%;
-				margin-top: 50px;
-				margin-bottom: 80px;
+			h3 {
+				font: 60px/1 'arial';
+				text-align: left;
+			}
+		}
+		.youtubeTitleRight {
+			width: 100%;
+			height: 150px;
+			padding: 0 30px;
+			span {
+				width: 70px;
+				height: 70px;
+				margin: 20px;
+			}
+			p {
+				top: 40px;
+				left: 100px;
+				width: 45%;
+				z-index: 2;
+				background: transparent;
+			}
+			figure {
+				float: right;
+				top: -150px;
+				width: 300px;
+				margin: 20px;
+			}
+		}
+		.videoList {
+			article {
+				flex-wrap: wrap;
+				flex-direction: column;
+				align-items: center;
+				h4 {
+					width: 80%;
+					padding: 30px 0;
+				}
+				.txt {
+					width: 80%;
+					padding: 20px 0;
+					span {
+						display: none;
+					}
+				}
+				.pic {
+					width: 80%;
+				}
 			}
 		}
 	}
@@ -136,21 +204,52 @@
 
 @media screen and (max-width: $mobile) {
 	.Youtube {
-		article {
-			h4 {
-				width: 100%;
-				margin-bottom: 20px;
+		.youtubeTitleLeft {
+			padding: 0 30px;
+			h2 {
+				font: 50px/1.1 'arial';
 			}
-			.txt {
+			h3 {
+				font: 50px/1.1 'arial';
+			}
+		}
+		.youtubeTitleRight {
+			height: 270px;
+			padding: 0 30px;
+			span {
+				display: none;
+			}
+			p {
 				width: 100%;
-				span {
-					margin-top: 20px;
+				top: 180px;
+				left: 10px;
+				padding: 0 30px;
+			}
+			figure {
+				float: left;
+				top: 15px;
+				left: 0;
+				width: 100%;
+				margin: 0;
+			}
+		}
+		.videoList {
+			padding: 0 30px;
+			article {
+				h4 {
+					width: 100%;
+				}
+				.txt {
+					width: 100%;
+				}
+				.pic {
+					width: 100%;
+					height: 180px;
+					margin-bottom: 30px;
 				}
 			}
-			.pic {
-				width: 100%;
-				margin-top: 30px;
-				margin-bottom: 40px;
+			figure.pop {
+				padding: 25vw 5vw;
 			}
 		}
 	}

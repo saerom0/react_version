@@ -88,72 +88,70 @@ function Review() {
 
 	return (
 		<Layout name={'Review'}>
-			<div className='container'>
-				<h1>Customer Review</h1>
-				<div className='inputBox'>
-					<input type='text' placeholder='제목을 입력하세요' ref={input} />
-					<br />
-					<textarea
-						cols='30'
-						rows='4'
-						placeholder='본문을 입력하세요'
-						ref={textarea}
-					></textarea>
-					<br />
-					<div className='btnSet'>
-						<button onClick={resetForm}>CANCEL</button>
-						<button onClick={createPost}>WRITE</button>
-					</div>
+			<h1>Customer Review</h1>
+			<div className='inputBox'>
+				<input type='text' placeholder='제목을 입력하세요' ref={input} />
+				<br />
+				<textarea
+					cols='30'
+					rows='4'
+					placeholder='본문을 입력하세요'
+					ref={textarea}
+				></textarea>
+				<br />
+				<div className='btnSet'>
+					<button onClick={resetForm}>CANCEL</button>
+					<button onClick={createPost}>WRITE</button>
 				</div>
+			</div>
 
-				<div className='showBox'>
-					{Posts.map((post, idx) => {
-						return (
-							<article key={idx}>
-								{post.enableUpdate ? (
-									//수정 모드
-									<>
-										<div className='txt'>
-											<h2>
-												<input
-													type='text'
-													defaultValue={post.title}
-													ref={inputEdit}
-												/>
-												<br />
-												<textarea
-													cols='30'
-													rows='4'
-													defaultValue={post.content}
-													ref={textareaEdit}
-												></textarea>
-												<br />
-											</h2>
-										</div>
+			<div className='showBox'>
+				{Posts.map((post, idx) => {
+					return (
+						<article key={idx}>
+							{post.enableUpdate ? (
+								//수정 모드
+								<>
+									<div className='txt'>
+										<h2>
+											<input
+												type='text'
+												defaultValue={post.title}
+												ref={inputEdit}
+											/>
+											<br />
+											<textarea
+												cols='30'
+												rows='4'
+												defaultValue={post.content}
+												ref={textareaEdit}
+											></textarea>
+											<br />
+										</h2>
+									</div>
 
-										<div className='btnSet'>
-											<button onClick={() => disableUpdate(idx)}>CANCEL</button>
-											<button onClick={() => updatePost(idx)}>UPDATED</button>
-										</div>
-									</>
-								) : (
-									//출력 모드
-									<>
-										<div className='txt'>
-											<h2>{post.title}</h2>
-											<p>{post.content}</p>
-										</div>
+									<div className='btnSet'>
+										<button onClick={() => disableUpdate(idx)}>CANCEL</button>
+										<button onClick={() => updatePost(idx)}>UPDATED</button>
+									</div>
+								</>
+							) : (
+								//출력 모드
+								<>
+									<div className='txt'>
+										<h2>{post.title}</h2>
+										<p>{post.content}</p>
+									</div>
 
-										<div className='btnSet'>
-											<button onClick={() => enableUpdate(idx)}>EDIT</button>
-											<button onClick={() => deletePost(idx)}>DELETE</button>
-										</div>
-									</>
-								)}
-							</article>
-						);
-					})}
-				</div>
+									<div className='btnSet'>
+										<button onClick={() => enableUpdate(idx)}>EDIT</button>
+										<button onClick={() => deletePost(idx)}>DELETE</button>
+									</div>
+								</>
+							)}
+						</article>
+					);
+				})}
 			</div>
 		</Layout>
 	);
