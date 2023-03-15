@@ -147,7 +147,7 @@
 								p {
 									font: 20px/1 $main-font;
 									margin-bottom: 20px;
-									.check {
+									span {
 										margin-right: 10px;
 									}
 								}
@@ -252,7 +252,6 @@
 					width: 57%;
 					font: 40px/50px 'arial';
 					margin: 0 3%;
-					padding: 0 30px;
 				}
 				.intro {
 					width: 37%;
@@ -293,7 +292,6 @@
 				h2 {
 					width: 100%;
 					font: 40px/1.1 'arial';
-					text-align: center;
 					margin: 0;
 				}
 				.intro {
@@ -327,7 +325,7 @@
 							h3 {
 								font: 13px/1.5 'arial';
 								&:hover {
-									font: 15px/1.5 'arial';
+									font: 14px/1.5 'arial';
 								}
 							}
 						}
@@ -360,8 +358,7 @@
 		.wrap1 {
 			h2 {
 				font: 38px/1.1 'arial';
-				padding: 0;
-				margin: 0;
+				text-align: center;
 			}
 			.move {
 				left: 10%;
@@ -378,19 +375,10 @@
 					nav {
 						ul li {
 							width: 80px;
-							h3 {
-								font: 12px/1.5 'arial';
-								&:hover {
-									font: 13px/1.5 'arial';
-								}
-							}
 						}
 						.tabBox {
 							article {
 								padding: 20px;
-								p {
-									font: 13px/1.2 $main-font;
-								}
 							}
 						}
 					}

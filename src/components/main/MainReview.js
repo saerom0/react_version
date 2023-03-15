@@ -51,8 +51,8 @@ function MainReview() {
 		localStorage.setItem('post', JSON.stringify(data.current));
 	}, []);
 
-	const icon_star = <FontAwesomeIcon className='star' icon={faStar} />;
-	const url = process.env.PUBLIC_URL;
+	const iconStar = <FontAwesomeIcon className='star' icon={faStar} />;
+	const pub = process.env.PUBLIC_URL;
 
 	return (
 		<section id='mainReview' className='myScroll'>
@@ -66,18 +66,18 @@ function MainReview() {
 								<div className='frame'>
 									<div className='pic'>
 										<img
-											src={`${url}/img/offer${idx + 1}.jpg`}
+											src={`${pub}/img/offer${idx + 1}.jpg`}
 											alt={data.title}
 										/>
 										<div className='stars'>
-											{icon_star}
-											{icon_star}
-											{icon_star}
-											{icon_star}
-											{icon_star}
+											{iconStar}
+											{iconStar}
+											{iconStar}
+											{iconStar}
+											{iconStar}
 										</div>
 									</div>
-									<Link to='/review' className='btn-review'>
+									<Link to='/review' className='btnReview'>
 										VIEW MORE
 									</Link>
 								</div>

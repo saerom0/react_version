@@ -10,10 +10,10 @@ const pub = process.env.PUBLIC_URL;
 function About() {
 	const [type, setType] = useState([]);
 	const [index, setIndex] = useState(0);
-	const [check_icon] = useState(
+	const [checkIcon] = useState(
 		<FontAwesomeIcon
 			icon={faCheckCircle}
-			className='check-icon'
+			className='checkIcon'
 		></FontAwesomeIcon>
 	);
 
@@ -25,6 +25,7 @@ function About() {
 		getData();
 	}, []);
 
+	const for5 = `{el.for5}`;
 	return (
 		<Layout name={'About'}>
 			<h1>Shared Office</h1>
@@ -95,7 +96,33 @@ function About() {
 									index === idx && (isOn = 'on');
 									return (
 										<article key={idx} className={isOn}>
-											<p>{el.content}</p>
+											<h3>{el.ideal}</h3>
+											<p>
+												<span>{checkIcon}</span>
+												{el.for1}
+											</p>
+											<p>
+												<span>{checkIcon}</span>
+												{el.for2}
+											</p>
+											<p>
+												<span>{checkIcon}</span>
+												{el.for3}
+											</p>
+											<p>
+												<span>{checkIcon}</span>
+												{el.for4}
+											</p>
+
+											{for5.hasOwnProperty('for5') && (
+												<p>
+													<span>{checkIcon}</span>
+													{el.for5}
+												</p>
+											)}
+
+											<p>{el.price1}</p>
+											<p>{el.price2}</p>
 										</article>
 									);
 								})}
@@ -183,8 +210,6 @@ function About() {
 
 export default About;
 
-// <article className='on'>
-// <h3>IDEAL FOR</h3>
 // <p>{check_icon}Business corporations and multinationals</p>
 // <p>{check_icon}Representative office and SMEs</p>
 // <p>{check_icon}Flexible project space</p>
