@@ -2,23 +2,51 @@
   "service": [
     {
       "title": "SERVICED OFFICE",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      "ideal": "IDEAL FOR",
+      "for1": "Business corporations and multinationals",
+      "for2": "Representative office and SMEs",
+      "for3": "Flexible project space",
+      "for4": "Short-term swing space",
+      "for5": "Risk-free new market entry",
+      "price1": "KRW 800,000 /PER MONTH"
     },
     {
       "title": "CO-WORKING SPACE",
-      "content": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain."
+      "ideal": "IDEAL FOR",
+      "for1": "Individuals and freelancers",
+      "for2": "Business networking",
+      "for3": "Innovative start-ups",
+      "for4": "Vibrant community event space",
+      "price1": "COWORKING DAY PASS : KRW 50,000 /PER DAY",
+      "price2": "DEDICATED WORKSTATION : KRW 650,000 /PER MONTH"
     },
     {
       "title": "VIRTUAL OFFICE",
-      "content": "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy."
+      "ideal": "IDEAL FOR",
+      "for1": "Entrepreneurs working from home",
+      "for2": "Start-ups with a limited budget",
+      "for3": "SMEs with a regional presence",
+      "for4": "Company registration address",
+      "price1": "KRW 95,000 /PER MONTH"
     },
     {
       "title": "MEETING ROOMS & CONFERENCE FACILITIES",
-      "content": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form"
+      "ideal": "IDEAL FOR",
+      "for1": "Business meetings",
+      "for2": "Corporate trainings",
+      "for3": "Business travellers",
+      "for4": "Home office users",
+      "for5": "Training venue",
+      "price1": "MEETING ROOMS : KRW 60,000 /PER HOUR",
+      "price2": "VIDEO CONFERENCING : KRW 250,000 /PER HOUR"
     },
     {
       "title": "BUSINESS SUPPORT SERVICES",
-      "content": " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+      "ideal": "IDEAL FOR",
+      "for1": "Business Concierge",
+      "for2": "Accounting & Tax consultation",
+      "for3": "Web design and hosting",
+      "for4": "New market entry support"
     }
   ]
 }

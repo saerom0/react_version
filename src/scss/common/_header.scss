@@ -271,10 +271,16 @@ header {
 				.web-h1 a {
 					color: #000;
 					font: bold 16px/30px $main-font;
+					&:hover {
+						color: #777;
+					}
 				}
 				nav #gnb li a {
 					color: #000;
 					font: bold 16px/30px $main-font;
+					&:hover {
+						color: #777;
+					}
 				}
 				.log {
 					li a {

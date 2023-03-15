@@ -7,17 +7,17 @@ export const fetchFlickr = createAsyncThunk(
 		const baseURL =
 			'https://www.flickr.com/services/rest/?format=json&nojsoncallback=1';
 		const key = '1f6a8afb62dde6c9a4d9073dd46560aa';
-		const method_interest = 'flickr.interestingness.getList';
-		const method_search = 'flickr.photos.search';
-		const method_user = 'flickr.people.getPhotos';
+		const methodInterest = 'flickr.interestingness.getList';
+		const methodSearch = 'flickr.photos.search';
+		const methodUser = 'flickr.people.getPhotos';
 		const num = 30;
 		let url = '';
 		if (opt.type === 'interest')
-			url = `${baseURL}&method=${method_interest}&api_key=${key}&per_page=${num}`;
+			url = `${baseURL}&method=${methodInterest}&api_key=${key}&per_page=${num}`;
 		if (opt.type === 'search')
-			url = `${baseURL}&method=${method_search}&api_key=${key}&per_page=${num}&tags=${opt.tags}`;
+			url = `${baseURL}&method=${methodSearch}&api_key=${key}&per_page=${num}&tags=${opt.tags}`;
 		if (opt.type === 'user')
-			url = `${baseURL}&method=${method_user}&api_key=${key}&per_page=${num}&user_id=${opt.user}`;
+			url = `${baseURL}&method=${methodUser}&api_key=${key}&per_page=${num}&user_id=${opt.user}`;
 
 		const response = await axios.get(url);
 		return response.data.photos.photo;
