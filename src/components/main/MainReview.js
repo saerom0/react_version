@@ -4,6 +4,9 @@ import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function MainReview() {
+	const iconStar = <FontAwesomeIcon className='star' icon={faStar} />;
+	const pub = process.env.PUBLIC_URL;
+
 	const getLocalData = () => {
 		const dummyPosts = [
 			{
@@ -50,9 +53,6 @@ function MainReview() {
 	useEffect(() => {
 		localStorage.setItem('post', JSON.stringify(data.current));
 	}, []);
-
-	const iconStar = <FontAwesomeIcon className='star' icon={faStar} />;
-	const pub = process.env.PUBLIC_URL;
 
 	return (
 		<section id='mainReview' className='myScroll'>

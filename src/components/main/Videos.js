@@ -60,7 +60,7 @@ function Videos() {
 										}deg) translateX(138%)`,
 									}}
 								>
-									<div className='img-wrap'>
+									<div className='imgWrap'>
 										<div
 											className='thumb'
 											onClick={() => {
@@ -104,7 +104,7 @@ function Videos() {
 										}deg) translateX(110%)`,
 									}}
 								>
-									<div className='img-wrap'>
+									<div className='imgWrap'>
 										<div
 											className='thumb'
 											onClick={() => {

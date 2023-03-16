@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-//비동기 서버통신으로 데이터를 전달 받고 첫번째 인수로 넣은 문자값으로 내부 액션타입을 자동 생성해 액션객체 생성
 export const fetchYoutube = createAsyncThunk(
 	'youtube/requestYoutube',
 	async () => {
@@ -15,7 +14,6 @@ export const fetchYoutube = createAsyncThunk(
 	}
 );
 
-//fetchYoutube가 리턴하는 액션객체의 상태값에 따라 store에 전달할 리듀서 데이터값을 반환
 const youtubeSlice = createSlice({
 	name: 'youtube',
 	initialState: {

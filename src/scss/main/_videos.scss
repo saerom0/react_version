@@ -28,7 +28,7 @@
 				height: 100%;
 				cursor: pointer;
 				&:hover {
-					.img-wrap {
+					.imgWrap {
 						.thumb {
 							img {
 								transform: scale(1.1);
@@ -36,7 +36,7 @@
 						}
 					}
 				}
-				.img-wrap {
+				.imgWrap {
 					position: relative;
 					width: 100%;
 					height: 100%;
@@ -80,7 +80,7 @@
 					}
 				}
 				&.on {
-					.img-wrap {
+					.imgWrap {
 						opacity: 1;
 						transform: scale(1);
 					}
@@ -106,7 +106,7 @@
 				left: 0;
 				cursor: pointer;
 				&:hover {
-					.img-wrap {
+					.imgWrap {
 						.thumb {
 							img {
 								transform: scale(1.1);
@@ -114,7 +114,7 @@
 						}
 					}
 				}
-				.img-wrap {
+				.imgWrap {
 					position: relative;
 					width: 100%;
 					height: 100%;
@@ -157,7 +157,7 @@
 					}
 				}
 				&.on {
-					.img-wrap {
+					.imgWrap {
 						opacity: 1;
 						transform: scale(0.9);
 					}
@@ -356,7 +356,7 @@
 				top: 20%;
 				left: -50%;
 				article {
-					.img-wrap {
+					.imgWrap {
 						.thumb {
 							height: 270px;
 						}
@@ -444,7 +444,7 @@
 				height: 55%;
 				left: -95%;
 				article {
-					.img-wrap {
+					.imgWrap {
 						.thumb {
 							height: 60%;
 						}
